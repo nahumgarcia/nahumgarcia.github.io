@@ -1,6 +1,0 @@
-layout: post
-title: "Probando Jekyll"
-date: 2024-01-10 15:37:00 -0000
-categories: posts
-
-This is a *markdown* test to see how **Github** pages work
