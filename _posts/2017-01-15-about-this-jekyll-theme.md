@@ -3,7 +3,6 @@ layout: post
 title: About this Jekyll theme
 tags: [Demo, Jekyll]
 author: Heiswayi Nrird
-comment: true
 ---
 
 Textlog is a minimalist, lefty-style Jekyll theme designed for documentation based blog.
