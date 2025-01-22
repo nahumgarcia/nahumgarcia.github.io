@@ -1,0 +1,29 @@
+---
+title: La pantomima de Pono
+author: Nahúm
+ 
+tags:
+
+categories:
+
+---
+
+Ya se han escrito muchas cosas sobre lo (en principio) ridículo de la propuesta de Neil Young con Pono. Me pareció un buen resumen de links para leer [el que hizo Marco Arment](http://www.marco.org/2014/03/13/pono-reading-material), en el cual se mencionaba también el magnifico post de Chris Montgomery al que enlaza este articulo y que, en mi opinion, es el único que hace falta para entender por que la música a 192 o a 96KHz no suena mejor, o por que los 24bits no son necesarios para el audio de consumo[^1]. Técnico pero accesible, extenso, y cristalino en conclusiones, cualquiera a quien le interese el audio y se considere audiófilo debería leerlo.
+<br>
+Aunque, de lo que más me llamo la atención fue [el propio video de la campaña de Kickstarter](https://www.kickstarter.com/projects/1003614822/ponomusic-where-your-soul-rediscovers-music), campaña que está arrasando y ya lleva más de 5 millones de dólares recaudados. En él, salen todos los amigotes músicos de Neil Young, desde Beck a Foo Fighters, Costello, Mumford & Sons, a los cuales Neil se ha llevado de paseo para ponerles música en el coche usando su reproductor musical. Como estrategia genera-hype no está nada mal. Qué demonios, es una absoluta genialidad marketiniana. Ya pasó la era de ver anuncios de televisiones donde esas televisiones parecen verse mejor que la propia televisión donde estás viendo el anuncio. La aproximación de Hitchcock funciona mucho mejor. Díganselo al propio Spielberg con su Tiburón. ¡No lo enseñes! Enseña la reacción. Todos esos músicos, buenos músicos, deberían saber lo que suena bien y lo que suena mal. Excepto que no es así. Los músicos solo necesitan buen gusto para ser buenos músicos, no tienen por que tener un oído especialmente entrenado.
+<br>
+Por otro lado, no puedo evitar preguntarme, ¿qué música les ha puesto? ¿Con qué combinación de amplificador y altavoces?. Hubiera sido muy sencillo coger un mp3 a 192KHz, pasarlo por un equipo de coche realmente bueno y decirles que aquello que escuchan es el Santo Grial convertido vibración acústica. Es más, seamos honestos, si llega Neil Young, te sube en su Cadillac Eldorado Biarritz de 1978 y te dice que lo que vas a escuchar tiene la mejor calidad que hayas escuchado en tu vida, el efecto placebo sube a niveles estratosféricos.
+<br>
+Pues bien, en una actualización reciente de la campaña del proyecto, han puesto [un GIF animado](https://s3.amazonaws.com/ksr/assets/001/815/519/9adc2837c2c40c9a477f8e79a75975ea_large.gif?1396212827) de supuestas reacciones de gente escuchando música a través de Pono con unos “auriculares cualquiera” (salen un par de los de Apple). Esto se pone interesante. O sea que afirman que Pono va a sonar mejor aunque tengas unos audífonos de los que vienen con el iPhone. Ahá.
+<br>
+En realidad esto alimenta más mis sospechas de dónde está aquí el truco. Y es lo único que tiene sentido de todo este desastre que no hay por donde cogerlo: remasterizaciones decentes.
+<br>
+Personalmente suelo evitar las ediciones remasterizadas, pero no porque tenga nada en sí contra ello. Las evito porque suelen significar coger la grabación original y aplastar la dinámica de cualquier forma para ponerla al día con los estándares que tenemos ahora. Muchos llevan años diciendo que hemos perdido [la batalla contra el _loudness_](http://dynamicrangeday.co.uk/about/) y quizá Neil Young quiera ser el paladín que nos saque del lío. Al final el panorama [no es tan grave](http://www.soundonsound.com/sos/sep11/articles/loudness.htm) como algunos lo quieren pintar. Pero mucha música vieja puede ser mejorada una barbaridad con un buen remaster, y es que ahora las herramientas digitales que tenemos, en combinación con las analógicas, nos dan unas posibilidades mucho mayores de lo que nunca hemos tenido en audio. Pero cuidado con este detalle, si estoy en lo cierto, Pono solo va a “sonar mejor” con música vieja. De hecho, en los videos promocionales, he reconocido solo a Dylan y al propio Young. ¿Es Pono un sistema de audio para audiófilos o para puretas? Mucha de la música nueva que se ha compuesto no sigue los mismos patrones de antaño: ha sido concebida y arreglada usando elementos distintos para las partes, en vez de usar la dinámica de los instrumentos y la voz para crear cambios. Esto pasa mucho con la música electrónica y de sintes. **Phoenix** no va a sonar mejor con más dinámica porque su música no utiliza apenas la dinámica para transmitir. **LMFAO** probablemente sonarían a rayos si utilizamos el mismo planteamiento. El resto de la música probablemente suene tan bien o tan mal como haya querido que suene su autor. Y es que en el siglo XXI, el sonido es otro elemento artístico más con el que jugar, y si un disco parece añejo y acartonado no es que suene mal, es un _feature_[^2].
+<br>
+Ahora, si esto es así, ¿necesitamos realmente un nuevo reproductor? **En absoluto**. La música remasterizada se escucharía igual en un iPod. ¿Tiene sentido a nivel empresarial? Probablemente. Una vez entras en el ecosistema de Young, si compras la música a 96KHz no puedes escucharla en otro lado que no sea el Pono o el portátil. Si ademas te crees que suena mejor _“por ser a 96KHz”_, estas vendido. Así que al final, tienes mucho mas control sobre tus consumidores y el [lock-in](http://en.wikipedia.org/wiki/Vendor_lock-in) es mucho más efectivo. Y a $18 por disco como se puede ver en Kickstarter, el negocio puede ser redondo.
+
+
+[^1]: Yo siempre grabo a 44.1KHz. En todos los años he hecho experimentos a grabar a 48KHz y a 96KHz y símplemente [no hay nada ahi que merezca la pena](http://www.soundonsound.com/sos/jun05/articles/qa0605_6.htm). En cambio, sí grabo todo a 24bits desde hace mucho.
+
+[^2]: Y me alegro de que sea así.
+

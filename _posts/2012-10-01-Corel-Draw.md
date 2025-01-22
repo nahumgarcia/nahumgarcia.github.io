@@ -1,0 +1,18 @@
+---
+title: Corel Draw
+author: Nahúm
+ 
+tags:
+
+categories:
+
+---
+
+El otro día estaba revisando algunas de mis viejas pertenencias, cosas guardadas en cajones que quedaron tal cual los dejé cuando me fui de casa de mis padres el mismo día que cumplí 18 años. Entre ellas me sorprendió reencontrarme con algunas cintas de casete de cuando estaba en el instituto, junto con algún vídeo VHS. Casi había olvidado que pasé una época en que me pasaba las tardes enteras haciendo cosas en Corel Draw (la versión 6, ha llovido). No recuerdo exactamente en qué momento empecé a usarlo más en serio, imagino que sería en 1º de B.U.P., porque todo surgió de hacer carteles para conciertos, míos y de otros grupos de Torrijos. Al principio sólo eran texto con una foto de fondo, pero un día descubrí los vectores y todo cambió. Ahí empecé a replicar cosas que me rodeaban. Los dos proyectos más grandes que hice fueron mis guitarras de entonces, una imitación de SG, y otra de Stratocaster. Las hice a la perfección, hice cada tornillo, girado aleatoriamente, cada capa, cada pieza, hasta el último detalle. Repliqué las tipos de la pala, la textura del nácar, todas las proporciones estaban exactas. Pasé horas buscando el color verde de las clavijas, y el color vino traslúcido del cuerpo de la SG. ¡Estaba tan orgulloso de aquellos dos dibujos! Pero eran tan pesados que mi 486DX2 se las veía y deseaba para abrirlos. Tardaba minutos en cargarlos, y a menudo Corel se cerraba de pronto dejándome con cosas a medias, sin salvar. Ojalá los tuviera aún. Era otra época, y para entonces, con mis conocimientos y mi equipo, aquello era una auténtica hazaña, sobre todo por el detalle y el mimo que puse en aquellas reproducciones. Con lo que aprendí, empecé a usar Corel para hacer cosas más prácticas. Una de las primeras cosas fue mientras empezaba con la SG, la primera de las dos que hice. Justo entonces acababa de empezar a leerme El Señor de los Anillos, tras haber terminado El Hobbit. Estaba tan inmerso en aquellos libros, pasaba tantas horas leyendo, que me hice un marca páginas y lo plastifiqué de forma casera, usando capas de celofán. Después empecé con las cintas de casete. Como solían ser grabadas de CDs que yo había comprado o que me habían dejado, usaba elementos del diseño de la portada o la contra portada. Me fascina cómo trabajé en el de Kula Shaker. Entonces era uno de mis discos favoritos y le puse especial cariño. Copié letra a letra la tipografía, los colores y la composición. Hasta puse las canciones en forma de espiral como venía en el CD.
+
+​También me hizo gracia encontrar esa copia de La Naranja Mecánica, porque su cubierta la hice haciendo un collage. Recorté las letras y la cuchilla, hice una composición y escribí la parte de atrás y el canto con una máquina de escribir. Luego lo llevé a una copistería para que me hiciera una fotocopia a color de aquello. Eso era mi forma de consolidarlo. Que por cierto, qué caras eran las fotocopias a color. Me dejé una fortuna en tonterías de estas.
+
+![](cassette.jpg)  
+
+En aquel amor por el detalle reconozco el germen de muchas cosas que vinieron después. Esa obstinación por dejar las cosas bien hechas, por aprender y mejorar. Aunque también reconozco a mi yo maniático y obsesivo, el que gusta de que todo tenga un orden, y que todo esté cuidado a nivel estético y funcional. Dediqué muchas, muchas horas a aquello sólo por entretenerme, pero también porque realmente quería que esos objetos fueran tan bonitos por fuera como lo era la música que tenían por dentro. En cuanto estuvo en mi mano cambiarlo, me dediqué a ello hasta que cada cosa quedó perfecta. Y es que en el fondo , casi todos los perfeccionistas son en realidad, enfermos, y obsesos.
+
