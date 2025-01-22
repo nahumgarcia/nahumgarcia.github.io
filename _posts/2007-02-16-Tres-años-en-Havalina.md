@@ -1,9 +1,7 @@
 ---
 title: Tres años en Havalina
 author: Nahúm
- 
-tags:
-
+tags: [música]
 categories:
 
 ---
