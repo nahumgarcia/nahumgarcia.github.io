@@ -17,6 +17,6 @@ Textlog is a minimalist, lefty-style Jekyll theme designed for documentation bas
 - Responsive and mobile-friendly
 - Post can have specific author name displayed on post metadata - apply via yaml front matter
 
-![Alt text](img/85879.jpg)
+![Alt text](_posts/85879.jpg)
 
 [Source code on GitHub](https://github.com/heiswayi/textlog)
