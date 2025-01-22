@@ -1,5 +1,5 @@
 ---
-title: El año que disfrutamos del mirador de La Cornisa
+title: El mirador de La Cornisa
 author: Nahúm
  
 tags:
