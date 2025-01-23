@@ -9,7 +9,7 @@ categories:
 
 En 2006 empecé a tocar el bajo como interino en Havalina Blu, cuando aún la banda era un cuarteto que cantaba en inglés y ahí empezó la historia.<br>Les conocía desde hacía tiempo, porque tenían mucha relación con una vieja compañera de mis estudios de sonido en el IESPB, y ella siempre me hablaba maravillas de ellos. Fui a verles al Café La palma en 2004, presentando su primer disco autoeditado y me gustó mucho. Después, otra vez en el Chesterfield Café en 2006, presentando A Woman or Two, estrenando contrato con Junk Records, y fue amor a segunda vista. Ese concierto fue muy especial para mí, porque me devolvió las ganas incontenibles de tocar de nuevo. Para Havalina Blu también fue muy especial; de camino tuvieron un accidente absurdo que dejó el coche siniestro total y se las vieron negras para llegar a la sala con el equipo a cuestas. 
 
-![Foto de Havalina](/assets/images/havalina.png)  
+![Foto de Havalina](/assets/images/havalina.png "Foto de Juan Aragonés")  
 
 Ellos habían escuchado grabaciones mías también a través de mi compañera, y creo que de alguna forma nos buscábamos mutuamente para hacer algo juntos. Así que un día, Manuel me dijo que les gustaría contar conmigo para servirles de apoyo en los directos, metiendo guitarras acústicas, teclados, percusiones… lo que surgiera. Al poco tiempo me dijo que se quedaban sin bajista por varios meses, y me pidió que les hiciera la suplencia. Yo estaba encantado. Recuerdo que tras varios ensayos me sentía como pez en el agua, divirtiéndome como un niño pequeño. Después empezaron los conciertos y los viajes interminables en coche, y no puedo decir que la cosa fuera una sucesión de éxitos. Más bien al contrario, la mayoría de los conciertos se sucederían sin pena ni gloria. 
 
