@@ -3,7 +3,7 @@ title: "Nahúm García"
 description: "Minimalist Jekyll theme for documentation site"
 baseurl: "https://nahumgarcia.github.io" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
 url: ""
-author: "John Doe"
+author: "Nahúm García"
 
 # Build settings
 kramdown:
