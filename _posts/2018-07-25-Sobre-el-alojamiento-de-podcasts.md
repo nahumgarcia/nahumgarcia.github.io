@@ -1,11 +1,8 @@
 ---
 title: Sobre el alojamiento de podcasts
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 Leía hoy en el blog de Jason Snell [un artículo](https://sixcolors.com/link/2018/07/why-you-should-never-pay-for-podcast-hosting/) comentando [otro artículo](https://medium.com/@NirZicherman/why-you-should-never-pay-for-podcast-hosting-9c39becd7cf7) de Nir Zicherman, cofundador de [Anchor](https://anchor.fm/). Zicherman afirmaba en Medium que nadie debería pagar por el alojamiento de podcasts. Anchor, su plataforma, lanzó hace unos meses la versión 3.0, donde por primera vez, ofrecían alojamiento gratuito para podcasts producidos fuera de su plataforma.

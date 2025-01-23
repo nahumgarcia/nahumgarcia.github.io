@@ -17,7 +17,7 @@ He elegido **[Numbers](http://www.apple.com/iwork/numbers/)**, más que nada por
 Después de echarle unas horas trabajando en ello en Numbers, he llegado a una solución que me es práctica y estoy bastante contento con ella. Básicamente, es una hoja con los clientes, otra con un historial de facturas y otra que es un generador de facturas que me he ingeniado, donde introduces el número de factura del historial que quieres generar y automáticamente se genera, lista para guardar en PDF y enviar al email de contacto correspondiente. Todas las hojas están interconectadas mediante fórmulas y búsquedas internas para que no haya que estar introduciendo los mismos datos una y otra vez.  
 La factura queda así:
 
-![](numbers_invoice.jpg)
+![](/assets/images/numbers_invoice.jpg)
 
 Una de las cosas que más he echado de menos es la posibilidad de generar menús en los que aparezcan como opciones disponibles los campos de alguna tabla. Eso hubiera hecho posible, por ejemplo, que a la hora de rellenar los datos de una factura en el historial, ya nos diera a elegir directamente entre los clientes y así no hubiera que escribir el nombre a mano o hacer copy/paste. O que a la hora de generar una factura, nos diera a elegir entre los números de factura que realmente tenemos ya en el historial. Pero bueno, son pequeños detalles de manejo. Lo bueno es que es una solución práctica y de bajo coste, hecha a mi medida, en un rato, en un formato bastante exportable y en un software que dudo mucho desaparezca en muchos años.
 

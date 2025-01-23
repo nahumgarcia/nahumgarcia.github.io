@@ -3,11 +3,7 @@ title: El monopolio que cambió el porno
 author: Nahúm
 tags:
 categories:
-
 ---
-
-
-![](0_0.png)
 
 Este artículo se publicó primero en Zerospaces [en mayo de 2021](https://zerospaces.com/issue/solo/article/when-capitalism-and-a-coup-detat-changed-the-user-experience-of-porn) .
 

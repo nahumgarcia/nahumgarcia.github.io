@@ -1,11 +1,8 @@
 ---
 title: Música y videojuegos
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 Cuando iba al instituto, lo que solía hacer por las tardes era jugar a videojuegos y escuchar discos en loop. En aquella época uno no tenía acceso a muchos discos y lo normal era que te pasaran cintas o que pidiera algún CD por catálogo, a la Discoplay o a HitXop. Lo cierto es que ahora sigo siendo un oyente obsesivo, o quizá diría que soy costumbrista, y me gusta acomodarme en un disco durante días, o incluso semanas. Y mientras estoy con uno, no suelo escuchar apenas nada más.

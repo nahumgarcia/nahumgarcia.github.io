@@ -1,11 +1,8 @@
 ---
 title: La música y el recuerdo
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 Probablemente, una de las cosas sobre las que más me he quejado en Twitter durante los últimos años, es el hecho de que los servicios de streaming de música pongan un límite artificial al número de canciones que puedes guardar en tu cuenta. No me refiero al número de canciones que puedes tener descargadas simultáneamente en tus dispositivos, si no a cuántas puedes añadir a tu librería. En el caso de Spotify son 10.000 canciones, y en Apple Music 100.000. En Spotify podrías ampliar esa cantidad guardando discos en playlists distintas - ya que el límite aplica a cada lista individual, siendo *Tu Biblioteca* una lista más a nivel fundamental - pero esto es trasladar al usuario un problema que es del servicio. Hay gente que opina que 10.000 es un número suficientemente grande, pero para mí, lo ilógico es que haya un límite, sea cual sea. Al final, acabarás alcanzando ese límite, es cuestión de tiempo. 

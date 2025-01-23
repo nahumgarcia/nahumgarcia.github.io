@@ -1,11 +1,8 @@
 ---
 title: Conveniencia vs control
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 Si hace tiempo uno de los lemas de Apple con el App Store era "There's an app for that!", indicando que para cualquier cosa que necesitaras hacer, encontrarías una app específica para hacerlo, hace tiempo que podríamos ampliar ese lema con "...and probably there's a service too". Y es que en la época del "X as a service" tenemos más opciones que nunca para hacer las cosas. Y si bien hoy la franja entre lo que es un servicio y lo que no lo es está en continuo debate muy unido a lo difícil que es tener una fuente regular de ingresos cuando se es desarrollador, hay más empresas que nunca tratando de solucionar nuestras vidas a golpe de servicios con una pata en el mundo digital, o las cuatro patas. 

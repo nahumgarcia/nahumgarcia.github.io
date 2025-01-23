@@ -1,11 +1,8 @@
 ---
 title: Tinder y el patetismo
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 Tinder, como cualquier red social de los últimos años, nació con una idea muy sencilla: era una app para ligar donde la base de todo era un simple pasar de tarjetas con fotos de usuario para decir si “yay” or “nay” a cada una. La idea en sí no era novedosa, páginas como [Hot or not](https://en.m.wikipedia.org/wiki/Hot_or_Not) que surgieron en el año 2000 ya se basaban en una simple valoración del atractivo de los usuarios en base a sus fotos, y rápidamente vieron un filón de negocio en la posibilidad de añadir un sistema de “matchmaking” de pago (Wikipedia lo traduce al español como casamentera y ahora solo quiero usar esa palabra en el entorno tecnológico en vez de “app de citas”).
@@ -25,7 +22,7 @@ Y es que si vas a diseñar cualquier tipo de sistema donde interactúan personas
 
 Alguien dibujó esta viñeta que me encanta y con la que me identifico tras haber jugado el juego varias veces:
 
-![](http://cdn.themis-media.com/media/global/images/library/deriv/85/85879.jpg)
+![](/assets/images/85879.jpg)
 
 En Tinder el problema es el inverso, nunca pusieron los medios para reducir la fricción intrínseca al problema que quieren resolver, ni tampoco pusieron las herramientas para que los usuarios pudieran crearse un perfil que les defina mínimamente. Y este es otro de los problemas que veo, **que se acompaña muy poco a los usuarios a la hora de crear sus perfiles**, quedando estos sin contenido apenas, con textos demasiado iguales los unos de los otros que no dicen nada de la persona, o relegando la bio al lugar donde se quejan de las experiencias vividas y escribiendo una especie de carta a los reyes magos de lo que quieren que sea su próximo match. Esto al final genera una sensación de, como dice la letra del [tango de Discépolo](https://youtu.be/CpqMpNtvTZk), que todos los usuarios están “en el mismo lodo, todos manoseaos”, en un lugar donde al final triunfan los que saben adaptarse a las reglas del juego en una competición desequilibrada, donde los que son más carismáticos o tienen un fotógrafo mejor tienen más posibilidades de triunfar, creando indirectamente una red social elitista y frustrante para una gran cantidad de sus usuarios, una frustración que como decía antes, se acaba filtrando en sus biografías. Los paralelismos con el liberalismo económico ya mejor en otro post que me desvío demasiado.
 

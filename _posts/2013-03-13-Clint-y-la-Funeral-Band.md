@@ -8,5 +8,5 @@ categories:
 
 ---
 
-![](clintfuneralband.jpg)
+![Foto de Clint por Nahúm García](/assets/images/clintfuneralband.jpg)
 
