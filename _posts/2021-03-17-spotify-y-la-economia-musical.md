@@ -1,11 +1,8 @@
 ---
 title: Spotify y la economía musical
 author: Nahúm
- 
 tags:
-
 categories:
-
 ---
 
 El otro día fue noticia que en varias ciudades del mundo hubo protestas de artistas frente a la oficinas de Spotify. No parecen haber sido unas protestas multitudinarias, pero es un hecho significativo que muestra que hay un descontento palpable en el sector. Especialmente entre artistas medianos que a nivel de proyecto funcionan y tienen un público fiel, que pueden meter miles de personas en un concierto, con canciones que superan el millón de escuchas en Spotify, pero después perciben una cantidad irrisoria de dicha plataforma. Existe una sensación general de que se vive una continua crisis del sector, que además sobrevive con cero inversión pública, y se ve al streaming como una de las causas de esta crisis. Y es que es verdad que (link: https://www.toptal.com/finance/market-research-analysts/state-of-music-industry text: viendo las cifras), es evidente que la industria musical ha estado cayendo durante toda la primera década de los 2000, pasado de facturar 25.000 millones de dólares en 1999, a facturar 14.000 millones de dólares en 2010. Después, los siguientes 5 primeros años de los 2010 los ingresos se estancaron, para comenzar a crecer de nuevo y alcanzar los 21.000 millones en 2019. No se ha recuperado el brío que tenía en los 90 con el auge del CD, pero se está recuperado bastante, a niveles de 2003, y gran parte de los ingresos que antes venían de la venta de discos físicos, ahora vienen del streaming, que irónicamente, es el responsable de que esté mejorando la situación ya que tanto el beneficio por ventas físicas sigue cayendo, como el de las descargas digitales. Básicamente, el negocio crece, porque crece el streaming.
