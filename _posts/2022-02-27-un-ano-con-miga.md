@@ -7,7 +7,7 @@ categories:
 
 ---
 
-![](img_9656.jpg)
+![Foto de Miga](/assets/images/img_9656.jpg "Foto de Miga que parece una pintura del renacimiento")
 
 Tal día como hoy, hace un año, conducía desde Morata de Tajuña hasta mi casa con una perrita de 6 meses que acababa de adoptar. Miga dio el pistoletazo de salida de esta nueva etapa vomitando en el coche. Como representación gráfica de los meses que estaban por venir, no podía haber sido más acertada. Juntos, hemos pasado un año que parece una vida. Miga marcó el comienzo de la segunda mitad de un largo viaje de retorno a casa que empezó en la navidad previa a la pandemia, y que está acabando ahora en 2022. Como a casi todo el mundo, la pandemia supuso un reset brutal, que además en mi caso sucedió al poco de comenzar una nueva etapa en mi vida, así para mí el hipotético fin de la pandemia parecía más reencontrarme conmigo mismo que volver a una normalidad pasada que ya no existe.
 
