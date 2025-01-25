@@ -5,9 +5,9 @@ author: Nahúm
 tags: 
 categories:
 ---
-![](assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg)
+![](/assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg)
 
-Inspirado por [este post de Ari](https://blog.arianaescobar.com/15-things-i-loved-in-2022), voy a enumerar unas cuantas cosas que me guxstaron de este año. Muchas son de otros años pero yo las he disfrutado en 2022. Sin ningún orden específico.
+Inspirado por [este post de Ari](https://blog.arianaescobar.com/15-things-i-loved-in-2022), voy a enumerar unas cuantas cosas que me gustaron de este año. Muchas son de otros años pero yo las he disfrutado en 2022. Sin ningún orden específico.
 
 - [La Peor Persona del Mundo](https://letterboxd.com/film/the-worst-person-in-the-world/), [Otra Ronda](https://letterboxd.com/film/another-round/) y [Aftersun](https://letterboxd.com/film/aftersun/). Maravillosas las tres.
 - [Miga](/2022/02/27/un-ano-con-miga/). Si el primer año con ella fue complicado de gestionar, en 2022 se ha convertido en unos de mis pilares emocionales. Los animales son lo mejor, y los perros particularmente.
