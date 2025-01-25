@@ -2,5 +2,12 @@
 layout: page
 title: About
 ---
+![](assets/images/about.jpg)
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+Hola. Me llamo Nahúm García y soy un músico y diseñador residente en Madrid.
+
+Pasé los primeros 10 años de mi carrera profesional componiendo y produciendo música y haciendo diseño de sonido para contenidos audiovisuales. Primero para [Pocoyó](https://www.pocoyo.com/)desde Zinkia Entertainment, la premiada serie de animación para niños. También trabajé como músico freelance para [OEO & Parser](https://oeomusica.com/), haciendo anuncios para televisión e internet, donde trabajé en campañas para Coca-Cola, Fanta, Mapfre, Rexona, Magnum, Pullmantur, BBVA, y otras grandes marcas.
+
+En 2014, buscando nuevos retos, me apunté al curso de Diseño de Productos Digitales de [La Nave Nodriza](https://lanavenodriza.com/). La tecnología y el diseño siempre habían sido grandes pasiones, antes incluso que la música. Tras pasar varios años en Fjord (ahora [Accenture Song](https://newsroom.accenture.com/news/accenture-announces-accenture-interactives-evolution.htm)) y después [Designers With Attitude](https://www.dwa.es/), pasé dos años como parte del equipo de producto de [Factorial](https://factorialhr.com/).
+
+En mis ratos libres sigo tocando y produciendo con algunas bandas del panorama español. He tocado con [Havalina](https://open.spotify.com/album/5Nn9lvik0trvVM4TKM5iqD?si=eY2Toeh1SuKvaJcuCrBeTw), [Annie B Sweet](https://open.spotify.com/album/2hzw9bxTXsyMHJMleFolNG?si=fudyLNKfSVacybmaqe34QQ), [Julio de la Rosa](https://open.spotify.com/album/4bCS5YQltbYFyG2E1VDWGZ?si=sjGvEToLRriawtLeglWyzw), [Clint](https://open.spotify.com/album/3RGSWcCh5BrfrOzoGHekWG?si=KpdNh8bRR_yvKpLi6cCNMQ), [Wild Honey](https://open.spotify.com/album/51zX2pmZPg7r7D28AS2OF5?si=Q9MDYdRSTFG91jFWiwLdAA), [Alex Ferreira](https://open.spotify.com/album/3KNX1cziZujwIVFNU6YsyG?si=VBMZtJQxSK-y5aGlrJtfNQ), [Lázaro](https://open.spotify.com/album/6oCjlQf2jdlLGpeYjfAZeG?si=7hjJuYXfSe69zXPJaku8Dg), [Alice Wonder](https://open.spotify.com/album/2DBw6z2Vj0eppNrSwrRsAb?si=iDs0JzijSk6VaeZeM7K8GQ), [Linda Mirada](https://open.spotify.com/album/5pMqXbbPG5mYuOTRRi4NiY?si=K0lck_uoTQ-O48O8paem_A), [Francisco Nixon](https://open.spotify.com/album/0hixK9G353ElXvInlqiNpW?si=pWS_jIBPS9O_0WmFRlWbBA) y [Ricardo Vicente](https://open.spotify.com/album/43jlczvGYDqZiK8YtkJNiR?si=N3_y9ABkT16zBHdJwSTpbA). De Fran produje «Lo malo que nos pasa» y de Ricardo, «Qué haces tan lejos de casa», «Hotel Florida» y «A lo mejor yo te gusto».
