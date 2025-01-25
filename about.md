@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-![](assets/images/about.jpg)
+![](/assets/images/about.jpg)
 
 Hola. Me llamo Nahúm García y soy un músico y diseñador residente en Madrid.
 
