@@ -17,9 +17,8 @@ layout: default
 		</ul>
 	</section>
 	<section>
-	{% include nav.html %}
 	  <div class="copyright">
-        <p>&copy; {{ site.time | date: '%Y' }} <strong>{{ site.title }}</strong> </p>
+        <p>&copy; {{ site.time | date: '%Y' }} <strong>{{ site.title }}</strong> {% include nav.html %}</p>
       </div>
       </section>
 </div>
