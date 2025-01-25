@@ -11,11 +11,13 @@
             "id": "6b0e3ff15fe7e523",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/images/about.jpg"
+                "file": "about.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
+              "icon": "lucide-file",
               "title": "about"
             }
           }
@@ -162,8 +164,8 @@
   },
   "active": "6b0e3ff15fe7e523",
   "lastOpenFiles": [
-    "about.md",
     "assets/images/about.jpg",
+    "about.md",
     "_posts/2023-01-22-cosas-que-me-han-gustado-en-2022.md",
     "_posts/2019-07-26-tinder-y-el-patetismo.md",
     "_posts/2017-10-15-conveniencia-vs-control.md",
@@ -190,7 +192,6 @@
     "_posts/2024-01-11-nuevo-reparto-derechos.md",
     "_posts/2021-03-17-spotify-y-la-economia-musical.md",
     "_posts/2022-02-27-un-ano-con-miga.md",
-    "_posts/2022-07-11-52-canciones.md",
     "2022/02/27",
     "2022/02",
     "2022",

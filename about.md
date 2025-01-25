@@ -2,7 +2,7 @@
 layout: page
 title: Sobre mí
 ---
-![](/assets/images/about.jpg)
+![Autofoto](/assets/images/about.jpg "Autofoto en San Juan de Luz")
 
 Hola. Me llamo Nahúm García y soy un músico y diseñador residente en Madrid.
 
