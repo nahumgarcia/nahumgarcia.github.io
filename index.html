@@ -22,17 +22,23 @@ layout: default
       </div>
       </section>
       
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-	<!-- Left element -->
-  	    <h1 class="smallcap">
-      	  <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px;">
+  <!-- Left Element -->
+  <div class="home">
+    <section class="site-header">
+      <h1 class="smallcap">
+        <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
           {{ site.title }}
-      	  </a>
-     	 </h1>
- 	<!-- Right element -->
- 		<div style="margin-left: auto;">
-		{% include nav.html %}
-		</div>
+        </a>
+      </h1>
+    </section>
+  </div>
+
+
+  <!-- Right Element -->
+  <div style="margin-left: auto;">
+    {% include nav.html %}
+  </div>
 	</div>
 </div>
 
