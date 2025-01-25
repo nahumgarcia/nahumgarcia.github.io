@@ -6,7 +6,7 @@ title: About
 
 Hola. Me llamo Nahúm García y soy un músico y diseñador residente en Madrid.
 
-Pasé los primeros 10 años de mi carrera profesional componiendo y produciendo música y haciendo diseño de sonido para contenidos audiovisuales. Primero para [Pocoyó](https://www.pocoyo.com/)desde Zinkia Entertainment, la premiada serie de animación para niños. También trabajé como músico freelance para [OEO & Parser](https://oeomusica.com/), haciendo anuncios para televisión e internet, donde trabajé en campañas para Coca-Cola, Fanta, Mapfre, Rexona, Magnum, Pullmantur, BBVA, y otras grandes marcas.
+Pasé los primeros 10 años de mi carrera profesional componiendo y produciendo música y haciendo diseño de sonido para contenidos audiovisuales. Primero para [Pocoyó](https://www.pocoyo.com/) desde Zinkia Entertainment, la premiada serie de animación para niños. También trabajé como músico freelance para [OEO & Parser](https://oeomusica.com/), haciendo anuncios para televisión e internet, donde trabajé en campañas para Coca-Cola, Fanta, Mapfre, Rexona, Magnum, Pullmantur, BBVA, y otras grandes marcas.
 
 En 2014, buscando nuevos retos, me apunté al curso de Diseño de Productos Digitales de [La Nave Nodriza](https://lanavenodriza.com/). La tecnología y el diseño siempre habían sido grandes pasiones, antes incluso que la música. Tras pasar varios años en Fjord (ahora [Accenture Song](https://newsroom.accenture.com/news/accenture-announces-accenture-interactives-evolution.htm)) y después [Designers With Attitude](https://www.dwa.es/), pasé dos años como parte del equipo de producto de [Factorial](https://factorialhr.com/).
 
