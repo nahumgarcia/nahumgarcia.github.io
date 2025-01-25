@@ -25,9 +25,22 @@ layout: default
 
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
+  <!-- Left element -->
   <div class="home">
-	<section class="site-header">
-		<h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1> 
+    <section class="site-header">
+      <h1 class="smallcap">
+        <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+          {{ site.title }}
+        </a>
+      </h1>
+    </section>
+  </div>
+
+  <!-- Center element -->
   <div>Center Element</div>
-  <div style="margin-left: auto;">{% include nav.html %} </div>
+
+  <!-- Right element -->
+  <div style="margin-left: auto;">
+    {% include nav.html %}
+  </div>
 </div>
