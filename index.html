@@ -24,17 +24,11 @@ layout: default
       
 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px;">
   <!-- Left Element -->
-  <div class="home">
-    <section class="site-header">
       <h1 class="smallcap">
         <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
           {{ site.title }}
         </a>
       </h1>
-    </section>
-  </div>
-
-
   <!-- Right Element -->
   <div style="margin-left: auto;">
     {% include nav.html %}
