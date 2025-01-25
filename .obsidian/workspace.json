@@ -11,13 +11,11 @@
             "id": "6b0e3ff15fe7e523",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "about.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/images/about.jpg"
               },
-              "icon": "lucide-file",
+              "icon": "lucide-image",
               "title": "about"
             }
           }
