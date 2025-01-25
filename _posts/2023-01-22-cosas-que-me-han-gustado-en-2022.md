@@ -5,7 +5,8 @@ author: Nahúm
 tags: 
 categories:
 ---
-![](silente-edited-1536x864.jpg)
+![Jorge Drexler en concierto](silente-edited-1536x864.jpg "Jorge Drexler en concierto)
+
 Inspirado por [este post de Ari](https://blog.arianaescobar.com/15-things-i-loved-in-2022), voy a enumerar unas cuantas cosas que me guxstaron de este año. Muchas son de otros años pero yo las he disfrutado en 2022. Sin ningún orden específico.
 
 - [La Peor Persona del Mundo](https://letterboxd.com/film/the-worst-person-in-the-world/), [Otra Ronda](https://letterboxd.com/film/another-round/) y [Aftersun](https://letterboxd.com/film/aftersun/). Maravillosas las tres.
