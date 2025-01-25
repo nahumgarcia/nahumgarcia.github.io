@@ -19,4 +19,4 @@ Inspirado por [este post de Ari](https://blog.arianaescobar.com/15-things-i-lov
 - Zelda Breath of the Wild. Me ha costado años pillarle el punto, pero al final me encantó y lo completé.
 - Las fotografías de [Bego Antón](https://begoanton.com/).
 - [No Siento Nada](https://www.penguinlibros.com/es/tematicas/237140-libro-no-siento-nada-9788418052026) de Liv Strömquist (imprescindible lectura).
-- Heirloom Rustic Ales en Tulsa (USA)
+- Heirloom Rustic Ales en Tulsa (USA). Una cervecería fantástica y un bar que es un punto de encuentro de la mejor gente de la zona. 
