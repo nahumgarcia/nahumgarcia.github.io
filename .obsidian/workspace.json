@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 411.5
   },
   "right": {
     "id": "d3fa8c12c800b51d",
@@ -164,9 +164,13 @@
   },
   "active": "f6d685a831dc440b",
   "lastOpenFiles": [
+    "assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg",
+    "assets/images/silente-edited-1536x864.jpg",
+    "_posts/assets/images/silente-edited-1536x864.jpg",
+    "_posts/assets/images",
+    "_posts/assets",
     "_posts/2022-07-11-52-canciones.md",
     "_posts/2023-01-22-cosas-que-me-han-gustado-en-2022.md",
-    "assets/images/silente-edited-1536x864.jpg",
     "assets/images/silente-edited-1.jpg.webp",
     "README.md",
     "about.md",

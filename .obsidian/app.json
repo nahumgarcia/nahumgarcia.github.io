@@ -3,5 +3,6 @@
   "newFileFolderPath": "_posts",
   "useMarkdownLinks": true,
   "attachmentFolderPath": "assets/images",
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "newLinkFormat": "absolute"
 }

@@ -5,7 +5,7 @@ author: Nahúm
 tags: 
 categories:
 ---
-![Jorge Drexler en concierto](assets/images/silente-edited-1536x864.jpg "Jorge Drexler en concierto)
+![](assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg)
 
 Inspirado por [este post de Ari](https://blog.arianaescobar.com/15-things-i-loved-in-2022), voy a enumerar unas cuantas cosas que me guxstaron de este año. Muchas son de otros años pero yo las he disfrutado en 2022. Sin ningún orden específico.
 
