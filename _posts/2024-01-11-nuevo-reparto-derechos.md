@@ -2,7 +2,9 @@
 layout: post
 title: El nuevo reparto de beneficios de Spotify, otro desplante a los artistas
 author: Nahúm
-tags: 
+tags:
+  - música
+  - industriamusical
 categories:
 ---
 En 2021 publiqué [un artículo](/2021/03/17/spotify-y-la-economia-musical/) sobre el modelo de negocio de Spotify. Estaba habiendo bastante revuelo online (e incluso alguna pequeña protesta frente a sus oficinas en varios lugares del mundo) por el poco dinero que los artistas percibían del servicio. Cito:
