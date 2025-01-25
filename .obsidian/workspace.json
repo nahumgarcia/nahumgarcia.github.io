@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "dcde71ecc7864129",
+        "id": "93960b1f1169cbaf",
         "type": "tabs",
         "children": [
           {
-            "id": "f6d685a831dc440b",
+            "id": "6b0e3ff15fe7e523",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2023-01-22-cosas-que-me-han-gustado-en-2022.md",
+                "file": "_posts/2024-01-11-nuevo-reparto-derechos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2023-01-22-cosas-que-me-han-gustado-en-2022"
+              "title": "2024-01-11-nuevo-reparto-derechos"
             }
           }
         ]
@@ -162,15 +162,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f6d685a831dc440b",
+  "active": "6b0e3ff15fe7e523",
   "lastOpenFiles": [
+    "_posts/2023-01-22-cosas-que-me-han-gustado-en-2022.md",
+    "_posts/2024-01-11-nuevo-reparto-derechos.md",
+    "2022/02/27/un-ano-con-miga_1.md",
+    "_posts/2022-02-27-un-ano-con-miga.md",
+    "2022/02/27/un-ano-con-miga.md",
+    "2022/02/27",
+    "2022/02",
+    "2022",
     "assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg",
     "assets/images/silente-edited-1536x864.jpg",
     "_posts/assets/images/silente-edited-1536x864.jpg",
     "_posts/assets/images",
     "_posts/assets",
     "_posts/2022-07-11-52-canciones.md",
-    "_posts/2023-01-22-cosas-que-me-han-gustado-en-2022.md",
     "assets/images/silente-edited-1.jpg.webp",
     "README.md",
     "about.md",
