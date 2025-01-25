@@ -1,11 +1,9 @@
 ---
 title: Bye bye Pocoyo
 author: Nahúm
- 
 tags:
-
+  - personal
 categories:
-
 ---
 
 Como dije a mis compañeros en mi email de despedida, si me hubieran dicho en aquel invierno de 2005 que estaría 7 años en Zinkia, no me lo hubiera creído. Mirar hacia atrás tanto tiempo y tratar de valorar en conjunto se convierte en un ejercicio de superación del vértigo. Y si hay algo evidente es que entré siendo una persona, y salí siendo otra. 

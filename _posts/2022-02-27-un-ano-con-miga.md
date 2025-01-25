@@ -1,9 +1,8 @@
 ---
 title: Un año con Miga
 author: Nahúm
- 
 tags:
-
+- personal
 categories:
 
 ---

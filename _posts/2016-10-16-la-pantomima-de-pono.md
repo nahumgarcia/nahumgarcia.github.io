@@ -1,11 +1,10 @@
 ---
 title: La pantomima de Pono
 author: Nahúm
- 
 tags:
-
+  - música
+  - tecnología
 categories:
-
 ---
 
 Ya se han escrito muchas cosas sobre lo (en principio) ridículo de la propuesta de Neil Young con Pono. Me pareció un buen resumen de links para leer [el que hizo Marco Arment](http://www.marco.org/2014/03/13/pono-reading-material), en el cual se mencionaba también el magnifico post de Chris Montgomery al que enlaza este articulo y que, en mi opinion, es el único que hace falta para entender por que la música a 192 o a 96KHz no suena mejor, o por que los 24bits no son necesarios para el audio de consumo[^1]. Técnico pero accesible, extenso, y cristalino en conclusiones, cualquiera a quien le interese el audio y se considere audiófilo debería leerlo.

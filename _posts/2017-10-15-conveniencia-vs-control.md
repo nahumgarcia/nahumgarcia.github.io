@@ -2,6 +2,7 @@
 title: Conveniencia vs control
 author: Nahúm
 tags:
+  - tecnología
 categories:
 ---
 

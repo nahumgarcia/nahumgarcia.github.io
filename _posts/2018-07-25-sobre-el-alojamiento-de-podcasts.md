@@ -2,6 +2,8 @@
 title: Sobre el alojamiento de podcasts
 author: Nahúm
 tags:
+  - podcasts
+  - tecnología
 categories:
 ---
 

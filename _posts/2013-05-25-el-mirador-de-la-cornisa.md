@@ -1,11 +1,10 @@
 ---
 title: El mirador de La Cornisa
 author: Nahúm
- 
 tags:
-
+  - personal
+  - madrid
 categories:
-
 ---
 
 Hace algo más de un año, en marzo de 2012, tomé esta foto con mi cámara, un día cualquiera que salía de Zinkia, poco antes de que comenzara el E.R.E.

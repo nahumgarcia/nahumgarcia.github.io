@@ -2,6 +2,8 @@
 title: Spotify y la economía musical
 author: Nahúm
 tags:
+- música
+- streaming
 categories:
 ---
 

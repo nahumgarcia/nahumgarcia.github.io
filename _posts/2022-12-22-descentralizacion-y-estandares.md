@@ -4,7 +4,8 @@ title: Descentralización y estándares
 author: Nahúm
  
 tags:
-
+- fediverso
+- redes_sociales
 categories:
 
 ---

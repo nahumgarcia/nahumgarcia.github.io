@@ -2,6 +2,8 @@
 title: Tinder y el patetismo
 author: Nahúm
 tags:
+  - tecnología
+  - diseño
 categories:
 ---
 

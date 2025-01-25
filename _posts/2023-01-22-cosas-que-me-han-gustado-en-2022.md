@@ -2,8 +2,12 @@
 layout: post
 title: Cosas que me han gustado en 2022
 author: Nahúm
-tags: 
-categories:
+tags:
+  - personal
+  - música
+  - videojuegos
+  - cine
+categories: prueba
 ---
 ![](/assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg)
 
