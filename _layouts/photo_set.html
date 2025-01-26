@@ -10,7 +10,7 @@ layout: default
 <h1>{{ page.title }}</h1>
 <ul class="list-photos">
   {% for i in (1..num) %}
-  <li>
+  <li class="list-photos_item">
     <img src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
   </li>
   {% endfor %}
