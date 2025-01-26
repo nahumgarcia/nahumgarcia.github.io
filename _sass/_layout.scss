@@ -227,8 +227,9 @@
   width: 100%;
   overflow: hidden; /* Recorta el contenido que exceda el contenedor */
   aspect-ratio: 1; /* Hace que el contenedor sea cuadrado */
-  border-radius: 10px; /* Esquinas redondeadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+  border-radius: 0px; /* Esquinas redondeadas */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+  text-align: center;
 }
 
 .gallery-item img {
@@ -241,6 +242,6 @@
 .gallery-item p {
   margin-top: 10px;
   font-size: 1rem;
-  text-align: center;
+
   color: #333;
 }
