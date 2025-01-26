@@ -215,29 +215,32 @@
 
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Galerías responsivas */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cuadrícula responsiva */
+  gap: 20px; /* Espacio entre elementos */
   list-style: none;
   padding: 0;
-  margin-left:0;
+  margin: 0;
 }
 
 .gallery-item {
-  text-align: center;
-  overflow: hidden; /* Recorta el contenido excedente */
-  aspect-ratio: 1; /* Hace que todas las imágenes sean cuadradas */
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Recorta el contenido que exceda el contenedor */
+  aspect-ratio: 1; /* Hace que el contenedor sea cuadrado */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
 }
 
 .gallery-item img {
   width: 100%;
-  height: auto; /* Mantener proporción de las imágenes */
-  border-radius: 2px; /* Esquinas redondeadas opcionales */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); Sombra suave */
-  object-fit: cover; /* Recorta la imagen para llenar el contenedor */
+  height: 100%;
+  object-fit: cover; /* Hace que las imágenes llenen el contenedor recortando */
+  display: block;
 }
 
 .gallery-item p {
   margin-top: 10px;
   font-size: 1rem;
+  text-align: center;
   color: #333;
 }
