@@ -225,7 +225,7 @@
 .gallery-item {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Recorta el contenido que exceda el contenedor */
+  overflow: visible; /* Recorta el contenido que exceda el contenedor */
   aspect-ratio: 1; /* Hace que el contenedor sea cuadrado */
   border-radius: 0px; /* Esquinas redondeadas */
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2); /* Sombra opcional */
@@ -242,6 +242,6 @@
 .gallery-item p {
   margin-top: 10px;
   font-size: 1rem;
-
+  text-align: center;
   color: #333;
 }
