@@ -212,3 +212,28 @@
 .list-photos_item {
         padding-bottom:2em
 }
+
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Galerías responsivas */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto; /* Mantener proporción de las imágenes */
+  border-radius: 10px; /* Esquinas redondeadas opcionales */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
