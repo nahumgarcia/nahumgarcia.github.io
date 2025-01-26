@@ -6,5 +6,5 @@ description: "Mexico 2020"
 
 photos:
     set: mexico
-    size: 14
+    size: 10
 ---
