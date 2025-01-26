@@ -215,7 +215,7 @@
 
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cuadrícula responsiva */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cuadrícula responsiva */
   gap: 20px; /* Espacio entre elementos */
   list-style: none;
   padding: 0;
