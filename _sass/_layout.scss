@@ -224,6 +224,8 @@
 
 .gallery-item {
   text-align: center;
+  overflow: hidden; /* Recorta el contenido excedente */
+  aspect-ratio: 1; /* Hace que todas las imágenes sean cuadradas */
 }
 
 .gallery-item img {
