@@ -7,7 +7,9 @@ layout: default
 
 {% assign num = page.photos.size %}
 
-<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+<header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+</header>
 <ul class="list-photos">
   {% for i in (1..num) %}
   <li class="list-photos_item">
