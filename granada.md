@@ -1,10 +1,10 @@
 ---
 layout: photo_set
-title: Berlin
+title: Granada
 permalink: /Granada/
 description: "Viaje a Granada"
 
 photos:
     set: granada
-    size: 3
+    size: 14
 ---
