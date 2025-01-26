@@ -1,10 +1,10 @@
 ---
 layout: photo_set
-title: Granada
-permalink: /Granada/
-description: "Viaje a Granada"
+title: Mexico 2020
+permalink: /Mexico/
+description: "Mexico 2020"
 
 photos:
-    set: granada
+    set: mexico
     size: 14
 ---
