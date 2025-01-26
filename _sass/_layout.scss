@@ -233,6 +233,7 @@
   height: auto; /* Mantener proporción de las imágenes */
   border-radius: 2px; /* Esquinas redondeadas opcionales */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); Sombra suave */
+  object-fit: cover; /* Recorta la imagen para llenar el contenedor */
 }
 
 .gallery-item p {
