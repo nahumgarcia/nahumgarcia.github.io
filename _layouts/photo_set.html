@@ -1,27 +1,22 @@
 ---
 layout: default
 ---
-
 <section class="site-header">
-  <h1 class="smallcap">
-    <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a>
-  </h1>
+		<h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
 </section>
 
-<header class="post-header">
-  <h1 class="post-title">{{ page.title }}</h1>
-</header>
+{% assign num = page.photos.size %}
 
-<ul class="photo-gallery">
-  {% for photo in page.photos.items %}
-    <li class="photo-gallery_item">
-      <img src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
-           alt="{{ photo.description }}">
-      <p>{{ photo.description }}</p>
-    </li>
+<header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+</header>
+<ul class="list-photos">
+  {% for i in (1..num) %}
+  <li class="list-photos_item">
+    <img src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+  </li>
   {% endfor %}
 </ul>
-
 <div>
   <a href="{{ site.baseurl }}/photos/">View All Photo Sets</a>
 </div>
