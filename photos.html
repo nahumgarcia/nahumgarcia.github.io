@@ -8,7 +8,6 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <!-- Usar la primera foto del set -->
       <img src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ gallery.photos.items[0].file }}" 
            alt="{{ gallery.photos.items[0].description }}">
       <p>{{ gallery.title }}</p>

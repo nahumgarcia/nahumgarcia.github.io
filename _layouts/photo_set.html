@@ -16,14 +16,12 @@ layout: default
 <ul class="photo-gallery">
   {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
-      <!-- Ruta corregida a la foto -->
       <img src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
            alt="{{ photo.description }}">
       <p>{{ photo.description }}</p>
     </li>
   {% endfor %}
 </ul>
-
 <div>
   <a href="{{ site.baseurl }}/photos/">View All Photo Sets</a>
 </div>
