@@ -4,7 +4,7 @@ title: "Granada"
 photos:
   set: "granada"
   items:
-    - file: "granada-1.jpg"
+	- file: "granada-1.jpg"
       description: "Beautiful sunset over the mountains."
     - file: "granada-2.jpg"
       description: "A calm beach during sunrise."
