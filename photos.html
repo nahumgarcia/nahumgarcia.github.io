@@ -2,21 +2,24 @@
 layout: page
 title: Fotos
 permalink: /photos/
+description: "ENTER HERE"
 ---
 
 <ul class="gallery-list">
-  {% for gallery in site.galleries %}
+  {% comment %}
+    Obtener todas las páginas con layout "photo_set" y mostrar un enlace con la primera foto de la galería.
+  {% endcomment %}
+  {% assign photo_pages = site.pages | where: "layout", "photo_set" %}
+  {% for photo_page in photo_pages %}
     <li class="gallery-item">
-      <a href="{{ gallery.url }}">
+      <a href="{{ photo_page.url | prepend: site.baseurl }}">
         <!-- Mostrar la primera foto de la galería -->
-        {% assign first_photo = gallery.photos.items | first %}
-        {% if first_photo %}
-          <img src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
-               alt="{{ first_photo.description }}">
-        {% else %}
-          <p>No image available</p>
-        {% endif %}
-        <p>{{ gallery.title }}</p>
+        <img 
+          src="{{ site.baseurl }}/assets/photos/{{ photo_page.photos.set }}-1.jpg" 
+          alt="First photo of {{ photo_page.title }}" 
+          class="gallery-thumbnail"
+        />
+        <p>{{ photo_page.title }}</p> <!-- Texto de título opcional -->
       </a>
     </li>
   {% endfor %}
