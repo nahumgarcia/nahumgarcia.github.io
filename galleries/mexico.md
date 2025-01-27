@@ -1,15 +1,13 @@
 ---
 layout: photo_set
-title: Mexico 2020
-permalink: /Mexico/
-description: "Mexico 2020"
-
+title: "Mexico"
 photos:
-    set: mexico
-    size: 10
-items:
+  set: "mexico"
+  items:
     - file: "mexico-1.jpg"
       description: "Beautiful sunset over the mountains."
     - file: "mexico-2.jpg"
       description: "A calm beach during sunrise."
+    - file: "mexico-3.jpg"
+      description: "A forest trail surrounded by autumn leaves."
 ---
