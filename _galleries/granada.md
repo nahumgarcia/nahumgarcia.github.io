@@ -20,5 +20,6 @@ photos:
 	- file: "granada-11.jpg"
 	- file: "granada-12.jpg"
 	- file: "granada-13.jpg"
-	- file: "granada-14.jpg"		
+	- file: "granada-14.jpg"	
+permalink: /photos/granada/	
 ---

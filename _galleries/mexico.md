@@ -17,4 +17,5 @@ photos:
 	- file: "mexico-8.jpg"
 	- file: "mexico-9.jpg"
 	- file: "mexico-10.jpg"
+permalink: /photos/mexico/
 ---
