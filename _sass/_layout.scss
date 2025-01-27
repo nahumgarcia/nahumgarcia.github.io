@@ -274,3 +274,11 @@
 .photo-gallery_item img:hover {
   transform: scale(1.05); /* Zoom suave al pasar el mouse */
 }
+
+.photo-gallery_item p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+  line-height: 1.4; /* Mejora la legibilidad si hay textos largos */
+}

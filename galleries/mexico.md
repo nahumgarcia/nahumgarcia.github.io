@@ -1,10 +1,11 @@
 ---
 layout: photo_set
-title: Mexico 2020
-permalink: /Mexico/
-description: "Mexico 2020"
-
+title: "Mexico"
 photos:
-    set: mexico
-    size: 10
+  set: "gallery1"
+  items:
+    - file: "mexico-1.jpg"
+      description: "Alex tomando algo en Cicatriz, su bar preferido de la Juárez."
+    - file: "mexico-2.jpg"
+      description: "Marta en su estudio."
 ---
