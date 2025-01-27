@@ -248,7 +248,7 @@
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Galería flexible */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Galería flexible */
   gap: 15px; /* Espacio entre fotos */
   list-style: none;
   padding: 0;
