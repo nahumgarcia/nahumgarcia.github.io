@@ -10,6 +10,12 @@ kramdown:
   input: GFM
 permalink: pretty
 
+#Galerías de fotos
+collections:
+  galleries:
+    output: true
+    permalink: /photos/:name/
+
 # Third-party services
 # just leave empty to disable it
 google_analytics:

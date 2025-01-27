@@ -8,9 +8,12 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <img src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ gallery.photos.items[0].file }}" 
-           alt="{{ gallery.photos.items[0].description }}">
-      <p>{{ gallery.title }}</p>
+      <a href="{{ gallery.url }}">
+        <!-- Mostrar la primera foto de cada galería -->
+        <img src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ gallery.photos.items[0].file }}" 
+             alt="{{ gallery.photos.items[0].description }}">
+        <p>{{ gallery.title }}</p>
+      </a>
     </li>
   {% endfor %}
 </ul>
