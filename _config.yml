@@ -1,8 +1,8 @@
 # Site settings
 title: "Nahúm García"
 description: "Blog personal"
-baseurl: "" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
-url: "https://nahumgarcia.github.io"
+baseurl: "https://nahumgarcia.github.io" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
+url: ""
 author: "Nahúm García"
 
 # Build settings

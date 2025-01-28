@@ -5,23 +5,15 @@ permalink: /photos/
 description: "ENTER HERE"
 ---
 
-<ul class="gallery-list">
-  {% for gallery in site.galleries %}
-    <li class="gallery-item">
-      <a href="{{ gallery.url | prepend: site.baseurl }}">
-        <!-- Mostrar la primera foto de la galería -->
-        {% assign first_photo = gallery.photos.items | first %}
-        {% if first_photo %}
-          <img 
-            src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
-            alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}" 
-            class="gallery-thumbnail"
-          />
-        {% else %}
-          <p>No hay imágenes disponibles</p>
-        {% endif %}
-        <p>{{ gallery.title }}</p> <!-- Título de la galería -->
-      </a>
-    </li>
-  {% endfor %}
+<ul class="photo-gallery">
+  <li class="photo-gallery_item">
+    <img 
+      src="{{ site.baseurl }}/assets/photos/granada/granada-1.jpg" 
+      alt="Primera foto de la galería 1">
+  </li>
+  <li class="photo-gallery_item">
+    <img 
+      src="{{ site.baseurl }}/assets/photos/granada/granada-2.jpg" 
+      alt="Segunda foto de la galería 1">
+  </li>
 </ul>
