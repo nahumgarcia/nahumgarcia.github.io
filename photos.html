@@ -7,19 +7,23 @@ description: "ENTER HERE"
 
 <ul class="gallery-list">
   {% comment %}
-    Obtener todas las páginas con layout "photo_set" y mostrar un enlace con la primera foto de la galería.
+    Obtener todas las galerías de la colección "galleries" y mostrar un enlace con la primera foto de cada galería.
   {% endcomment %}
-  {% assign photo_pages = site.pages | where: "layout", "photo_set" %}
-  {% for photo_page in photo_pages %}
+  {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <a href="{{ photo_page.url | prepend: site.baseurl }}">
+      <a href="{{ gallery.url | prepend: site.baseurl }}">
         <!-- Mostrar la primera foto de la galería -->
-        <img 
-          src="{{ site.baseurl }}/assets/photos/{{ photo_page.photos.set }}-1.jpg" 
-          alt="First photo of {{ photo_page.title }}" 
-          class="gallery-thumbnail"
-        />
-        <p>{{ photo_page.title }}</p> <!-- Texto de título opcional -->
+        {% assign first_photo = gallery.photos.items | first %}
+        {% if first_photo %}
+          <img 
+            src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
+            alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}" 
+            class="gallery-thumbnail"
+          />
+        {% else %}
+          <p>No hay imágenes disponibles</p>
+        {% endif %}
+        <p>{{ gallery.title }}</p> <!-- Texto de título opcional -->
       </a>
     </li>
   {% endfor %}
