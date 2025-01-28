@@ -6,9 +6,6 @@ description: "ENTER HERE"
 ---
 
 <ul class="gallery-list">
-  {% comment %}
-    Obtener todas las galerías de la colección "galleries" y mostrar un enlace con la primera foto de cada galería.
-  {% endcomment %}
   {% for gallery in site.galleries %}
     <li class="gallery-item">
       <a href="{{ gallery.url | prepend: site.baseurl }}">
@@ -23,7 +20,7 @@ description: "ENTER HERE"
         {% else %}
           <p>No hay imágenes disponibles</p>
         {% endif %}
-        <p>{{ gallery.title }}</p> <!-- Texto de título opcional -->
+        <p>{{ gallery.title }}</p> <!-- Título de la galería -->
       </a>
     </li>
   {% endfor %}

@@ -1,8 +1,8 @@
 # Site settings
 title: "Nahúm García"
 description: "Blog personal"
-baseurl: "" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
-url: "https://nahumgarcia.github.io"
+baseurl: "https://nahumgarcia.github.io" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
+url: ""
 author: "Nahúm García"
 
 # Build settings
@@ -10,16 +10,15 @@ kramdown:
   input: GFM
 permalink: pretty
 
-#Galerías de fotos
-collections:
-  galleries:
-    output: true
-    permalink: /photos/:name/
-
 # Third-party services
 # just leave empty to disable it
 google_analytics:
 disqus_shortname: 
+
+collections:
+  galleries:
+    output: true
+    permalink: /photos/:name/
 
 plugins:
   - jekyll-sitemap
