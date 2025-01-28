@@ -3,7 +3,11 @@ layout: default
 ---
 
 <section class="site-header">
-  <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
+  <h1 class="smallcap">
+    <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+      {{ site.title }}
+    </a>
+  </h1>
 </section>
 
 <header class="post-header">
@@ -12,10 +16,11 @@ layout: default
 
 <!-- Galería de Fotos -->
 <ul class="photo-gallery">
-  {% for i in (1..page.photos.size) %}
+  {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
-      <img src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg" 
-           alt="Photo {{ i }} from {{ page.title }}">
+      <img 
+        src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
+        alt="{{ photo.description | default: 'Photo from ' | append: page.title }}">
     </li>
   {% endfor %}
 </ul>

@@ -1,10 +1,11 @@
 ---
 layout: photo_set
-title: Granada
-permalink: /Granada/
-description: "Viaje a Granada"
-
+title: "Granada"
 photos:
-    set: granada
-    size: 14
+  set: "granada"
+  items:
+    - file: "granada-1.jpg"
+      description: "Primera foto de la galería 1"
+    - file: "granada-2.jpg"
+      description: "Segunda foto de la galería 1"
 ---
