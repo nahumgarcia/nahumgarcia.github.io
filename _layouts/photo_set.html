@@ -18,9 +18,12 @@ layout: default
 <ul class="photo-gallery">
   {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
-      <img 
-        src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
-        alt="{{ photo.description | default: 'Photo from ' | append: page.title }}">
+      <figure>
+        <img 
+          src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
+          alt="{{ photo.description }}">
+        <figcaption class="photo-caption">{{ photo.description }}</figcaption>
+      </figure>
     </li>
   {% endfor %}
 </ul>
