@@ -1,7 +1,7 @@
 # Site settings
 title: "Nahúm García"
 description: "Blog personal"
-baseurl: "" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
+baseurl: "" # Así debe quedar si es un sitio de usuario.
 url: "https://nahumgarcia.github.io"
 author: "Nahúm García"
 
@@ -19,6 +19,9 @@ collections:
   galleries:
     output: true
     permalink: /photos/:name/
+    # Añade esto para que Jekyll reconozca la carpeta:
+    output: true
+    title: Galerías
 
 plugins:
   - jekyll-sitemap
