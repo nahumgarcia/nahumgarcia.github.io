@@ -15,15 +15,16 @@ layout: default
 </header>
 
 <!-- Galería de Fotos -->
-<ul class="photo-gallery">
+<ul class="photo-gallery photo-gallery--single">
   {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
-      <figure>
+      <div class="photo-container"> <!-- Nuevo contenedor para la foto -->
         <img 
           src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
-          alt="{{ photo.description }}">
-        <figcaption class="photo-caption">{{ photo.description }}</figcaption>
-      </figure>
+          alt="{{ photo.description }}"
+        >
+      </div>
+      <p class="photo-description">{{ photo.description }}</p> <!-- Descripción fuera -->
     </li>
   {% endfor %}
 </ul>
