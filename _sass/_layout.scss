@@ -110,24 +110,23 @@
 /* Galerías individuales */
 /* ------------------------- */
 .photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(auto, 500px);
+  grid-gap: 15px;
+  grid-auto-flow: dense;
+  max-width: 1500px;
   margin: 0 auto;
-  max-width: 1200px;
+  padding: 0 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
-
-/* Estilos base de cada foto */
 .photo-gallery_item {
   position: relative;
-  overflow: hidden;
-  cursor: pointer;
   list-style: none;
+  padding-left: 0;
 }
-
 
 .photo-container {
   position: relative;
@@ -137,40 +136,23 @@
   cursor: zoom-in;
 }
 
-/* Estilos base de cada foto */
-.photo-gallery_item {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  list-style: none;
+.photo-gallery_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* FOTO HORIZONTAL (ocupa todo el ancho) */
+/* Fotos horizontales */
 .photo-gallery_item.horizontal {
-  flex: 1 1 100%;
+  grid-column: span 2;
   aspect-ratio: 16/9;
 }
 
-
-/* FOTO VERTICAL SUELTA (ocupa 75% del ancho) */
-.photo-gallery_item.vertical.single {
-  flex: 1 1 75%;
-  aspect-ratio: 3/4;
-}
-
-/* DOS FOTOS VERTICALES CONSECUTIVAS (ocupan 50% cada una) */
-.photo-gallery_item.vertical.pair {
-  flex: 1 1 48%;
-  aspect-ratio: 3/4;
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  .photo-gallery_item.horizontal,
-  .photo-gallery_item.vertical.single,
-  .photo-gallery_item.vertical.pair {
-    flex: 1 1 100%;
-  }
+/* Fotos verticales (optimizadas para espacio) */
+.photo-gallery_item.vertical {
+  grid-column: span 1;
+  aspect-ratio: 3/5; /* Más altas para reducir espacio vacío */
 }
 
 /* ------------------------- */
