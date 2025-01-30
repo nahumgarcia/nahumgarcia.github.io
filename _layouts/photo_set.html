@@ -42,48 +42,55 @@ layout: default
 </div>
 
 <script>
-// Lightbox
-document.querySelectorAll('.photo-container img').forEach(img => {
-  img.addEventListener('click', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const caption = document.getElementById('lightbox-caption');
-    
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll(".photo-gallery_item img");
+  const lightbox = document.createElement("div");
+  lightbox.classList.add("lightbox");
+  lightbox.innerHTML = `
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img">
+    <p class="description"></p>
+    <span class="lightbox-arrow left">&#10094;</span>
+    <span class="lightbox-arrow right">&#10095;</span>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const lightboxDesc = lightbox.querySelector(".description");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const leftArrow = lightbox.querySelector(".lightbox-arrow.left");
+  const rightArrow = lightbox.querySelector(".lightbox-arrow.right");
+
+  let currentIndex = 0;
+
+  function showLightbox(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+
+    currentIndex = index;
+    const img = images[index];
     lightboxImg.src = img.src;
-    caption.textContent = img.closest('.photo-gallery_item').dataset.caption; // Usamos dataset
-    lightbox.style.display = 'block';
+    lightboxDesc.textContent = img.alt || "";
+    lightbox.style.display = "flex";
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => showLightbox(index));
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  leftArrow.addEventListener("click", () => showLightbox(currentIndex - 1));
+  rightArrow.addEventListener("click", () => showLightbox(currentIndex + 1));
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowLeft") showLightbox(currentIndex - 1);
+      if (e.key === "ArrowRight") showLightbox(currentIndex + 1);
+      if (e.key === "Escape") lightbox.style.display = "none";
+    }
   });
 });
-
-// Cerrar lightbox
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target === lightbox || e.target === lightboxImg) {
-    lightbox.style.display = 'none';
-  }
-});
-
-// Detección automática de orientación (script previo)
-document.addEventListener('DOMContentLoaded', function() {
-  const detectOrientation = () => {
-    document.querySelectorAll('.photo-gallery_item').forEach(item => {
-      const img = item.querySelector('img');
-      if (img && img.complete) {
-        item.dataset.caption = img.alt; // Guardamos la descripción en dataset
-        if (img.naturalWidth > img.naturalHeight) {
-          item.classList.add('horizontal');
-        } else {
-          item.classList.add('vertical');
-        }
-      }
-    });
-  };
-  window.addEventListener('load', detectOrientation);
-});
 </script>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <img class="lightbox-img" id="lightbox-img">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-  </div>
-</div>
