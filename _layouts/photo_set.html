@@ -42,6 +42,34 @@ layout: default
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const items = document.querySelectorAll('.photo-gallery_item img');
+  let previousVertical = null;
+
+  items.forEach((img, index) => {
+    const container = img.closest('.photo-gallery_item');
+
+    // Detectar si la imagen es vertical u horizontal
+    if (img.naturalWidth > img.naturalHeight) {
+      container.classList.add('horizontal');
+      previousVertical = null; // Reiniciar agrupación vertical
+    } else {
+      if (previousVertical) {
+        // Si hay una vertical previa, agruparlas como "pair"
+        previousVertical.classList.add('pair');
+        container.classList.add('pair');
+        previousVertical = null; // Reiniciar
+      } else {
+        // Si no hay una vertical previa, marcarla como "single"
+        container.classList.add('vertical', 'single');
+        previousVertical = container;
+      }
+    }
+  });
+});
+</script>
+
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   const images = document.querySelectorAll(".photo-gallery_item img");
   const lightbox = document.createElement("div");
