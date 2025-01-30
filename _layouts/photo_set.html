@@ -32,3 +32,27 @@ layout: default
 <div>
   <a href="{{ site.baseurl }}/photos/">Ver todas las galerías</a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Función para detectar orientación
+  const detectOrientation = () => {
+    document.querySelectorAll('.photo-gallery_item').forEach(item => {
+      const img = item.querySelector('img');
+      
+      // Solo si la imagen existe y está cargada
+      if (img && img.complete) {
+        if (img.naturalWidth > img.naturalHeight) {
+          item.classList.add('horizontal');
+        } else if (img.naturalHeight > img.naturalWidth) {
+          item.classList.add('vertical');
+        }
+      }
+    });
+  };
+
+  // Ejecutar al cargar y si hay cambios
+  window.addEventListener('load', detectOrientation);
+  window.addEventListener('resize', detectOrientation); // Opcional: re-calcula al redimensionar
+});
+</script>
