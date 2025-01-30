@@ -1,6 +1,4 @@
-/* ------------------------- */
-/* Estilos generales */
-/* ------------------------- */
+/* Estilos base */
 .underlined {
     flex: 1;
     text-decoration: none;
@@ -56,6 +54,7 @@
     }
 }
 
+/* Contenido principal */
 .page-content {
     position: relative;
     padding: $spacing-unit ($spacing-unit * 0.75);
@@ -64,16 +63,13 @@
     max-width: $max-width;
 }
 
-/* ------------------------- */
-/* Galería principal */
-/* ------------------------- */
+/* Listados y galerías */
 .gallery-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* Elimina puntos de lista */
+  padding-left: 0; /* Elimina padding izquierdo */
 }
 
 .gallery-item {
@@ -81,8 +77,8 @@
   width: 100%;
   aspect-ratio: 1;
   text-align: center;
-  list-style: none;
-  padding-left: 0;
+  list-style: none; /* Elimina puntos de lista */
+  padding-left: 0; /* Elimina padding izquierdo */
   
   img {
     width: 100%;
@@ -92,7 +88,6 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    cursor: zoom-in;
     
     &:hover {
       transform: scale(1.05);
@@ -106,26 +101,24 @@
   }
 }
 
-/* ------------------------- */
 /* Galerías individuales */
-/* ------------------------- */
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(auto, 500px);
-  grid-gap: 15px;
+  grid-auto-rows: minmax(500px, auto);
+  grid-gap: 30px;
   grid-auto-flow: dense;
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
-  list-style: none;
-  padding-left: 0;
+  list-style: none; /* Elimina puntos de lista */
+  padding-left: 0; /* Elimina padding izquierdo */
 }
 
 .photo-gallery_item {
   position: relative;
-  list-style: none;
-  padding-left: 0;
+  list-style: none; /* Elimina puntos de lista */
+  padding-left: 0; /* Elimina padding izquierdo */
 }
 
 .photo-container {
@@ -133,7 +126,6 @@
   overflow: hidden;
   aspect-ratio: 4 / 3;
   border-radius: 0;
-  cursor: zoom-in;
 }
 
 .photo-gallery_item img {
@@ -141,70 +133,34 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Fotos horizontales */
+.photo-description {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  padding: 0;
+  line-height: 1.3;
+  list-style: none; /* Elimina puntos de lista */
+  padding-left: 0; /* Elimina padding izquierdo */
+}
+
+/* Fotos horizontales (relación ancho > alto) */
 .photo-gallery_item.horizontal {
   grid-column: span 2;
   aspect-ratio: 16/9;
 }
 
-/* Fotos verticales (optimizadas para espacio) */
+/* Fotos verticales (relación alto > ancho) */
 .photo-gallery_item.vertical {
   grid-column: span 1;
-  aspect-ratio: 3/5; /* Más altas para reducir espacio vacío */
+  aspect-ratio: 3/4;
 }
 
-/* ------------------------- */
-/* Lightbox */
-/* ------------------------- */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1000;
-  cursor: zoom-out;
-}
-
-.lightbox-content {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 90%;
-  text-align: center;
-}
-
-.lightbox-img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 5px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.lightbox-caption {
-  color: white;
-  margin-top: 15px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  display: inline-block;
-}
-
-/* Ocultar descripciones en galería */
-.photo-description {
-  display: none !important;
-}
-
-/* ------------------------- */
-/* Responsive */
-/* ------------------------- */
+/* Ajuste responsive para móviles */
 @media (max-width: 768px) {
   .photo-gallery {
     grid-template-columns: 1fr;
@@ -213,26 +169,20 @@
   .photo-gallery_item.horizontal {
     grid-column: span 1;
   }
-  
-  .lightbox-caption {
-    font-size: 1rem;
-    padding: 8px 15px;
-  }
 }
 
-/* ------------------------- */
-/* Otros estilos */
-/* ------------------------- */
+/* Otros estilos mantenidos */
 .post-list > li {
     margin-bottom: $spacing-unit / 4;
     list-style-type: none;
     margin-left: -2rem;
+    /* ... (mantener resto de estilos) */
 }
 
 .post-content {
-    /* ... (tus estilos existentes) */
+    /* ... (mantener estilos existentes) */
 }
 
 .copyright {
-    /* ... (tus estilos existentes) */
+    /* ... (mantener estilos existentes) */
 }
