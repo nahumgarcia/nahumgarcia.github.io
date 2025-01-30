@@ -11,20 +11,21 @@ layout: default
 </section>
 
 <header class="post-header">
-  <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+  <h1 class="post-title">{{ page.title }}</h1>
 </header>
 
 <!-- Galería de Fotos -->
 <ul class="photo-gallery photo-gallery--single">
   {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
-      <div class="photo-container"> <!-- Nuevo contenedor para la foto -->
+      <div class="photo-container">
         <img 
           src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
           alt="{{ photo.description }}"
+          class="gallery-image"
+          data-description="{{ photo.description }}"
         >
       </div>
-      <p class="photo-description">{{ photo.description }}</p> <!-- Descripción fuera -->
     </li>
   {% endfor %}
 </ul>
@@ -33,26 +34,55 @@ layout: default
   <a href="{{ site.baseurl }}/photos/">Ver todas las galerías</a>
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <p class="description" id="lightbox-desc"></p>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Función para detectar orientación
-  const detectOrientation = () => {
-    document.querySelectorAll('.photo-gallery_item').forEach(item => {
-      const img = item.querySelector('img');
-      
-      // Solo si la imagen existe y está cargada
-      if (img && img.complete) {
-        if (img.naturalWidth > img.naturalHeight) {
-          item.classList.add('horizontal');
-        } else if (img.naturalHeight > img.naturalWidth) {
-          item.classList.add('vertical');
-        }
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.gallery-image').forEach(img => {
+    img.addEventListener('click', function() {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = this.src;
+      lightboxDesc.textContent = this.getAttribute('data-description') || '';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  // Detectar orientación
+  document.querySelectorAll('.photo-gallery_item img').forEach(img => {
+    img.addEventListener('load', function() {
+      const parent = this.closest('.photo-gallery_item');
+      if (this.naturalWidth > this.naturalHeight) {
+        parent.classList.add('horizontal');
+      } else {
+        parent.classList.add('vertical');
       }
     });
-  };
-
-  // Ejecutar al cargar y si hay cambios
-  window.addEventListener('load', detectOrientation);
-  window.addEventListener('resize', detectOrientation); // Opcional: re-calcula al redimensionar
+  });
 });
 </script>
