@@ -42,47 +42,55 @@ layout: default
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxDesc = document.getElementById('lightbox-desc');
-  const closeBtn = document.querySelector('.lightbox-close');
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll(".photo-gallery_item img");
+  const lightbox = document.createElement("div");
+  lightbox.classList.add("lightbox");
+  lightbox.innerHTML = `
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img">
+    <p class="description"></p>
+    <span class="lightbox-arrow left">&#10094;</span>
+    <span class="lightbox-arrow right">&#10095;</span>
+  `;
+  document.body.appendChild(lightbox);
 
-  document.querySelectorAll('.gallery-image').forEach(img => {
-    img.addEventListener('click', function() {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = this.src;
-      lightboxDesc.textContent = this.getAttribute('data-description') || '';
-    });
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const lightboxDesc = lightbox.querySelector(".description");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const leftArrow = lightbox.querySelector(".lightbox-arrow.left");
+  const rightArrow = lightbox.querySelector(".lightbox-arrow.right");
+
+  let currentIndex = 0;
+
+  function showLightbox(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+
+    currentIndex = index;
+    const img = images[index];
+    lightboxImg.src = img.src;
+    lightboxDesc.textContent = img.alt || "";
+    lightbox.style.display = "flex";
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => showLightbox(index));
   });
 
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
   });
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
+  leftArrow.addEventListener("click", () => showLightbox(currentIndex - 1));
+  rightArrow.addEventListener("click", () => showLightbox(currentIndex + 1));
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowLeft") showLightbox(currentIndex - 1);
+      if (e.key === "ArrowRight") showLightbox(currentIndex + 1);
+      if (e.key === "Escape") lightbox.style.display = "none";
     }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-      lightbox.style.display = 'none';
-    }
-  });
-
-  // Detectar orientación
-  document.querySelectorAll('.photo-gallery_item img').forEach(img => {
-    img.addEventListener('load', function() {
-      const parent = this.closest('.photo-gallery_item');
-      if (this.naturalWidth > this.naturalHeight) {
-        parent.classList.add('horizontal');
-      } else {
-        parent.classList.add('vertical');
-      }
-    });
   });
 });
 </script>
