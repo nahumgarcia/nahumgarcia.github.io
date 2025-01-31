@@ -37,6 +37,25 @@
     max-width: 1200px;
 }
 
+.post-meta {
+  font-size: $small-font-size;
+  font-family: $code-font-family;
+  color: $grey-color;
+  a, a:visited {
+    color: $grey-color-dark;
+  }
+  .tags {
+      a, a:visited {
+          background: $grey-color-light;
+          padding: 0.1rem 0.5rem;
+      }
+  }
+}
+
+.tag-title {
+  font-weight: bold;
+}
+
 /* Galería de miniaturas */
 .gallery-list {
   display: grid;
