@@ -51,7 +51,10 @@
       }
   }
 }
-
+time {
+  font-size: $small-font-size;
+  color: $grey-color;
+  display: inline-block;
 .tag-title {
   font-weight: bold;
 }
