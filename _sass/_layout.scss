@@ -113,26 +113,12 @@ time {
 
 .gallery-item {
   position: relative;
-  overflow: hidden;
-}
-
-.gallery-link {
-  display: block;
-  text-decoration: none;
-}
-
-.gallery-thumbnail-container {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.gallery-thumbnail {
   width: 100%;
-  height: auto;
-  display: block;
+  overflow: hidden; /* Evita que la imagen se expanda fuera del contenedor */
+  aspect-ratio: 1;
+  text-align: center;
+  padding-left: 0;
 }
-
 
 .gallery-item img {
   width: 100%;
@@ -155,7 +141,41 @@ time {
   transition: background 0.3s ease;
 }
 
-/* Estilos del texto del título */
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-thumbnail-container {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item-title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: none;
+}
+
+.gallery-link:hover .gallery-item-title {
+  display: block;
+}
+
+/* Estilos del texto del título 
 .gallery-item-title {
   position: absolute;
   top: 50%;
@@ -164,14 +184,11 @@ time {
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  opacity: 0; /* Oculto inicialmente */
+  opacity: 0; 
   transition: opacity 0.3s ease;
   text-decoration: none;
 }
-
-.gallery-link:hover .gallery-item-title {
-  display: block;
-}
+*/
 
 /* Efectos al hacer hover */
 .gallery-item:hover img {
@@ -181,6 +198,10 @@ time {
 
 .gallery-item:hover::after {
   background: rgba(0, 0, 0, 0.5); /* Añade la capa oscura */
+}
+
+.gallery-item:hover .gallery-item-title {
+  opacity: 1; /* Muestra el título */
 }
 
 .gallery-item img:hover {
