@@ -140,7 +140,33 @@ time {
   transition: background 0.3s ease;
 }
 
+/* Estilos del texto del título */
+.gallery-item-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
 
+/* Efectos al hacer hover */
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.6); /* Oscurece la imagen */
+}
+
+.gallery-item:hover::after {
+  background: rgba(0, 0, 0, 0.5); /* Añade la capa oscura */
+}
+
+.gallery-item:hover .gallery-item-title {
+  opacity: 1; /* Muestra el título */
+}
 
 .gallery-item img:hover {
   transform: scale(1.05);
