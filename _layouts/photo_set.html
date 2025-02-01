@@ -1,12 +1,9 @@
 ---
 layout: default
 ---
-
 <section class="site-header">
   <h1 class="smallcap">
-    <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
-      {{ site.title }}
-    </a>
+    <a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a>
   </h1>
 </section>
 
@@ -14,24 +11,27 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
 </header>
 
-<!-- Galería de Fotos -->
-<ul class="photo-gallery photo-gallery--single">
-  {% for photo in page.photos.items %}
+<!-- Solo una galería -->
+<div class="gallery-container">
+  <ul class="photo-gallery">
+    {% for photo in page.photos.items %}
     <li class="photo-gallery_item">
       <div class="photo-container">
-        <img 
-          src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}" 
-          alt="{{ photo.description }}"
+        <img
+          src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}"
+          alt="{{ photo.description | default: 'Foto de ' | append: page.title }}"
           class="gallery-image"
-          data-description="{{ photo.description }}"
+          data-description="{{ photo.description | default: 'Foto de ' | append: page.title }}"
+          onload="this.naturalWidth > this.naturalHeight ? this.parentElement.parentElement.classList.add('horizontal') : this.parentElement.parentElement.classList.add('vertical')"
         >
       </div>
     </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</div>
 
-<div>
-  <a href="{{ site.baseurl }}/photos/">Ver todas las galerías</a>
+<div class="gallery-navigation">
+  <a href="{{ site.baseurl }}/photos/" class="back-to-galleries">Ver todas las galerías</a>
 </div>
 
 
