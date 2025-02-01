@@ -9,7 +9,7 @@ description: "ENTER HERE"
   {% for gallery in site.galleries %}
     <li class="gallery-item">
       <!-- Cambia gallery.url por gallery.permalink -->
-      <a href="{{ gallery.permalink | prepend: site.baseurl }}">
+      <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
           <img 
