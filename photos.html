@@ -8,12 +8,13 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
+      <!-- Cambia gallery.url por gallery.permalink -->
       <a href="{{ gallery.permalink | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
           <img 
             src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
-            alt="{{ first_photo.description | default: 'Primera imagen de ' | append: gallery.title }}" 
+            alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>

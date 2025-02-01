@@ -111,6 +111,7 @@ time {
 }
 
 .gallery-item {
+  display: inline-block;
   position: relative;
   width: 100%;
   overflow: hidden; /* Evita que la imagen se expanda fuera del contenedor */
@@ -127,7 +128,10 @@ time {
   border-radius: 0px;
   transition: transform 0.3s ease;
 }
-
+.gallery-thumbnail {
+  display: block;
+  visibility: visible;
+}
 /* Agrega la capa oscura al hacer hover */
 .gallery-item::after {
   content: "";
