@@ -224,7 +224,6 @@ time {
   }
 }
 
-/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -238,32 +237,54 @@ time {
   z-index: 1000;
 }
 
-.lightbox img {
+.lightbox-img {
   max-width: 90%;
-  max-height: 80vh;
-  border-radius: 0px;
+  max-height: 85vh;
+  border-radius: 4px;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.lightbox .description {
+.lightbox-description {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
   color: white;
-  font-size: 1.2rem;
-  margin-top: 10px;
   text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 30px;
   color: white;
+  font-size: 40px;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* Otros estilos */
-.post-list > li {
-    margin-bottom: 5px;
-    list-style-type: none;
-    margin-left: -2rem;
-    font-weight: medium;
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 1001;
+}
+
+.lightbox-arrow.left {
+  left: 20px;
+}
+
+.lightbox-arrow.right {
+  right: 20px;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  color: #ddd;
 }
