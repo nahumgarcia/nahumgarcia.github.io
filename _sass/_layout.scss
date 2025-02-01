@@ -133,7 +133,7 @@ time {
   visibility: visible;
 }
 /* Agrega la capa oscura al hacer hover */
-.gallery-item::after {
+.gallery-item a::after {
   content: "";
   position: absolute;
   top: 0;
@@ -172,9 +172,11 @@ time {
   opacity: 1; /* Muestra el título */
 }
 
+/*
 .gallery-item img:hover {
   transform: scale(1.05);
 }
+*/
 
 /* Galería individual */
 .photo-gallery {
