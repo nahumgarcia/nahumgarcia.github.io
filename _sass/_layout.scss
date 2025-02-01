@@ -102,22 +102,37 @@ time {
 
 /* Galería de miniaturas */
 .gallery-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   margin-left: 0rem;
 }
 
+
 .gallery-item {
   position: relative;
-  width: 100%;
-  overflow: hidden; /* Evita que la imagen se expanda fuera del contenedor */
-  aspect-ratio: 1;
-  text-align: center;
-  padding-left: 0;
+  overflow: hidden;
 }
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-thumbnail-container {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 .gallery-item img {
   width: 100%;
@@ -154,6 +169,10 @@ time {
   text-decoration: none;
 }
 
+.gallery-link:hover .gallery-item-title {
+  display: block;
+}
+
 /* Efectos al hacer hover */
 .gallery-item:hover img {
   transform: scale(1.05);
@@ -162,10 +181,6 @@ time {
 
 .gallery-item:hover::after {
   background: rgba(0, 0, 0, 0.5); /* Añade la capa oscura */
-}
-
-.gallery-item:hover .gallery-item-title {
-  opacity: 1; /* Muestra el título */
 }
 
 .gallery-item img:hover {
