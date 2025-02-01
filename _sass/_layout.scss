@@ -140,6 +140,7 @@ time {
   margin: 0 auto;
   padding: 0 20px;
   list-style: none;
+  margin-left: -2rem;
 }
 
 .photo-gallery_item {
@@ -193,7 +194,7 @@ time {
 .lightbox img {
   max-width: 90%;
   max-height: 80vh;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .lightbox .description {
