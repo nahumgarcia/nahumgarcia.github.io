@@ -9,7 +9,6 @@ description: "ENTER HERE"
   {% for gallery in site.galleries %}
     <li class="gallery-item">
       <a href="{{ gallery.url | prepend: site.baseurl }}">
-        <!-- Mostrar la primera foto de la galería -->
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
           <img 
@@ -17,10 +16,10 @@ description: "ENTER HERE"
             alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
+          <span class="gallery-item-title">{{ gallery.title }}</span>
         {% else %}
-          <p>No hay imágenes disponibles</p>
+          <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
-        <span class="gallery-item-title">{{ gallery.title }}</span>
       </a>
     </li>
   {% endfor %}
