@@ -115,17 +115,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
-{% for photo in page.photos.items %}
-<li class="photo-gallery_item {% if photo.orientation == 'vertical' %}vertical{% else %}horizontal{% endif %}">
-    <div class="photo-container">
-        <img
-            src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}"
-            alt="{{ photo.description | default: 'Foto de ' | append: page.title }}"
-            class="gallery-image"
-            data-description="{{ photo.description | default: 'Foto de ' | append: page.title }}"
-            onload="this.naturalWidth > this.naturalHeight ? this.parentElement.parentElement.classList.add('horizontal') : this.parentElement.parentElement.classList.add('vertical')"
-        >
-    </div>
-</li>
-{% endfor %}
