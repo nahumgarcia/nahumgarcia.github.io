@@ -17,6 +17,7 @@ description: "ENTER HERE"
             alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
+          <span class="gallery-item-title">{{ gallery.title }}</span>
         {% else %}
           <p>No hay imágenes disponibles</p>
         {% endif %}
