@@ -5,10 +5,9 @@ permalink: /photos/
 description: "ENTER HERE"
 ---
 
-<ul class="gallery-list">
+<ul class="allery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <!-- Cambia gallery.url por gallery.permalink -->
       <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
@@ -18,6 +17,14 @@ description: "ENTER HERE"
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>
+          
+          {% comment %} Extraer fecha del nombre del archivo {% endcomment %}
+          {% assign filename = gallery.path | split: '/' | last %}
+          {% assign date_part = filename | split: '-' | slice: 0, 3 | join: '-' %}
+          <time datetime="{{ date_part | date_to_xmlschema }}">
+            {{ date_part | date: "%b %d, %Y" }}
+          </time>
+          
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
