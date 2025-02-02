@@ -8,6 +8,7 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
+      <!-- Cambia gallery.url por gallery.permalink -->
       <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
@@ -20,9 +21,6 @@ description: "ENTER HERE"
           <time datetime="{{ gallery.date | date_to_xmlschema }}">
             {{ gallery.date | date: "%b %d, %Y" }}
           </time>
-          {% else %}
-            <p>Error: No se pudo extraer la fecha</p>
-          {% endif %}
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
