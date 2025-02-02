@@ -184,51 +184,48 @@ time {
 margin-left: 0rem;
 }
 
-/* Grid base de la galería */
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 10px;
   width: 150%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: 0;
   list-style: none;
-  transform: translateX(-16.66%);
 }
 
-/* Fotos verticales */
+.photo-gallery_item {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+}
+
+.photo-gallery_item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+/* Mejora en la distribución */
+.photo-gallery_item.horizontal {
+  grid-column: span 2;
+}
+
 .photo-gallery_item.vertical {
   grid-column: span 1;
 }
 
-/* Cuando una foto vertical está sola en una fila */
-.photo-gallery_item.vertical:nth-child(odd):last-child,  /* Última foto si es impar */
-.photo-gallery_item.vertical:only-child {                /* Si es la única foto */
-  grid-column: 1 / -1;                                 /* Ocupa toda la fila */
-  width: 75%;                                         /* Ancho del 75% */
-  justify-self: center;                               /* Centra en la fila */
-}
-
-/* Fotos horizontales */
-.photo-gallery_item.horizontal {
-  grid-column: 1 / -1; /* Sigue ocupando el ancho completo */
-}
-
+/* Ajuste responsive */
 @media (max-width: 768px) {
   .photo-gallery {
-      width: 100%;          /* Vuelve al ancho normal en móviles */
-      transform: none;      /* Elimina el desplazamiento */
-      grid-template-columns: 1fr;  /* Una sola columna */
-      gap: 15px;           /* Reduce el espacio entre fotos */
+    grid-template-columns: 1fr;
   }
-
-  .photo-gallery_item.vertical,
-  .photo-gallery_item.horizontal,
-  .photo-gallery_item.vertical:nth-child(odd):last-child,
-  .photo-gallery_item.vertical:only-child {
-      width: 100%;         /* Todas las fotos ocupan el ancho completo */
-      grid-column: 1 / -1;
+  
+  .photo-gallery_item.horizontal {
+    grid-column: span 1;
   }
 }
 
