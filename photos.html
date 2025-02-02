@@ -8,7 +8,7 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <a href="{{ gallery.url | prepend: site.baseurl }}">
+      <a href="{{ gallery.permalink | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
           <img 
@@ -19,11 +19,21 @@ description: "ENTER HERE"
           <span class="gallery-item-title">{{ gallery.title }}</span>
           
           {% comment %} Extraer fecha del nombre del archivo {% endcomment %}
-          {% assign filename = gallery.path | split: '/' | last %}
-          {% assign date_part = filename | split: '-' | slice: 0, 3 | join: '-' %}
-          <time datetime="{{ date_part | date_to_xmlschema }}">
-            {{ date_part | date: "%b %d, %Y" }}
-          </time>
+          {% assign filename = gallery.name | split: '.' | first %}
+          {% assign date_parts = filename | split: '-' %}
+          
+          {% if date_parts.size >= 3 %}
+            {% assign year = date_parts[0] %}
+            {% assign month = date_parts[1] %}
+            {% assign day = date_parts[2] %}
+            {% assign formatted_date = year | append: '-' | append: month | append: '-' | append: day %}
+          {% endif %}
+          
+          {% if formatted_date %}
+            <time datetime="{{ formatted_date }}">
+              {{ formatted_date | date: "%b %d, %Y" }}
+            </time>
+          {% endif %}
           
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
