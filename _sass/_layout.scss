@@ -244,6 +244,36 @@ margin-left: 0rem;
   }
 }
 
+/* Icono de descripción */
+.photo-info-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  padding: 5px;
+  cursor: help;
+  transition: transform 0.2s ease;
+}
+
+.photo-info-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.photo-info-icon:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Asegura que el contenedor de la foto tenga posición relativa */
+.photo-container {
+  position: relative;
+  height: 100%;
+}
+
 .lightbox {
   display: none;
   position: fixed;
