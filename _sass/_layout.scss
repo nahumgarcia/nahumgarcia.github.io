@@ -118,7 +118,6 @@ time {
   aspect-ratio: 1;
   text-align: center;
   padding-left: 0;
-  margin-left: 0rem;
 }
 
 .gallery-item img {
@@ -187,6 +186,7 @@ time {
   grid-gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
+  margin-left: 0rem;
   padding: 0 20px;
   list-style: none;
 }
