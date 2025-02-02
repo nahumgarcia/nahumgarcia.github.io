@@ -251,12 +251,13 @@ margin-left: 0rem;
 .lightbox-description {
   position: absolute;
   bottom: 20px;
-  left: 20px;
-  right: 20px;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el elemento horizontalmente */
+  max-width: 600px;
+  width: 90%; /* Para que sea responsivo en pantallas pequeñas */
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 10px 20px;
   background: rgba(0, 0, 0, 0.5);
 }
 
