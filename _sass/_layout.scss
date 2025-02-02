@@ -278,6 +278,50 @@ margin-left: 0rem;
   height: 100%;
 }
 
+/* Añade esto al final de tu CSS */
+@media (hover: none) and (max-width: 768px) {
+  .gallery-item-title,
+  .gallery-date {
+    opacity: 1 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+  
+  .gallery-item-title {
+    top: 20% !important;
+    font-size: 1.2rem;
+  }
+  
+  .gallery-date {
+    bottom: 20px !important;
+  }
+  
+  .gallery-item:hover img {
+    filter: brightness(1) !important;
+    transform: none !important;
+  }
+  
+  .gallery-item a::after {
+    background: rgba(0,0,0,0.4) !important; /* Fondo semi-transparente permanente */
+  }
+}
+
+/* Versión alternativa para navegadores que no soportan hover: none */
+@media (max-width: 768px) {
+  .gallery-item-title,
+  .gallery-date {
+    opacity: 1 !important;
+  }
+  
+  .gallery-item:hover img {
+    filter: brightness(1) !important;
+  }
+  
+  .gallery-item a::after {
+    background: rgba(0,0,0,0.4) !important;
+  }
+}
+
+
 .lightbox {
   display: none;
   position: fixed;
