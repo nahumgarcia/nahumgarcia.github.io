@@ -179,6 +179,11 @@ time {
 */
 
 /* Galería individual */
+
+.photo-container {
+margin-left: 0rem;
+}
+
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -186,7 +191,6 @@ time {
   grid-gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-left: 0rem;
   padding: 0 20px;
   list-style: none;
 }
