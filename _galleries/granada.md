@@ -7,7 +7,7 @@ photos:
     - file: "granada-2.jpg"
       alt: "Primera foto de la galería 1"
     - file: "granada-1.jpg"
-      description: "Segunda foto de la galería 1"
+      description: "Voy a poner un texto muy muy largo aquí para ver qué pasa, como que estoy contando algo importante o lo que sea pero en verdad solo estoy probando. Que podría poner un Lorem Ipsum, verdad? Ya pero no me da la gana buscar uno."
     - file: "granada-3.jpg"
       alt: "Segunda foto de la galería 1"
     - file: "granada-4.jpg"
