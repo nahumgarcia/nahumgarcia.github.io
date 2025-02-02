@@ -17,7 +17,19 @@ description: "ENTER HERE"
             alt="{{ first_photo.description | default: 'Primera foto de ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
-          <span class="gallery-item-title">{{ gallery.title }} {{ page.date | date_to_xmlschema }} itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time></span>
+          <span class="gallery-item-title">
+            {{ gallery.title }} 
+            {% assign filename = first_photo.file | split: '.' | first %}
+            {% assign date_parts = filename | split: '-' %}
+            {% if date_parts.size >= 3 %}
+              {% assign year = date_parts[0] %}
+              {% assign month = date_parts[1] %}
+              {% assign day = date_parts[2] %}
+              <time datetime="{{ year }}-{{ month }}-{{ day }}" itemprop="datePublished">
+                {{ month }} {{ day }}, {{ year }}
+              </time>
+            {% endif %}
+          </span>
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
