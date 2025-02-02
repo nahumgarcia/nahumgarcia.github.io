@@ -8,7 +8,7 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <a href="{{ gallery.permalink | prepend: site.baseurl }}">
+      <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
           <img 
@@ -17,24 +17,22 @@ description: "ENTER HERE"
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>
-          
+
           {% comment %} Extraer fecha del nombre del archivo {% endcomment %}
           {% assign filename = gallery.name | split: '.' | first %}
           {% assign date_parts = filename | split: '-' %}
-          
-          {% if date_parts.size >= 3 %}
-            {% assign year = date_parts[0] %}
-            {% assign month = date_parts[1] %}
-            {% assign day = date_parts[2] %}
-            {% assign formatted_date = year | append: '-' | append: month | append: '-' | append: day %}
-          {% endif %}
-          
-          {% if formatted_date %}
+          {% assign year = date_parts[0] %}
+          {% assign month = date_parts[1] %}
+          {% assign day = date_parts[2] %}
+          {% assign formatted_date = year | append: '-' | append: month | append: '-' | append: day %}
+
+          {% if year and month and day %}
             <time datetime="{{ formatted_date }}">
               {{ formatted_date | date: "%b %d, %Y" }}
             </time>
+          {% else %}
+            <p>Error: No se pudo extraer la fecha</p>
           {% endif %}
-          
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
