@@ -7,7 +7,7 @@ photos:
     - file: "granada-2.jpg"
       alt: "Primera foto de la galería 1"
     - file: "granada-1.jpg"
-      alt: "Segunda foto de la galería 1"
+      description: "Segunda foto de la galería 1"
     - file: "granada-3.jpg"
       alt: "Segunda foto de la galería 1"
     - file: "granada-4.jpg"
