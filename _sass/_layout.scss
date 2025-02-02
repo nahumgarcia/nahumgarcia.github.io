@@ -171,7 +171,12 @@ time {
 .gallery-item:hover .gallery-item-title {
   opacity: 1; /* Muestra el título */
 }
-
+.gallery-date {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.3em;
+}
 /*
 .gallery-item img:hover {
   transform: scale(1.05);

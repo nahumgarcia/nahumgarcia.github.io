@@ -8,7 +8,6 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <!-- Cambia gallery.url por gallery.permalink -->
       <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
@@ -18,7 +17,8 @@ description: "ENTER HERE"
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>
-          <time datetime="{{ gallery.date | date_to_xmlschema }}">
+          <!-- Fecha del front matter -->
+          <time class="gallery-date" datetime="{{ gallery.date | date_to_xmlschema }}">
             {{ gallery.date | date: "%b %d, %Y" }}
           </time>
         {% else %}
