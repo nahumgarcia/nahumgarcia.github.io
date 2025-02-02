@@ -278,7 +278,7 @@ margin-left: 0rem;
   height: 100%;
 }
 
-/* Añade esto al final de tu CSS */
+/* Responsive títulos galerías y fechas */
 @media (hover: none) and (max-width: 768px) {
   .gallery-item-title,
   .gallery-date {
@@ -287,6 +287,8 @@ margin-left: 0rem;
   }
   
   .gallery-item-title {
+    color: white !important; /* Fuerza el color blanco */
+    -webkit-text-fill-color: white; /* Para Safari */
     top: 20% !important;
     font-size: 1.2rem;
   }
@@ -310,6 +312,8 @@ margin-left: 0rem;
   .gallery-item-title,
   .gallery-date {
     opacity: 1 !important;
+    color: white !important; /* Fuerza el color blanco */
+    -webkit-text-fill-color: white; /* Para Safari */
   }
   
   .gallery-item:hover img {
