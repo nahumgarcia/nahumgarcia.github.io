@@ -19,7 +19,7 @@ layout: default
       <div class="photo-container">
         <img
           src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}"
-          alt="{{ photo.description | default: 'Foto de ' | append: page.title }}"
+          alt="{{ photo.description }}"
           class="gallery-image"
           data-description="{{ photo.description }}"
           onload="this.naturalWidth > this.naturalHeight ? this.parentElement.parentElement.classList.add('horizontal') : this.parentElement.parentElement.classList.add('vertical')"
