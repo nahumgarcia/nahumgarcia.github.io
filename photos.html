@@ -17,10 +17,7 @@ description: "ENTER HERE"
             alt="{{ first_photo.description | default: 'Primera foto de ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
-          <span class="gallery-item-title">{{ gallery.title }}</span>
-          <span class="gallery-item-title">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>
-          </span>
+          <span class="gallery-item-title">{{ gallery.title }} <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time> </span>
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
