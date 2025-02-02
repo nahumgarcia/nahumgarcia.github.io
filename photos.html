@@ -17,19 +17,9 @@ description: "ENTER HERE"
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>
-
-          {% comment %} Extraer fecha del nombre del archivo {% endcomment %}
-          {% assign filename = gallery.name | split: '.' | first %}
-          {% assign date_parts = filename | split: '-' %}
-          {% assign year = date_parts[0] %}
-          {% assign month = date_parts[1] %}
-          {% assign day = date_parts[2] %}
-          {% assign formatted_date = year | append: '-' | append: month | append: '-' | append: day %}
-
-          {% if year and month and day %}
-            <time datetime="{{ formatted_date }}">
-              {{ formatted_date | date: "%b %d, %Y" }}
-            </time>
+          <time datetime="{{ gallery.date | date_to_xmlschema }}">
+            {{ gallery.date | date: "%b %d, %Y" }}
+          </time>
           {% else %}
             <p>Error: No se pudo extraer la fecha</p>
           {% endif %}
