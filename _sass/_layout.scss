@@ -171,17 +171,28 @@ time {
 .gallery-item:hover .gallery-item-title {
   opacity: 1; /* Muestra el título */
 }
+
+.gallery-item:hover .gallery-date {
+  opacity: 1;
+}
+
+/* Ajusta el z-index del overlay */
+.gallery-item a::after {
+  z-index: 1; /* Asegura que está debajo del texto */
+}
+
 .gallery-date {
-  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Mayor que el overlay (z-index: 1 implícito) */
+  color: white !important;
   font-size: 0.9em;
-  color: #666;
-  margin-top: 0.3em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-/*
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-*/
+
 
 /* Galería individual */
 
