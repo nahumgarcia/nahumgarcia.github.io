@@ -313,6 +313,8 @@ margin-left: 0rem;
   .gallery-item-title,
   .gallery-date {
     opacity: 1 !important;
+    color: white !important;
+    -webkit-text-fill-color: white;
   }
   
   .gallery-item:hover img {
