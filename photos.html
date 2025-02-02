@@ -8,31 +8,19 @@ description: "ENTER HERE"
 <ul class="gallery-list">
   {% for gallery in site.galleries %}
     <li class="gallery-item">
-      <a href="{{ gallery.permalink | prepend: site.baseurl }}">
+      <!-- Cambia gallery.url por gallery.permalink -->
+      <a href="{{ gallery.url | prepend: site.baseurl }}">
         {% assign first_photo = gallery.photos.items | first %}
         {% if first_photo %}
-          <img
-            src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}"
-            alt="{{ first_photo.description | default: 'First photo of ' | append: gallery.title }}"
+          <img 
+            src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
+            alt="{{ first_photo.description | default: 'Primera foto de ' | append: gallery.title }}" 
             class="gallery-thumbnail"
           />
           <span class="gallery-item-title">{{ gallery.title }}</span>
-
-          <!-- Extraer fecha del nombre del archivo -->
-          {% assign filename = first_photo.file | split: '.' | first %}
-          {% assign date_parts = filename | split: '-' %}
-
-          {% if date_parts.size >= 3 %}
-            {% assign year = date_parts[0] %}
-            {% assign month = date_parts[1] %}
-            {% assign day = date_parts[2] %}
-            <p class="post-meta">
-              <time datetime="{{ year }}-{{ month }}-{{ day }}">
-                {{ month }} {{ day }}, {{ year }}
-              </time>
-            </p>
-          {% endif %}
-
+          <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>
+           </p>
         {% else %}
           <span class="gallery-no-image">No hay imágenes disponibles</span>
         {% endif %}
