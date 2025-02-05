@@ -1,6 +1,7 @@
 ---
 layout: photo_set
 title: "Mexico"
+date: 2020-01-08
 photos:
   set: "mexico"
   items:
