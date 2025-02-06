@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-02-06-jekyll.md",
+                "file": "_posts/2012-07-04-bye-bye-pocoyo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-02-06-jekyll"
+              "title": "2012-07-04-bye-bye-pocoyo"
             }
           }
         ]
@@ -166,9 +166,9 @@
   },
   "active": "6b0e3ff15fe7e523",
   "lastOpenFiles": [
+    "_posts/2025-02-06-jekyll.md",
     "_posts/2024-01-22-arroz-blanco-perfecto.md",
     "_posts/2024-01-17-union-eropea-streaming-musical.md",
-    "_posts/2025-02-06-jekyll.md",
     "templates/post.md",
     "about.md",
     "templates",
