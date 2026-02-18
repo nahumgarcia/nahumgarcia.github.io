@@ -22,12 +22,9 @@ layout: default
       <div class="photo-container">
         <img
           src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}"
-          alt="{{ photo.description }}"
-          class="gallery-image"
+          alt="{{ photo.alt | default: photo.file }}"
           data-description="{{ photo.description }}"
-          onload="this.naturalWidth > this.naturalHeight ? this.parentElement.parentElement.classList.add('horizontal') : this.parentElement.parentElement.classList.add('vertical')"
         >
-        <!-- Icono de comentario -->
         {% if photo.description %}
           <div class="photo-info-icon" title="Esta foto tiene descripción">
             <svg viewBox="0 0 24 24" width="24" height="24">
@@ -74,18 +71,24 @@ document.addEventListener("DOMContentLoaded", function() {
     function showLightbox(index) {
         if (index < 0) index = images.length - 1;
         if (index >= images.length) index = 0;
-        
+
         currentIndex = index;
         const img = images[index];
-        
-        // Añade una transición suave
+
         lightboxImg.style.opacity = '0';
         setTimeout(() => {
-            lightboxImg.src = img.src;
+            const newSrc = img.src;
             lightboxDesc.textContent = img.dataset.description || img.alt;
-            lightboxImg.style.opacity = '1';
+            if (lightboxImg.src === newSrc) {
+                lightboxImg.style.opacity = '1';
+            } else {
+                lightboxImg.onload = () => {
+                    lightboxImg.style.opacity = '1';
+                };
+                lightboxImg.src = newSrc;
+            }
         }, 200);
-        
+
         lightbox.style.display = "flex";
     }
     
