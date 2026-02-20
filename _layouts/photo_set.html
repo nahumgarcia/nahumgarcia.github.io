@@ -78,15 +78,20 @@ document.addEventListener("DOMContentLoaded", function() {
         lightboxImg.style.opacity = '0';
         setTimeout(() => {
             const newSrc = img.src;
-            lightboxDesc.textContent = img.dataset.description || img.alt;
-            if (lightboxImg.src === newSrc) {
-                lightboxImg.style.opacity = '1';
+            const desc = img.dataset.description || '';
+            if (desc) {
+                lightboxDesc.textContent = desc;
+                lightboxDesc.style.display = '';
             } else {
-                lightboxImg.onload = () => {
-                    lightboxImg.style.opacity = '1';
-                };
-                lightboxImg.src = newSrc;
+                lightboxDesc.textContent = '';
+                lightboxDesc.style.display = 'none';
             }
+            lightboxImg.style.visibility = 'hidden';
+            lightboxImg.onload = () => {
+                lightboxImg.style.visibility = 'visible';
+                lightboxImg.style.opacity = '1';
+            };
+            lightboxImg.src = newSrc;
         }, 200);
 
         lightbox.style.display = "flex";

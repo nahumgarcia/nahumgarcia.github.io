@@ -3,3 +3,8 @@ _site
 .jekyll-cache
 .jekyll-metadata
 Gemfile.lock
+.DS_Store
+*.canvas
+vendor/
+.bundle/
+SITE-NOTES.md
