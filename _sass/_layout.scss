@@ -37,18 +37,35 @@
 
 /* Encabezado */
 .site-header {
-    margin-top: -2rem;
-    margin-bottom: 100px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: $spacing-unit ($spacing-unit * 0.75) 0;
+}
+
+.site-nav {
+    margin: 0;
+    font-size: 1rem;
+    a, a:visited {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: var(--grey);
+        transition: color 0.2s ease;
+    }
+    a:hover {
+        color: var(--text-color);
+    }
 }
 .smallcap {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .smallcap a {
     text-decoration: none;
     letter-spacing: 0px;
-    color: #000000;
+    color: var(--text-color);
 }
 
 /* Contenido principal */
@@ -57,6 +74,13 @@
   padding: $spacing-unit ($spacing-unit * 0.75);
   margin: 1rem auto;
   box-sizing: border-box;
+  max-width: 1200px;
+}
+
+.post-content,
+.post-header,
+.post-meta,
+.post {
   max-width: $max-width;
 }
 /**
@@ -70,11 +94,11 @@
 }
 
 .post-meta {
-  font-size: $small-font-size;
+  font-size: 1rem;
   font-family: $base-font-family;
-  color: $grey-color;
+  color: var(--grey-dark);
   a, a:visited {
-    color: $grey-color-dark;
+    color: var(--grey-dark);
   }
   .tags {
       a, a:visited {
@@ -83,13 +107,15 @@
   }
 }
 time {
-  font-size: $small-font-size;
-  color: $grey-color;
+  font-size: 1rem;
+  color: var(--grey-dark);
   display: inline-block;
 }
 
 .tag-title {
   font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .post-title {
@@ -197,7 +223,8 @@ time {
 /* Galería individual */
 
 .gallery-container {
-  margin-left: 0rem;
+  width: 90vw;
+  max-width: 1200px;
 }
 
 .photo-gallery {

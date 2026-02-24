@@ -20,3 +20,10 @@ plugins:
   - jekyll-sitemap
 
 exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script"]
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

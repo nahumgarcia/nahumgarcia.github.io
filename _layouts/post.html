@@ -1,9 +1,6 @@
 ---
 layout: default
 ---
-<section class="site-header">
-		<h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
-</section>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
@@ -33,9 +30,6 @@ layout: default
   	  {% endif %}
     </p>
   
-   <h2 class="post-title">
-      <a href="/" title="Volver a la página principal" style="text-decoration: none;">←</a>
-    </h2>
   {% if page.comment %}
     {% include disqus.html %}
   {% endif %}
