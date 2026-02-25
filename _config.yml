@@ -11,9 +11,12 @@ kramdown:
 permalink: pretty
 
 collections:
+  photos:
+    output: true
+    permalink: /photos/post/:name/
   galleries:
     output: true
-    permalink: /photos/:name/
+    permalink: /photos/album/:name/
     title: Galerías
 
 plugins:
@@ -27,3 +30,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "photos"
+    values:
+      layout: "photo_post"

@@ -1,25 +1,6 @@
 ---
-layout: default
+layout: home_feed
+title: ""
+page_num: 1
+per_page: 6
 ---
-<div class="home">
-	<section>
-	<h2 class="tag-title">Entradas</h2> 
-		<ul class="post-list">
-			{% for post in site.posts %}
-			<li>
-				<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
-			</li>
-			{% endfor %}
-		</ul>
-	</section>
-	<!--
-	<section>
-	  <div class="copyright">
-        <p>&copy; {{ site.time | date: '%Y' }} <strong>{{ site.title }}</strong> </p>
-      </div>
-      </section>
-      -->    
-
-</div>
-
-

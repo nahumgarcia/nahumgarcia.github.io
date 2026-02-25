@@ -1,0 +1,30 @@
+---
+layout: default
+title: Álbumes
+permalink: /photos/albums/
+description: "Todos los álbumes de fotos"
+---
+
+<ul class="gallery-list">
+  {% assign sorted_albums = site.galleries | sort: "date" | reverse %}
+  {% for album in sorted_albums %}
+    <li class="gallery-item">
+      <a href="{{ album.url | prepend: site.baseurl }}">
+        {% if album.cover_photo %}
+          <img
+            src="{{ site.baseurl }}/assets/photos/{{ album.cover_photo }}"
+            alt="{{ album.title }}"
+            class="gallery-thumbnail"
+            loading="lazy"
+          />
+          <span class="gallery-item-title">{{ album.title }}</span>
+          <time class="gallery-date" datetime="{{ album.date | date_to_xmlschema }}">
+            {{ album.date | date: "%b %d, %Y" }}
+          </time>
+        {% else %}
+          <span class="gallery-no-image">{{ album.title }}</span>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

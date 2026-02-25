@@ -1,47 +1,40 @@
 ---
 layout: default
 ---
-<header class="post-header">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <p class="post-meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>
-  </p>
-</header>
+<div class="album-page">
+  <header class="album-header">
+    <h1 class="album-title">{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+  </header>
 
-<!-- Solo una galería -->
-<div class="gallery-container">
-  <ul class="photo-gallery">
-    {% for photo in page.photos.items %}
-    <li class="photo-gallery_item">
-      <div class="photo-container">
+  {% if page.content != "" %}
+  <div class="album-description">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <div class="album-grid">
+    {% assign album_posts = site.photos | where_exp: "item", "item.albums contains page.slug" | sort: "date" | reverse %}
+    {% for post in album_posts %}
+      {% for photo in post.photos %}
+      <a href="#" class="album-grid-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
         <img
-          src="{{ site.baseurl }}/assets/photos/{{ page.photos.set }}/{{ photo.file }}"
+          src="{{ site.baseurl }}/assets/photos/{{ photo.file }}"
           alt="{{ photo.alt | default: photo.file }}"
-          data-description="{{ photo.description }}"
+          loading="lazy"
         >
-        {% if photo.description %}
-          <div class="photo-info-icon" title="Esta foto tiene descripción">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-            </svg>
-          </div>
-        {% endif %}
-      </div>
-    </li>
+      </a>
+      {% endfor %}
     {% endfor %}
-  </ul>
+  </div>
 </div>
-
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll(".photo-gallery_item img");
+    const photos = document.querySelectorAll(".album-grid-photo");
     const lightbox = document.createElement("div");
     lightbox.classList.add("lightbox");
-    
-    // Mejora el HTML del lightbox con clases más específicas
+
     lightbox.innerHTML = `
         <span class="lightbox-close"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
         <span class="lightbox-arrow left"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
@@ -49,25 +42,25 @@ document.addEventListener("DOMContentLoaded", function() {
         <p class="lightbox-description"></p>
         <span class="lightbox-arrow right"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     `;
-    
+
     document.body.appendChild(lightbox);
-    
+
     const lightboxImg = lightbox.querySelector(".lightbox-img");
     const lightboxDesc = lightbox.querySelector(".lightbox-description");
     const closeBtn = lightbox.querySelector(".lightbox-close");
     const leftArrow = lightbox.querySelector(".lightbox-arrow.left");
     const rightArrow = lightbox.querySelector(".lightbox-arrow.right");
     let currentIndex = 0;
-    
+
     function showLightbox(index) {
-        if (index < 0) index = images.length - 1;
-        if (index >= images.length) index = 0;
-
+        if (index < 0) index = photos.length - 1;
+        if (index >= photos.length) index = 0;
         currentIndex = index;
-        const img = images[index];
-        const desc = img.dataset.description || '';
 
-        // Ocultar imagen anterior inmediatamente
+        const photo = photos[index];
+        const src = photo.dataset.full;
+        const desc = photo.dataset.alt || '';
+
         lightboxImg.style.display = 'none';
         lightboxImg.src = '';
 
@@ -79,40 +72,28 @@ document.addEventListener("DOMContentLoaded", function() {
             lightboxDesc.style.display = 'none';
         }
 
-        // Cargar nueva imagen
         const newImg = new Image();
         newImg.onload = () => {
             lightboxImg.src = newImg.src;
             lightboxImg.style.display = '';
         };
-        newImg.src = img.src;
+        newImg.src = src;
 
         lightbox.style.display = "flex";
         showControls();
     }
-    
-    // Eventos para cada imagen
-    images.forEach((img, index) => {
-        img.addEventListener("click", () => showLightbox(index));
+
+    photos.forEach((photo, index) => {
+        photo.addEventListener("click", (e) => {
+            e.preventDefault();
+            showLightbox(index);
+        });
     });
-    
-    // Cierra el lightbox
-    closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-    
-    // Navegación
-    leftArrow.addEventListener("click", (e) => {
-        e.stopPropagation();
-        showLightbox(currentIndex - 1);
-    });
-    
-    rightArrow.addEventListener("click", (e) => {
-        e.stopPropagation();
-        showLightbox(currentIndex + 1);
-    });
-    
-    // Eventos de teclado
+
+    closeBtn.addEventListener("click", () => { lightbox.style.display = "none"; });
+    leftArrow.addEventListener("click", (e) => { e.stopPropagation(); showLightbox(currentIndex - 1); });
+    rightArrow.addEventListener("click", (e) => { e.stopPropagation(); showLightbox(currentIndex + 1); });
+
     document.addEventListener("keydown", (e) => {
         if (lightbox.style.display === "flex") {
             if (e.key === "ArrowLeft") showLightbox(currentIndex - 1);
@@ -120,24 +101,17 @@ document.addEventListener("DOMContentLoaded", function() {
             if (e.key === "Escape") lightbox.style.display = "none";
         }
     });
-    
-    // Cierra el lightbox al hacer clic fuera de la imagen
+
     lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
+        if (e.target === lightbox) lightbox.style.display = "none";
     });
 
-    // Auto-ocultar controles tras inactividad
     let hideTimer;
     function showControls() {
         lightbox.classList.add("show-controls");
         clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-            lightbox.classList.remove("show-controls");
-        }, 2000);
+        hideTimer = setTimeout(() => { lightbox.classList.remove("show-controls"); }, 2000);
     }
-
     lightbox.addEventListener("mousemove", showControls);
     lightbox.addEventListener("touchstart", showControls);
 });

@@ -1,30 +1,8 @@
 ---
-layout: page
+layout: photo_page
 title: Fotos
 permalink: /photos/
-description: "Galerías de fotos"
+description: "Fotos y álbumes"
+page_num: 1
+per_page: 6
 ---
-
-<ul class="gallery-list">
-  {% for gallery in site.galleries %}
-    <li class="gallery-item">
-      <a href="{{ gallery.url | prepend: site.baseurl }}">
-        {% assign first_photo = gallery.photos.items | first %}
-        {% if first_photo %}
-          <img 
-            src="{{ site.baseurl }}/assets/photos/{{ gallery.photos.set }}/{{ first_photo.file }}" 
-            alt="{{ first_photo.description | default: 'Primera foto de ' | append: gallery.title }}" 
-            class="gallery-thumbnail"
-          />
-          <span class="gallery-item-title">{{ gallery.title }}</span>
-          <!-- Fecha del front matter -->
-          <time class="gallery-date" datetime="{{ gallery.date | date_to_xmlschema }}">
-            {{ gallery.date | date: "%b %d, %Y" }}
-          </time>
-        {% else %}
-          <span class="gallery-no-image">No hay imágenes disponibles</span>
-        {% endif %}
-      </a>
-    </li>
-  {% endfor %}
-</ul>

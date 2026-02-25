@@ -1,7 +1,8 @@
 <nav class="site-nav">
-<a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">Sobre mí</a>
-<a href="{{ '/photos' | prepend: site.baseurl | prepend: site.url }}">Fotos</a>
+<a href="{{ '/posts' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == '/posts/' %} class="nav-active"{% endif %}>Posts</a>
+<a href="{{ '/photos' | prepend: site.baseurl | prepend: site.url }}"{% if page.url contains '/photos' %} class="nav-active"{% endif %}>Fotos</a>
+<a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == '/about/' %} class="nav-active"{% endif %}>Sobre mí</a>
 <a href="https://nahumgarcia.bandcamp.com">Bandcamp</a>
-<a href="{{ '/tagged' | prepend: site.baseurl | prepend: site.url }}">Etiquetas</a>
+<a href="{{ '/tagged' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == '/tagged/' %} class="nav-active"{% endif %}>Etiquetas</a>
 <a href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">RSS</a>
 </nav>

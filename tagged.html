@@ -24,10 +24,6 @@ title: Etiquetas
 
 <div class="home">
 	<section>
-		<h2 class="tag-title">Etiquetas</h2>
-	</section>
-
-	<section>
 		{% for tag in tags %}
 		<h3 class="tag-title" id="{{ tag | slugify }}"># {{ tag }}</h3>
 		<ul class="post-list">
