@@ -1,0 +1,114 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    lightbox.innerHTML = '<span class="lightbox-close"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>'
+        + '<span class="lightbox-arrow left"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>'
+        + '<img class="lightbox-img" src="" alt="">'
+        + '<p class="lightbox-description"></p>'
+        + '<span class="lightbox-arrow right"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>';
+    document.body.appendChild(lightbox);
+
+    var lightboxImg = lightbox.querySelector(".lightbox-img");
+    var lightboxDesc = lightbox.querySelector(".lightbox-description");
+    var closeBtn = lightbox.querySelector(".lightbox-close");
+    var leftArrow = lightbox.querySelector(".lightbox-arrow.left");
+    var rightArrow = lightbox.querySelector(".lightbox-arrow.right");
+    var currentPhotos = [];
+    var currentIndex = 0;
+
+    function showLightbox(index) {
+        if (index < 0) index = currentPhotos.length - 1;
+        if (index >= currentPhotos.length) index = 0;
+        currentIndex = index;
+        var photo = currentPhotos[index];
+        var src = photo.dataset.full;
+        var desc = photo.dataset.alt || '';
+        lightboxImg.style.display = 'none';
+        lightboxImg.src = '';
+        if (desc) { lightboxDesc.textContent = desc; lightboxDesc.style.display = ''; }
+        else { lightboxDesc.textContent = ''; lightboxDesc.style.display = 'none'; }
+        var newImg = new Image();
+        newImg.onload = function() { lightboxImg.src = newImg.src; lightboxImg.style.display = ''; };
+        newImg.src = src;
+        lightbox.style.display = "flex";
+        showControls();
+    }
+
+    // Bind photo groups
+    var containers = document.querySelectorAll("{{ include.selector }}");
+    containers.forEach(function(container) {
+        var photos = container.querySelectorAll("{{ include.photo_selector }}");
+        photos.forEach(function(photo, idx) {
+            photo.addEventListener("click", function(e) {
+                e.preventDefault();
+                currentPhotos = Array.from(photos);
+                showLightbox(idx);
+            });
+        });
+    });
+
+    // Controls
+    closeBtn.addEventListener("click", function() { lightbox.style.display = "none"; });
+    leftArrow.addEventListener("click", function(e) { e.stopPropagation(); showLightbox(currentIndex - 1); });
+    rightArrow.addEventListener("click", function(e) { e.stopPropagation(); showLightbox(currentIndex + 1); });
+    document.addEventListener("keydown", function(e) {
+        if (lightbox.style.display === "flex") {
+            if (e.key === "ArrowLeft") showLightbox(currentIndex - 1);
+            if (e.key === "ArrowRight") showLightbox(currentIndex + 1);
+            if (e.key === "Escape") lightbox.style.display = "none";
+        }
+    });
+    lightbox.addEventListener("click", function(e) { if (e.target === lightbox) lightbox.style.display = "none"; });
+
+    // Auto-hide controls
+    var hideTimer;
+    function showControls() {
+        lightbox.classList.add("show-controls");
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function() { lightbox.classList.remove("show-controls"); }, 2000);
+    }
+    lightbox.addEventListener("mousemove", showControls);
+    lightbox.addEventListener("touchstart", function(e) {
+        if (e.target === closeBtn || closeBtn.contains(e.target) ||
+            e.target === leftArrow || leftArrow.contains(e.target) ||
+            e.target === rightArrow || rightArrow.contains(e.target)) return;
+        showControls();
+    }, { passive: true });
+
+    // Swipe support
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var swiping = false;
+
+    lightbox.addEventListener("touchstart", function(e) {
+        if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            swiping = true;
+        }
+    }, { passive: true });
+
+    lightbox.addEventListener("touchmove", function(e) {
+        if (!swiping) return;
+        var dx = e.touches[0].clientX - touchStartX;
+        var dy = e.touches[0].clientY - touchStartY;
+        // If horizontal swipe is dominant, prevent vertical scroll
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    lightbox.addEventListener("touchend", function(e) {
+        if (!swiping) return;
+        swiping = false;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        // Minimum 50px horizontal swipe, more horizontal than vertical
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) showLightbox(currentIndex + 1);  // swipe left = next
+            else showLightbox(currentIndex - 1);          // swipe right = prev
+        }
+    }, { passive: true });
+});
+</script>
