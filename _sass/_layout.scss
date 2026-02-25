@@ -129,7 +129,7 @@ time {
 /* Galería de miniaturas */
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
   list-style: none;
   padding-left: 0;
@@ -140,10 +140,11 @@ time {
   display: inline-block;
   position: relative;
   width: 100%;
-  overflow: hidden; /* Evita que la imagen se expanda fuera del contenedor */
+  overflow: hidden;
   aspect-ratio: 1;
   text-align: center;
   padding-left: 0;
+  border-radius: 12px;
 }
 
 .gallery-item img {
@@ -151,7 +152,7 @@ time {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0px;
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 .gallery-thumbnail {
