@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Controls
-    closeBtn.addEventListener("click", function() { closeLightbox(); });
-    leftArrow.addEventListener("click", function(e) { e.stopPropagation(); showLightbox(currentIndex - 1, 'right'); });
-    rightArrow.addEventListener("click", function(e) { e.stopPropagation(); showLightbox(currentIndex + 1, 'left'); });
+    closeBtn.addEventListener("click", function() { closeBtn.blur(); closeLightbox(); });
+    leftArrow.addEventListener("click", function(e) { e.stopPropagation(); leftArrow.blur(); showLightbox(currentIndex - 1, 'right'); });
+    rightArrow.addEventListener("click", function(e) { e.stopPropagation(); rightArrow.blur(); showLightbox(currentIndex + 1, 'left'); });
     document.addEventListener("keydown", function(e) {
         if (lightbox.style.display === "flex") {
             if (e.key === "ArrowLeft") showLightbox(currentIndex - 1, 'right');
