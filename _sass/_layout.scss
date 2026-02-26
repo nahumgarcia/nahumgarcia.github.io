@@ -40,7 +40,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 750px;
     margin: 0 auto 2rem;
     padding: $spacing-unit ($spacing-unit * 0.75) 0;
 }
@@ -48,6 +48,7 @@
 .site-nav {
     margin: 0;
     font-size: 1rem;
+    white-space: nowrap;
     a, a:visited {
         margin-left: 1.5rem;
         text-decoration: none;
@@ -79,6 +80,8 @@
 .smallcap {
     font-size: 1.25rem;
     font-weight: bold;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 .smallcap a {
     text-decoration: none;
@@ -92,7 +95,7 @@
   padding: $spacing-unit ($spacing-unit * 0.75);
   margin: 1rem auto;
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .post-content,
@@ -100,14 +103,29 @@
 .post-meta,
 .post {
   max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content img {
+  max-width: 1000px;
+  width: 1000px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  height: auto;
+  border-radius: 4px;
 }
 /**
 * Pages
 */
 .home {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+
   section + section {
       margin-top: $spacing-unit;
-      max-width: $max-width;
   }
 }
 
@@ -162,7 +180,7 @@ time {
   aspect-ratio: 1;
   text-align: center;
   padding-left: 0;
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 .gallery-item img {
@@ -170,14 +188,14 @@ time {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 12px;
+  border-radius: 4px;
   transition: transform 0.3s ease;
 }
 .gallery-thumbnail {
   display: block;
   visibility: visible;
 }
-/* Agrega la capa oscura al hacer hover */
+/* Capa oscura siempre visible */
 .gallery-item a::after {
   content: "";
   position: absolute;
@@ -185,7 +203,7 @@ time {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  background: rgba(0, 0, 0, 0.35);
   transition: background 0.3s ease;
 }
 
@@ -198,9 +216,10 @@ time {
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  opacity: 0; /* Oculto inicialmente */
-  transition: opacity 0.3s ease;
+  opacity: 1;
+  z-index: 2;
   text-decoration: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 /* Efectos al hacer hover */
@@ -435,11 +454,23 @@ time {
 
 /* ===== Home feed ===== */
 .home-feed {
-  max-width: 900px;
 }
 
 .home-feed-item {
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
+}
+
+.home-feed-post {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-feed-photo .photo-feed-caption,
+.home-feed-photo .photo-feed-meta {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-feed-post-link {
@@ -460,12 +491,14 @@ time {
 }
 
 .home-feed-post-body {
-  font-size: 1rem;
-  line-height: 1.6;
   margin-bottom: 0.5rem;
 
   img {
-    max-width: 100%;
+    max-width: 1000px;
+    width: 1000px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: block;
     height: auto;
     border-radius: 4px;
   }
@@ -571,7 +604,9 @@ time {
 
 /* ===== Photo feed ===== */
 .photo-feed {
-  max-width: 900px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .photo-feed-post {
@@ -649,7 +684,7 @@ time {
 
 .photo-feed-meta {
   margin-top: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--grey-dark);
   display: flex;
   align-items: center;
@@ -705,7 +740,9 @@ time {
 
 /* ===== Photo post (individual page) ===== */
 .photo-post {
-  max-width: 900px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .photo-post-photos {
@@ -828,5 +865,30 @@ time {
   .photo-post-photos,
   .photo-feed-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* ===== Photos submenu ===== */
+.photos-submenu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  max-width: $max-width;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+
+  a, a:visited {
+    text-decoration: none;
+    color: var(--grey);
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--text-color);
+  }
+
+  a.submenu-active, a.submenu-active:visited {
+    color: var(--text-color);
+    font-weight: bold;
   }
 }
