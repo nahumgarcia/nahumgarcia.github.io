@@ -421,6 +421,16 @@ time {
   color: white;
 }
 
+.lightbox-close:focus,
+.lightbox-arrow:focus,
+.lightbox-close:active,
+.lightbox-arrow:active {
+  outline: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ===== Home feed ===== */
 .home-feed {
   max-width: 900px;
