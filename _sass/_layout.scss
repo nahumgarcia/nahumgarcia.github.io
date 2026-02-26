@@ -35,21 +35,27 @@
     background-size: 100% 100%;
 }
 
+/* Wrapper externo — gestiona centrado y padding horizontal */
+.site-outer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 ($spacing-unit * 0.75);
+    box-sizing: border-box;
+}
+
 /* Encabezado */
 .site-header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    max-width: 750px;
-    margin: 0 auto 2rem;
-    padding: $spacing-unit ($spacing-unit * 0.75) 0;
+    max-width: $max-width;
+    margin: $spacing-unit auto 2rem;
 }
 
 .site-nav {
     margin: 0;
-    font-size: 1rem;
     a, a:visited {
-        margin-left: 1.5rem;
+        margin-left: 0.85rem;
         text-decoration: none;
         color: var(--grey);
         transition: color 0.2s ease;
@@ -77,7 +83,7 @@
     }
 }
 .smallcap {
-    font-size: 1.25rem;
+    font-size: $base-font-size;
     font-weight: bold;
     white-space: nowrap;
     flex-shrink: 0;
@@ -91,10 +97,8 @@
 /* Contenido principal */
 .page-content {
   position: relative;
-  padding: $spacing-unit ($spacing-unit * 0.75);
-  margin: 1rem auto;
+  padding: $spacing-unit 0;
   box-sizing: border-box;
-  max-width: 1000px;
 }
 
 .post-content,
@@ -107,10 +111,9 @@
 }
 
 .post-content img {
-  max-width: 1000px;
-  width: 1000px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: calc(100% + 202px);
+  max-width: none;
+  margin-left: -101px;
   display: block;
   height: auto;
   border-radius: 4px;
@@ -128,21 +131,25 @@
   }
 }
 
+.post-list {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
 .post-meta {
-  font-size: 1rem;
   font-family: $base-font-family;
   color: var(--grey-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   a, a:visited {
     color: var(--grey-dark);
-  }
-  .tags {
-      a, a:visited {
-          padding: 0rem 0.3rem;
-      }
+    text-decoration: none;
   }
 }
 time {
-  font-size: 1rem;
   color: var(--grey-dark);
   display: inline-block;
 }
@@ -157,7 +164,7 @@ time {
   font-size: 2rem;
   letter-spacing: -1px;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   font-weight: bold;
 }
 
@@ -480,7 +487,7 @@ time {
 .home-feed-post-title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: -1px;
 }
@@ -493,10 +500,9 @@ time {
   margin-bottom: 0.5rem;
 
   img {
-    max-width: 1000px;
-    width: 1000px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: calc(100% + 202px);
+    max-width: none;
+    margin-left: -101px;
     display: block;
     height: auto;
     border-radius: 4px;
@@ -683,7 +689,6 @@ time {
 
 .photo-feed-meta {
   margin-top: 0.5rem;
-  font-size: 1rem;
   color: var(--grey-dark);
   display: flex;
   align-items: center;
@@ -773,7 +778,6 @@ time {
 
 .photo-post-caption {
   margin-top: 1rem;
-  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -874,7 +878,6 @@ time {
   gap: 1.5rem;
   max-width: $max-width;
   margin: 0 auto 2rem;
-  font-size: 1rem;
 
   a, a:visited {
     text-decoration: none;

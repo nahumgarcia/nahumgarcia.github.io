@@ -3,12 +3,14 @@
   {% include head.html %}
 
   <body>
-    <header class="site-header">
-      <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
-      {% include nav.html %}
-    </header>
-    <div class="page-content">
-      {{ content }}
+    <div class="site-outer">
+      <header class="site-header">
+        <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
+        {% include nav.html %}
+      </header>
+      <div class="page-content">
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>
