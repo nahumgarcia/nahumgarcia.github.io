@@ -362,80 +362,62 @@ time {
   width: 100%;
   height: 100%;
   background: #000;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   z-index: 1000;
   overflow: hidden;
 }
 
+.lightbox-photo-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
 .lightbox-img {
-  max-width: 90%;
-  max-height: 80vh;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
+.lightbox-bottom {
+  flex-shrink: 0;
+  padding: 12px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .lightbox-description {
-  color: white;
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  padding: 12px 20px 0;
   margin: 0;
-  max-width: 90%;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.lightbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
+.lightbox-close,
 .lightbox-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  padding: 12px;
-  z-index: 1001;
   outline: none;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-}
-
-.lightbox-arrow:hover {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.lightbox.show-controls .lightbox-close,
-.lightbox.show-controls .lightbox-arrow {
-  opacity: 1;
-}
-
-.lightbox-arrow.left {
-  left: 20px;
-}
-
-.lightbox-arrow.right {
-  right: 20px;
+  padding: 8px;
+  transition: color 0.2s ease;
 }
 
 .lightbox-close:hover,
 .lightbox-arrow:hover {
-  color: #ddd;
+  color: white;
 }
 
 /* ===== Home feed ===== */

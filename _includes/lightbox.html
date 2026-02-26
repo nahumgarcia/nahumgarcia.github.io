@@ -2,11 +2,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     var lightbox = document.createElement("div");
     lightbox.classList.add("lightbox");
-    lightbox.innerHTML = '<span class="lightbox-close"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>'
-        + '<span class="lightbox-arrow left"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>'
-        + '<img class="lightbox-img" src="" alt="">'
+    lightbox.innerHTML = '<div class="lightbox-photo-area"><img class="lightbox-img" src="" alt=""></div>'
+        + '<div class="lightbox-bottom">'
         + '<p class="lightbox-description"></p>'
-        + '<span class="lightbox-arrow right"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>';
+        + '<div class="lightbox-controls">'
+        + '<span class="lightbox-arrow left"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>'
+        + '<span class="lightbox-close"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>'
+        + '<span class="lightbox-arrow right"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>'
+        + '</div></div>';
     document.body.appendChild(lightbox);
 
     var lightboxImg = lightbox.querySelector(".lightbox-img");
@@ -51,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         newImg.src = src;
         lightbox.style.display = "flex";
         document.body.style.overflow = "hidden";
-        showControls();
     }
 
     function closeLightbox() {
@@ -83,22 +85,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (e.key === "Escape") closeLightbox();
         }
     });
-    lightbox.addEventListener("click", function(e) { if (e.target === lightbox) closeLightbox(); });
-
-    // Auto-hide controls
-    var hideTimer;
-    function showControls() {
-        lightbox.classList.add("show-controls");
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(function() { lightbox.classList.remove("show-controls"); }, 2000);
-    }
-    lightbox.addEventListener("mousemove", showControls);
-    lightbox.addEventListener("touchstart", function(e) {
-        if (e.target === closeBtn || closeBtn.contains(e.target) ||
-            e.target === leftArrow || leftArrow.contains(e.target) ||
-            e.target === rightArrow || rightArrow.contains(e.target)) return;
-        showControls();
-    }, { passive: true });
+    lightbox.addEventListener("click", function(e) {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-photo-area')) closeLightbox();
+    });
 
     // Swipe support
     var touchStartX = 0;
