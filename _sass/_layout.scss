@@ -366,6 +366,8 @@ time {
   flex-direction: column;
   z-index: 1000;
   overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .lightbox-photo-area {
