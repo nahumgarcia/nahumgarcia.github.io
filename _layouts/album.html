@@ -4,7 +4,6 @@ layout: default
 <div class="album-page">
   <header class="album-header">
     <h1 class="album-title">{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
   </header>
 
   {% if page.content != "" %}

@@ -45,7 +45,7 @@ layout: default
       </div>
       {% endif %}
       <footer class="photo-feed-meta">
-        <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time>
+        <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time></a>
         {% if item.albums.size > 0 %}
         <span class="photo-feed-albums">
           {% for album_slug in item.albums %}
