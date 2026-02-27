@@ -510,13 +510,17 @@ time {
 }
 
 .read-more {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+  display: block;
+  width: fit-content;
+  margin-top: 1.25rem;
+  padding: 0.4em 1em;
+  background: var(--text-color);
+  color: var(--bg-color);
   text-decoration: none;
-  color: var(--grey-dark);
+  border-radius: 2em;
   &:hover {
-    color: var(--text-color);
+    opacity: 0.75;
+    text-decoration: none;
   }
 }
 
