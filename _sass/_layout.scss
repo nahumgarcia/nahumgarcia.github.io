@@ -728,7 +728,8 @@ time {
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
-  margin: 2rem 0;
+  max-width: $max-width;
+  margin: 2rem auto;
 }
 
 .page-link {
