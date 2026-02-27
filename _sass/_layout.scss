@@ -90,6 +90,11 @@
     white-space: nowrap;
     flex-shrink: 0;
 }
+.site-logo {
+    display: block;
+    height: 2rem;
+    width: auto;
+}
 .smallcap a {
     text-decoration: none;
     letter-spacing: 0px;
