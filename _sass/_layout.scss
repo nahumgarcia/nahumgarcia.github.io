@@ -65,7 +65,6 @@
     }
     a.nav-active, a.nav-active:visited {
         color: var(--text-color);
-        font-weight: bold;
     }
 }
 
@@ -73,9 +72,12 @@
     .site-header {
         flex-wrap: wrap;
     }
+    .smallcap {
+        margin-bottom: 0;
+    }
     .site-nav {
         width: 100%;
-        margin-top: 0.5rem;
+        margin-top: 0;
         a, a:visited {
             margin-left: 0;
             margin-right: 1rem;
@@ -160,7 +162,7 @@ time {
 }
 
 .tag-title {
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -225,7 +227,7 @@ time {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.4rem;
-  font-weight: bold;
+  font-weight: 600;
   color: white;
   opacity: 1;
   z-index: 2;
@@ -557,7 +559,7 @@ time {
 
   h2 {
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0;
   }
 }
@@ -821,7 +823,7 @@ time {
 
 .album-title {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
@@ -903,6 +905,23 @@ time {
 
   a.submenu-active, a.submenu-active:visited {
     color: var(--text-color);
-    font-weight: bold;
+  }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  max-width: $max-width;
+  margin: 3rem auto 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--grey-light);
+  display: flex;
+  gap: 1.5rem;
+
+  a, a:visited {
+    color: var(--grey);
+    text-decoration: none;
+    &:hover {
+      color: var(--text-color);
+    }
   }
 }
