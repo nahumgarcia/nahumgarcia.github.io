@@ -66,6 +66,16 @@ layout: default
     {%- comment -%} Blog post {%- endcomment -%}
     {% assign word_count = item.content | number_of_words %}
     <article class="home-feed-item home-feed-post">
+      <footer class="photo-feed-meta">
+        <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time>
+        {% if item.tags.size > 0 %}
+        <span class="home-feed-tags">
+          {% for tag in item.tags %}
+            <a href="{{ site.baseurl }}/tagged#{{ tag | slugify }}">#{{ tag }}</a>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </footer>
       <a href="{{ item.url | prepend: site.baseurl }}" class="home-feed-post-link">
         <h2 class="home-feed-post-title">{{ item.title }}</h2>
       </a>
@@ -79,16 +89,6 @@ layout: default
         {{ item.content }}
       </div>
       {% endif %}
-      <footer class="photo-feed-meta">
-        <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time>
-        {% if item.tags.size > 0 %}
-        <span class="home-feed-tags">
-          {% for tag in item.tags %}
-            <a href="{{ site.baseurl }}/tagged#{{ tag | slugify }}">#{{ tag }}</a>
-          {% endfor %}
-        </span>
-        {% endif %}
-      </footer>
     </article>
     {% endif %}
   {% endfor %}
