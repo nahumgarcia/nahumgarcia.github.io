@@ -84,7 +84,7 @@
 }
 .smallcap {
     font-size: $base-font-size;
-    font-weight: bold;
+    font-weight: 600;
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -117,6 +117,10 @@
   display: block;
   height: auto;
   border-radius: 4px;
+  @media (max-width: 850px) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 /**
 * Pages
@@ -165,7 +169,7 @@ time {
   letter-spacing: -1px;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Galería de miniaturas */
@@ -486,7 +490,7 @@ time {
 
 .home-feed-post-title {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -506,6 +510,10 @@ time {
     display: block;
     height: auto;
     border-radius: 4px;
+    @media (max-width: 850px) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 
