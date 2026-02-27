@@ -725,7 +725,7 @@ time {
 
 .feed-pagination {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 4px;
   margin: 2rem 0;
@@ -911,7 +911,7 @@ time {
 /* ===== Footer ===== */
 .site-footer {
   max-width: $max-width;
-  margin: 3rem auto 2rem;
+  margin: 3rem auto 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--grey-light);
   display: flex;
