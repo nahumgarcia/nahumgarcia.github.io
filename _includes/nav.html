@@ -1,5 +1,5 @@
 <nav class="site-nav">
-<a href="{{ '/escritos' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == '/escritos/' %} class="nav-active"{% endif %}>Escritos</a>
-<a href="{{ '/fotos' | prepend: site.baseurl | prepend: site.url }}"{% if page.url contains '/fotos' %} class="nav-active"{% endif %}>Fotos</a>
-<a href="{{ '/sobremi' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == '/sobremi/' %} class="nav-active"{% endif %}>Sobre mí</a>
+<a href="{{ site.baseurl }}/escritos/"{% if page.url == '/escritos/' %} class="nav-active"{% endif %}>Escritos</a>
+<a href="{{ site.baseurl }}/fotos/"{% if page.url contains '/fotos' %} class="nav-active"{% endif %}>Fotos</a>
+<a href="{{ site.baseurl }}/sobremi/"{% if page.url == '/sobremi/' %} class="nav-active"{% endif %}>Sobre mí</a>
 </nav>
