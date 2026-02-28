@@ -81,7 +81,7 @@
     display: flex;
     gap: 0.85rem;
     margin: 0;
-    margin-top: -0.65rem;
+    transform: translateY(-8px);
     a, a:visited {
         text-decoration: none;
         color: var(--grey);
@@ -100,7 +100,7 @@
         flex-wrap: wrap;
     }
     .site-nav {
-        margin-top: 0;
+        transform: none;
     }
 }
 .smallcap {
