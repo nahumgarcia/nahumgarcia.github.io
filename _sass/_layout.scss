@@ -58,9 +58,9 @@
         right: 0;
         height: 2.5rem;
         background: linear-gradient(to bottom,
-            var(--bg-color) 0%,
-            color-mix(in srgb, var(--bg-color) 55%, transparent) 55%,
-            color-mix(in srgb, var(--bg-color) 15%, transparent) 80%,
+            color-mix(in srgb, var(--bg-color) 90%, transparent) 0%,
+            color-mix(in srgb, var(--bg-color) 45%, transparent) 40%,
+            color-mix(in srgb, var(--bg-color) 10%, transparent) 70%,
             transparent 100%);
         pointer-events: none;
     }
@@ -134,7 +134,7 @@
 /* Contenido principal */
 .page-content {
   position: relative;
-  padding: $spacing-unit 0;
+  padding: 0.5rem 0 $spacing-unit;
   box-sizing: border-box;
 }
 
