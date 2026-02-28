@@ -11,15 +11,7 @@
             <img src="{{ '/assets/images/logo-color.svg' | prepend: site.baseurl }}" alt="" class="site-logo site-logo-color">
           </span>
         </a></h1>
-        <div class="header-nav">
-          {% include nav.html %}
-          {% if page.url contains '/photos' %}
-          <nav class="photos-submenu">
-            <a href="{{ site.baseurl }}/photos/"{% if page.url == '/photos/' %} class="submenu-active"{% endif %}>Publicaciones</a>
-            <a href="{{ site.baseurl }}/photos/albums/"{% if page.url contains '/albums' %} class="submenu-active"{% endif %}>Álbumes</a>
-          </nav>
-          {% endif %}
-        </div>
+        {% include nav.html %}
       </header>
       <div class="page-content">
         {{ content }}

@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<nav class="photos-submenu">
+  <a href="{{ site.baseurl }}/photos/" class="submenu-active">Publicaciones</a>
+  <a href="{{ site.baseurl }}/photos/albums/">Álbumes</a>
+</nav>
+
 {% assign per_page = page.per_page | default: 6 %}
 {% assign page_num = page.page_num | default: 1 %}
 {% assign sorted_photos = site.photos | sort: "date" | reverse %}

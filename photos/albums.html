@@ -5,6 +5,11 @@ permalink: /photos/albums/
 description: "Todos los álbumes de fotos"
 ---
 
+<nav class="photos-submenu">
+  <a href="{{ site.baseurl }}/photos/">Publicaciones</a>
+  <a href="{{ site.baseurl }}/photos/albums/" class="submenu-active">Álbumes</a>
+</nav>
+
 <ul class="gallery-list">
   {% assign sorted_albums = site.galleries | sort: "date" | reverse %}
   {% for album in sorted_albums %}
