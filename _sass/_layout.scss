@@ -46,7 +46,7 @@
 /* Encabezado */
 .site-header {
     position: sticky;
-    top: 0.5rem;
+    top: 0;
     z-index: 50;
     display: flex;
     flex-direction: row;
@@ -54,18 +54,19 @@
     justify-content: space-between;
     max-width: $max-width;
     margin: $spacing-unit auto 0;
+    padding-top: 0.5rem;
     padding-bottom: 0.6rem;
 
     &::before {
         content: '';
         position: absolute;
-        top: -2rem;
+        top: 0;
         bottom: -6rem;
         left: -100vw;
         right: -100vw;
         background: linear-gradient(to bottom,
             var(--bg-color) 0%,
-            var(--bg-color) 40%,
+            var(--bg-color) 45%,
             color-mix(in srgb, var(--bg-color) 55%, transparent) 65%,
             color-mix(in srgb, var(--bg-color) 15%, transparent) 82%,
             transparent 100%);
@@ -79,7 +80,7 @@
     display: flex;
     gap: 0.85rem;
     margin: 0;
-    margin-top: -0.15rem;
+    margin-top: -0.35rem;
     position: relative;
     z-index: 1;
     a, a:visited {
