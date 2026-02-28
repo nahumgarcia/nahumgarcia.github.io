@@ -5,7 +5,7 @@
   <body>
     <div class="site-outer">
       <header class="site-header">
-        <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}"><img src="{{ '/assets/images/logo.svg' | prepend: site.baseurl }}" alt="{{ site.title }}" class="site-logo"></a></h1>
+        <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
         {% include nav.html %}
       </header>
       <div class="page-content">
@@ -13,5 +13,74 @@
       </div>
       {% include footer.html %}
     </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var tooltip = document.createElement('div');
+      tooltip.className = 'footnote-tooltip';
+      document.body.appendChild(tooltip);
+      var activeLink = null;
+
+      document.querySelectorAll('a.footnote').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (activeLink === this && tooltip.style.display === 'block') {
+            tooltip.style.display = 'none';
+            activeLink = null;
+            return;
+          }
+
+          var id = this.getAttribute('href').slice(1);
+          var fnEl = document.getElementById(id);
+          if (!fnEl) return;
+
+          var clone = fnEl.cloneNode(true);
+          clone.querySelectorAll('.reversefootnote').forEach(function (a) { a.remove(); });
+          tooltip.innerHTML = clone.innerHTML;
+          tooltip.style.display = 'block';
+          tooltip.classList.remove('below');
+
+          var linkRect = this.getBoundingClientRect();
+          var scrollX = window.scrollX || window.pageXOffset;
+          var scrollY = window.scrollY || window.pageYOffset;
+          var ttW = tooltip.offsetWidth;
+          var ttH = tooltip.offsetHeight;
+
+          var left = linkRect.left + scrollX + linkRect.width / 2 - ttW / 2;
+          var top  = linkRect.top  + scrollY - ttH - 12;
+
+          if (left < scrollX + 10) left = scrollX + 10;
+          if (left + ttW > scrollX + window.innerWidth - 10) left = scrollX + window.innerWidth - ttW - 10;
+
+          if (top < scrollY + 10) {
+            top = linkRect.bottom + scrollY + 12;
+            tooltip.classList.add('below');
+          }
+
+          var tailLeft = Math.max(16, Math.min(
+            linkRect.left + scrollX + linkRect.width / 2 - left,
+            ttW - 16
+          ));
+          tooltip.style.setProperty('--tail-left', tailLeft + 'px');
+          tooltip.style.left = left + 'px';
+          tooltip.style.top  = top  + 'px';
+          activeLink = this;
+        });
+      });
+
+      document.addEventListener('click', function () {
+        tooltip.style.display = 'none';
+        activeLink = null;
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          tooltip.style.display = 'none';
+          activeLink = null;
+        }
+      });
+    });
+  </script>
   </body>
 </html>
