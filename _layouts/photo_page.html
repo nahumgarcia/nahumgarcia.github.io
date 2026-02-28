@@ -7,11 +7,6 @@ layout: default
 {% assign total_pages = sorted_photos.size | plus: 0.0 | divided_by: per_page | ceil %}
 {% assign offset = page_num | minus: 1 | times: per_page %}
 
-<nav class="photos-submenu">
-  <a href="{{ site.baseurl }}/photos/" class="submenu-active">Publicaciones</a>
-  <a href="{{ site.baseurl }}/photos/albums/">Álbumes</a>
-</nav>
-
 <section class="photo-feed" id="photo-feed">
   {% for post in sorted_photos limit: per_page offset: offset %}
   <article class="photo-feed-post">

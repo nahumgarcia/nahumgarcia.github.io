@@ -5,8 +5,21 @@
   <body>
     <div class="site-outer">
       <header class="site-header">
-        <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
-        {% include nav.html %}
+        <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+          <span class="logo-wrapper">
+            <img src="{{ '/assets/images/logo-bn.svg' | prepend: site.baseurl }}" alt="{{ site.title }}" class="site-logo site-logo-bn">
+            <img src="{{ '/assets/images/logo-color.svg' | prepend: site.baseurl }}" alt="" class="site-logo site-logo-color">
+          </span>
+        </a></h1>
+        <div class="header-nav">
+          {% include nav.html %}
+          {% if page.url contains '/photos' %}
+          <nav class="photos-submenu">
+            <a href="{{ site.baseurl }}/photos/"{% if page.url == '/photos/' %} class="submenu-active"{% endif %}>Publicaciones</a>
+            <a href="{{ site.baseurl }}/photos/albums/"{% if page.url contains '/albums' %} class="submenu-active"{% endif %}>Álbumes</a>
+          </nav>
+          {% endif %}
+        </div>
       </header>
       <div class="page-content">
         {{ content }}
