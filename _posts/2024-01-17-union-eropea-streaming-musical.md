@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "La Unión Europea al streaming musical: «Se vienen cositas»"
+title: "La Unión Europea podría intervenir en el streaming musical"
 author: Nahúm
 tags:
   - música

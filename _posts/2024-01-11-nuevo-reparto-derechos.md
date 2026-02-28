@@ -1,6 +1,6 @@
 ---
 layout: post
-title: El nuevo reparto de beneficios de Spotify, otro desplante a los artistas
+title: "Otro desplante a los artistas por parte de Spotify"
 author: Nahúm
 tags:
   - música
