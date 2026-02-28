@@ -188,6 +188,15 @@
   line-height: 1.8;
 }
 
+.tag-page-prefix {
+  color: var(--grey);
+}
+
+.tag-page-count {
+  color: var(--grey-dark);
+  margin-bottom: 1.5rem;
+}
+
 .post-meta {
   font-family: $base-font-family;
   color: var(--grey-dark);

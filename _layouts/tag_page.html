@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="home">
+  <h1 class="post-title tag-page-title">
+    <span class="tag-page-prefix">Tema:</span> {{ page.tag }}
+  </h1>
+
+  {% assign count = page.tag_posts | size %}
+  <p class="tag-page-count">{{ count }} entrada{% if count != 1 %}s{% endif %} sobre este tema</p>
+
+  <ul class="post-list">
+    {% for post in page.tag_posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
