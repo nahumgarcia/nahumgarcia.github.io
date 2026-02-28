@@ -158,6 +158,36 @@
   padding-left: 0;
   margin-left: 0;
   list-style: none;
+
+  li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+
+    time {
+      flex-shrink: 0;
+      font-size: $small-font-size;
+    }
+  }
+}
+
+.posts-section-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grey);
+  margin-bottom: 0.75rem;
+}
+
+.posts-tags-section {
+  margin-bottom: 2.5rem;
+}
+
+.posts-tags-list {
+  margin-bottom: 0;
+  line-height: 1.8;
 }
 
 .post-meta {
