@@ -71,7 +71,7 @@ layout: default
         {% if item.tags.size > 0 %}
         <span class="home-feed-tags">
           {% for tag in item.tags %}
-            <a href="{{ site.baseurl }}/tagged/{{ tag | slugify }}/">#{{ tag }}</a>
+            <a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/">#{{ tag }}</a>
           {% endfor %}
         </span>
         {% endif %}

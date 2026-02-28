@@ -3,7 +3,7 @@ module Jekyll
     def initialize(site, base, tag, posts)
       @site  = site
       @base  = base
-      @dir   = File.join('tagged', Jekyll::Utils.slugify(tag))
+      @dir   = File.join('tagged', Jekyll::Utils.slugify(tag, mode: 'latin'))
       @name  = 'index.html'
 
       self.process(@name)

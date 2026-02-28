@@ -25,7 +25,7 @@ title: Etiquetas
 <div class="home">
 	<section>
 		{% for tag in tags %}
-		<h3 class="tag-title" id="{{ tag | slugify }}"># {{ tag }}</h3>
+		<h3 class="tag-title" id="{{ tag | slugify: "latin" }}"># {{ tag }}</h3>
 		<ul class="post-list">
 			{% for post in site.posts %}
 	    {% if post.tags contains tag %}
