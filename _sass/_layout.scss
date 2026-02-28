@@ -167,13 +167,14 @@
 
     time {
       flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
     }
   }
 }
 
 .posts-section-title {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
   color: var(--grey);
   margin-bottom: 0.75rem;
 }
