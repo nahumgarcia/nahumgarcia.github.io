@@ -3,7 +3,7 @@
   {% include head.html %}
 
   <body>
-    <div class="site-outer">
+    <div class="site-header-outer">
       <header class="site-header">
         <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
           <span class="logo-wrapper">
@@ -13,6 +13,8 @@
         </a></h1>
         {% include nav.html %}
       </header>
+    </div>
+    <div class="site-outer">
       <div class="page-content">
         {{ content }}
       </div>
