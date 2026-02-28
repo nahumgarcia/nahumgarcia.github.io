@@ -178,6 +178,10 @@ time {
   display: inline-block;
 }
 
+a:hover time {
+  color: var(--hover-color);
+}
+
 .tag-title {
   font-weight: 600;
   margin-top: 2rem;
