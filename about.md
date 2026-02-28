@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Sobre mí
+permalink: /sobremi/
 ---
 ![Autofoto](/assets/images/about.jpg "Autofoto en San Juan de Luz")
 

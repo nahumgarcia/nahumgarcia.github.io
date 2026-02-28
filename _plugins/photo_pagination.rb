@@ -22,7 +22,7 @@ module Jekyll
     def initialize(site, page_num, total_pages)
       @site = site
       @base = site.source
-      @dir = "photos/page/#{page_num}"
+      @dir = "fotos/page/#{page_num}"
       @name = "index.html"
 
       self.process(@name)

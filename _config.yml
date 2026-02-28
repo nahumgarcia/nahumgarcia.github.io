@@ -13,10 +13,10 @@ permalink: pretty
 collections:
   photos:
     output: true
-    permalink: /photos/post/:name/
+    permalink: /fotos/post/:name/
   galleries:
     output: true
-    permalink: /photos/album/:name/
+    permalink: /fotos/album/:name/
     title: Galerías
 
 plugins:

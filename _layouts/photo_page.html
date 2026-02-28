@@ -2,8 +2,8 @@
 layout: default
 ---
 <nav class="photos-submenu">
-  <a href="{{ site.baseurl }}/photos/" class="submenu-active">Publicaciones</a>
-  <a href="{{ site.baseurl }}/photos/albums/">Álbumes</a>
+  <a href="{{ site.baseurl }}/fotos/" class="submenu-active">Publicaciones</a>
+  <a href="{{ site.baseurl }}/fotos/albums/">Álbumes</a>
 </nav>
 
 {% assign per_page = page.per_page | default: 6 %}
@@ -55,9 +55,9 @@ layout: default
 <nav class="feed-pagination">
   {% if page_num > 1 %}
     {% if page_num == 2 %}
-    <a href="{{ site.baseurl }}/photos/" class="page-link page-prev">&laquo;</a>
+    <a href="{{ site.baseurl }}/fotos/" class="page-link page-prev">&laquo;</a>
     {% else %}
-    <a href="{{ site.baseurl }}/photos/page/{{ page_num | minus: 1 }}/" class="page-link page-prev">&laquo;</a>
+    <a href="{{ site.baseurl }}/fotos/page/{{ page_num | minus: 1 }}/" class="page-link page-prev">&laquo;</a>
     {% endif %}
   {% endif %}
 
@@ -65,14 +65,14 @@ layout: default
     {% if i == page_num %}
     <span class="page-link page-current">{{ i }}</span>
     {% elsif i == 1 %}
-    <a href="{{ site.baseurl }}/photos/" class="page-link">{{ i }}</a>
+    <a href="{{ site.baseurl }}/fotos/" class="page-link">{{ i }}</a>
     {% else %}
-    <a href="{{ site.baseurl }}/photos/page/{{ i }}/" class="page-link">{{ i }}</a>
+    <a href="{{ site.baseurl }}/fotos/page/{{ i }}/" class="page-link">{{ i }}</a>
     {% endif %}
   {% endfor %}
 
   {% if page_num < total_pages %}
-  <a href="{{ site.baseurl }}/photos/page/{{ page_num | plus: 1 }}/" class="page-link page-next">&raquo;</a>
+  <a href="{{ site.baseurl }}/fotos/page/{{ page_num | plus: 1 }}/" class="page-link page-next">&raquo;</a>
   {% endif %}
 </nav>
 {% endif %}
