@@ -1043,7 +1043,8 @@ a:hover time {
   border-top: 1px solid var(--grey-light);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
 
   a, a:visited {
     color: var(--grey);
