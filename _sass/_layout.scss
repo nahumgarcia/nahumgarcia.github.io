@@ -45,25 +45,6 @@
 
 /* Encabezado */
 .site-header-outer {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--bg-color);
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        height: 2.5rem;
-        background: linear-gradient(to bottom,
-            color-mix(in srgb, var(--bg-color) 90%, transparent) 0%,
-            color-mix(in srgb, var(--bg-color) 45%, transparent) 40%,
-            color-mix(in srgb, var(--bg-color) 10%, transparent) 70%,
-            transparent 100%);
-        pointer-events: none;
-    }
 }
 
 .site-header {
@@ -135,7 +116,7 @@
 /* Contenido principal */
 .page-content {
   position: relative;
-  padding: 0.5rem 0 $spacing-unit;
+  padding: $spacing-unit 0 $spacing-unit;
   box-sizing: border-box;
 }
 
