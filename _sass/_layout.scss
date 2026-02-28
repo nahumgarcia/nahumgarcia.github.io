@@ -167,16 +167,13 @@
 
     time {
       flex-shrink: 0;
-      font-size: $small-font-size;
     }
   }
 }
 
 .posts-section-title {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: var(--grey);
   margin-bottom: 0.75rem;
 }
