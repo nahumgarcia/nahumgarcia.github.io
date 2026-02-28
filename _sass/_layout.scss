@@ -167,13 +167,14 @@
 
     time {
       flex-shrink: 0;
+      font-size: $small-font-size;
       font-variant-numeric: tabular-nums;
     }
   }
 }
 
 .posts-section-title {
-  font-size: 1rem;
+  font-size: $small-font-size;
   font-weight: 300;
   color: var(--grey);
   margin-bottom: 0.75rem;
@@ -1041,6 +1042,7 @@ a:hover time {
   padding-top: 1.5rem;
   border-top: 1px solid var(--grey-light);
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 
   a, a:visited {
