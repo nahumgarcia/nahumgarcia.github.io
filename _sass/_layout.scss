@@ -56,7 +56,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        height: 5rem;
+        height: 2.8rem;
         background: linear-gradient(to bottom,
             var(--bg-color) 0%,
             color-mix(in srgb, var(--bg-color) 55%, transparent) 55%,
@@ -73,7 +73,7 @@
     justify-content: space-between;
     max-width: $max-width;
     margin: 0 auto;
-    padding: 0.75rem ($spacing-unit * 0.75) 0.6rem;
+    padding: 0.5rem ($spacing-unit * 0.75) 0.35rem;
 }
 
 
