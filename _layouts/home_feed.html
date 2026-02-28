@@ -67,7 +67,7 @@ layout: default
     {% assign word_count = item.content | number_of_words %}
     <article class="home-feed-item home-feed-post">
       <footer class="photo-feed-meta">
-        <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time>
+        <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time></a>
         {% if item.tags.size > 0 %}
         <span class="home-feed-tags">
           {% for tag in item.tags %}
