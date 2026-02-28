@@ -79,6 +79,8 @@
     display: flex;
     gap: 0.85rem;
     margin: 0;
+    position: relative;
+    z-index: 1;
     a, a:visited {
         text-decoration: none;
         color: var(--grey);
