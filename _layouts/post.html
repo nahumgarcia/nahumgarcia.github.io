@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var nav = document.createElement('nav');
   nav.className = 'toc';
+  var title = document.createElement('p');
+  title.className = 'toc-title';
+  title.textContent = 'Tabla de contenidos';
+  nav.appendChild(title);
   var ul = document.createElement('ul');
 
   headings.forEach(function (h) {
