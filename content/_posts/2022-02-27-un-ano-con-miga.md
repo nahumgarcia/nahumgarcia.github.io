@@ -4,7 +4,6 @@ author: Nahúm
 tags:
 - personal
 - perros
-categories:
 
 ---
 
