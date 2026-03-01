@@ -163,10 +163,7 @@
 }
 
 .toc {
-  border-left: 3px solid var(--grey-light);
-  padding: 0.75rem 1.25rem;
   margin-bottom: 2rem;
-  font-size: $small-font-size;
 
   ol {
     list-style: none;
@@ -179,7 +176,7 @@
     counter-increment: toc-counter;
     &::before {
       content: counter(toc-counter) " \2014\00a0";
-      color: var(--grey);
+      color: var(--text-color);
     }
   }
   li.toc-h3 {
@@ -187,7 +184,7 @@
   }
   a {
     text-decoration: none;
-    color: var(--grey-dark);
+    color: var(--text-color);
     &:hover {
       color: var(--hover-color);
     }
