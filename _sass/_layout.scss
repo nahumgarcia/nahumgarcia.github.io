@@ -283,7 +283,7 @@
   &-footer {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
     gap: 1rem;
   }
 
@@ -413,7 +413,7 @@ a:hover time {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
   opacity: 1;
   z-index: 2;
