@@ -10,14 +10,16 @@ kramdown:
   input: GFM
 permalink: pretty
 
+collections_dir: content
+
 collections:
   photos:
     output: true
     permalink: /fotos/post/:name/
-  galleries:
+  photoalbums:
     output: true
     permalink: /fotos/album/:name/
-    title: Galerías
+    title: Álbumes
 
 plugins:
   - jekyll-sitemap

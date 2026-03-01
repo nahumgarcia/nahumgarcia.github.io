@@ -33,7 +33,7 @@ layout: default
         {% if item.albums.size > 0 %}
         <span class="photo-feed-albums">
           {% for album_slug in item.albums %}
-            {% assign album = site.galleries | where: "slug", album_slug | first %}
+            {% assign album = site.photoalbums | where: "slug", album_slug | first %}
             {% if album %}
               <a href="{{ album.url | prepend: site.baseurl }}">{{ album.title }}</a>{% unless forloop.last %}, {% endunless %}
             {% endif %}

@@ -11,7 +11,7 @@ description: "Todos los álbumes de fotos"
 </nav>
 
 <ul class="gallery-list">
-  {% assign sorted_albums = site.galleries | sort: "date" | reverse %}
+  {% assign sorted_albums = site.photoalbums | sort: "date" | reverse %}
   {% for album in sorted_albums %}
     <li class="gallery-item">
       <a href="{{ album.url | prepend: site.baseurl }}">

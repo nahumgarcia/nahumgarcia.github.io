@@ -289,6 +289,8 @@
 
   &-tags {
     color: var(--grey-dark);
+    min-width: 0;
+    overflow-wrap: break-word;
   }
 
   &-footer .post-reading-time {
