@@ -168,19 +168,19 @@
   margin-bottom: 2rem;
   font-size: $small-font-size;
 
-  .toc-title {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--grey-dark);
-  }
-
-  ul {
+  ol {
     list-style: none;
     margin: 0;
     padding: 0;
+    counter-reset: toc-counter;
   }
   li {
     margin-bottom: 0.2rem;
+    counter-increment: toc-counter;
+    &::before {
+      content: counter(toc-counter) " \2014\00a0";
+      color: var(--grey);
+    }
   }
   li.toc-h3 {
     margin-left: 1rem;

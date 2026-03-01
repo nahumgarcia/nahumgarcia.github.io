@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var headings = content.querySelectorAll('h2, h3');
   if (headings.length === 0) return;
 
+  var title = document.createElement('p');
+  title.className = 'posts-section-title';
+  title.textContent = 'Tabla de contenidos';
+
   var nav = document.createElement('nav');
   nav.className = 'toc';
-  var title = document.createElement('p');
-  title.className = 'toc-title';
-  title.textContent = 'Tabla de contenidos';
-  nav.appendChild(title);
-  var ul = document.createElement('ul');
+  var ol = document.createElement('ol');
 
   headings.forEach(function (h) {
     var li = document.createElement('li');
@@ -50,10 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
     a.href = '#' + h.id;
     a.textContent = h.textContent;
     li.appendChild(a);
-    ul.appendChild(li);
+    ol.appendChild(li);
   });
 
-  nav.appendChild(ul);
+  nav.appendChild(ol);
   content.insertBefore(nav, content.firstChild);
+  content.insertBefore(title, nav);
 });
 </script>
