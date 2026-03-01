@@ -3,6 +3,7 @@ title: Un año con Miga
 author: Nahúm
 tags:
 - personal
+- perros
 categories:
 
 ---
