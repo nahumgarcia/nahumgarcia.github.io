@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "La Unión Europea podría intervenir en el streaming musical"
+title: La Unión Europea podría intervenir en el streaming musical
 author: Nahúm
 tags:
   - música
