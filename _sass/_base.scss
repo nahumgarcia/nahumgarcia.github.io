@@ -91,6 +91,10 @@ h5,
 h6 {
     font-weight: $base-font-weight;
 }
+
+strong, b {
+    font-weight: 700;
+}
 /**
  * Links
  */
