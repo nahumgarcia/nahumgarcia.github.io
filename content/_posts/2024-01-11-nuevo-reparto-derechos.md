@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Otro desplante a los artistas por parte de Spotify"
 author: Nahúm
 tags:

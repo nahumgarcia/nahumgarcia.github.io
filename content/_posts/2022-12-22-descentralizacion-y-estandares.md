@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Descentralización y estándares
 author: Nahúm
  

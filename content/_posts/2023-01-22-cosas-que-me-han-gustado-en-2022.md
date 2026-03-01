@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Cosas que me han gustado en 2022
 author: Nahúm
 tags:
