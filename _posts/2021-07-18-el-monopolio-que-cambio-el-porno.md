@@ -8,7 +8,7 @@ categories:
 ---
 Este artículo se publicó primero en la publicación para adultos Zerospaces, fundada por [Stoya](https://en.wikipedia.org/wiki/Stoya), en mayo de 2021. El sitio ha dejado de estar online.
 
-### De la distribución a la emisión al streaming
+## De la distribución a la emisión al streaming
 
 En junio de 1990 comenzó a emitir en España el primer canal de televisión privado. Canal+, fundado en Francia, era un proyecto muy ambicioso que, comparado con la televisión pública española de la época, parecía que venía del futuro. Tenía programas de entrevistas de calidad, estrenos de películas, y contenido para adultos. El branding del canal ha sido considerado una referencia en el mundo del diseño, por su finura y su estilo rompedor. La suscripción no era barata, unos $20 al mes (unos $40 de hoy) más un depósito de $100 por el decodificador.
 
@@ -24,7 +24,7 @@ En las primeras décadas de internet, el modelo de negocio era sencillo para la 
 
 En 2006, una startup sueca desconocida hasta entonces lanzó su nuevo servicio digital. Spotify acababa de revolucionar la distribución musical poniendo millones de canciones al alcance de cualquiera con una cuenta gratuita. Netflix también sacó su plataforma de vídeo en streaming, y hoy nos parece increíble recordar que antes de eso enviaban las películas en formato físico por correo postal. En esos años también fue cuando comenzamos a hablar de los servicios “freemium”. Servicios con un uso básico gratuito que ofrecían funcionalidades de pago para los usuarios más dedicados. A veces, en este tipo de servicios las cuentas gratuitas generaban ingresos mediante publicidad. Cuando salió Spotify parecía que el mundo había cambiado de repente, y de hecho así fue. Pero la industria del porno fue lenta en adaptarse a este nuevo mundo. Rápidamente, otros aprovecharon las enormes oportunidades que se estaban creando.
 
-### Romper las reglas para ganar el juego
+## Romper las reglas para ganar el juego
 
 Comenzaron a surgir varias plataformas donde cientos de vídeos porno eran subidos y visualizados. Se consideraban sitios para compartir vídeos, lo que significaba que en principio todo el contenido lo subían los usuarios. Eso también significaba que las compañías de esas plataformas no se consideraban responsables directamente por las violaciones de copyright que hubiera entre dichos vídeos, en tanto en cuanto dichas plataformas tuvieran sistemas para denunciar infracciones y borraran los vídeos denunciados. Pero por cada vídeo que la industria era capaz de borrar, aparecían varias copias más. La velocidad con la que los usuarios eran capaces de volver a subir los vídeos era mucho mayor que la capacidad que tenía la industria de detectarlos e intentar eliminarlos de la plataforma, y la situación se hizo incontenible.
 
@@ -38,7 +38,7 @@ Siempre he apreciado el diseño de las cosas, tanto de los objetos como los prod
 
 Un pop-under es un tipo de anuncio que se carga en una ventana debajo del contenido que estás viendo. Una redirección, funciona de forma parecida, pero lo que hace es cargar un anuncio en una página que estás abandonando, y te abre una pestaña nueva con el destino al que te dirigías. Así, la redirección es parecida a un pop-under pero funciona con pestañas en vez de ventanas. El contenido falso consiste en mezclar miniaturas de video y botones falsos con el contenido verdadero, o crear secciones en la web que solo llevan a anuncios.
 
-### El abuso normalizado
+## El abuso normalizado
 
 Se ha abusado tanto de estas técnicas durante años, especialmente en sitios piratas de torrents y demás, que los desarrolladores de navegadores han tratado de incorporar protecciones contra ellos. Tanto es así, que los pop-unders ya sólo funcionan en Firefox, que pasó de ser uno de los principales navegadores a que su uso se reduzca a un 4% de los usuarios a día de hoy. Podríamos decir que las redirecciones son una evolución de los pop-unders, pero son más difíciles de bloquear, ya que cuando se usan con fines lícitos, son un recurso tan necesario en internet que no se puede eliminar sin romper cómo funcionan las páginas web.
 
@@ -48,7 +48,7 @@ Ahora, cabría preguntarse por qué MindGeek sigue haciendo estas cosas cuando M
 
 Es interesante pensar que tanto Pornhub, Spotify, como la mayoría de servicios de envío de comida, han implementado sistemas para dar propina a los creadores de contenido, a los músicos y a los riders. Y aunque permitir dar propinas en sí no es algo malo, hacerlo porque compensas insuficientemente a tu base de trabajadores se siente como una perversión neoliberal desde mi perspectiva eurocentrista. Es como reconocer que su modelo de negocio no funciona, y que mejor lo solucionen sus clientes de forma voluntaria.
 
-### El streaming y la industria
+## El streaming y la industria
 
 Recientemente, Pornhub añadió funcionalidades que ofrecían nuevas formas de ganar dinero a los creadores de contenido. Así, los creadores pueden crear perfiles verificados, a los que los usuarios pueden suscribirse, comprar vídeos sueltos o pagar una cantidad mensual para acceder a contenidos premium. Estas novedades parecen un cambio positivo en la forma en que los creadores ganan dinero en la plataforma, y está claro que hay una nueva generación de actores y actrices que sobreviven gracias a eso, pero no deja de resultar irónico que la misma plataforma que lleva más de una década beneficiándose de vídeos sin licencia, de repente se preocupe por los protagonistas de esos vídeos, especialmente teniendo una posición tan dominante. Ahora, hay que recordar que en 2016 nació la plataforma OnlyFans, que permite a las actrices y actores una forma de distribuir contenido a sus fans mediante un pago mensual. Adaptarse o morir.
 
@@ -56,7 +56,7 @@ Pero el negocio del streaming es difícil en todos lados. Spotify tampoco salvó
 
 Del mismo modo, tampoco es justo decir que el streaming ha sido malo para la música, y aunque el crecimiento de Spotify preocupa a muchos, aún tenemos proyectos como Bandcamp que trabajan directamente con los músicos, combinando las bondades del streaming con la venta de productos físicos. Bandcamp lleva existiendo muchos años, y es económicamente rentable, y es querido y respetado por la mayoría de músicos independientes y net labels. El streaming es simplemente una forma más de distribuir contenido; es el modelo de negocio tras el streaming lo que lo hace mejor o peor. Y Youtube es un buen ejemplo de esto. Con varias generaciones de chavales queriendo ser “Youtubers” en vez de futbolistas o estrellas del rock, la plataforma se ha convertido en un símbolo de fama y dinero.
 
-### Oferta y demanda
+## Oferta y demanda
 
 Volviendo al tema de la experiencia de usuario de estos sitios de porno gratuito, el sistema de etiquetado de los vídeos es otro de los grandes pilares; ya que dichas etiquetas son una de las formas principales de navegar el contenido. Son increíblemente detalladas, conté 110 en la barra lateral de Pornhub, pero hay más de mil en XVideos. Y aunque el uso de etiquetas en sí no es algo malo, la cosa se complica cuando cuando estas se usan para describir los vídeos, pero sobre todo, los atributos físicos de las mujeres que participan en ellos. Podría razonarse que reducir el sexo a los tipos de actos que ocurren en él es una frivolidad, pero cuando estas etiquetas se usan para describir solo a las mujeres, inevitablemente acaba cosificándolas. Y aunque seguramente este es el modo en que un porcentaje de hombres consume porno, es preocupante que esa sea la visión mainstream que se ha normalizado durante años. Peor aún, debería despertar todas las alarmas cuando estos sitios web han permitido etiquetas como “menor de edad” o “grabación oculta” que representan actividades ilegales – y pese a que algunos sitios las esconden de la vista principal, es fácil encontrarlas mediante búsquedas. Permitir que se usen estas etiquetas es terrible, especialmente después de los múltiples reportes de vídeos de abusos sexuales que ha habido durante años. El problema es que aunque algunas plataformas han comenzado a prohibirlos, los usuarios siguen encontrando formas de usarlos cambiando una letra o dos. Al final, el problema no son los tags, es la moderación del contenido, y este es uno de los mayores retos del internet actual.
 
