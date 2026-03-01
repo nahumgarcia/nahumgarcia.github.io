@@ -244,25 +244,33 @@
 
 .post-card {
   border: 1px solid var(--grey-light);
+  border-radius: 4px;
   padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.2s ease;
 
-  &-meta {
-    font-size: $small-font-size;
+  &:hover, &:active {
+    border-color: var(--grey-dark);
+    text-decoration: none;
+  }
+
+  &-date {
     color: var(--grey-dark);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     margin-bottom: 0.4rem;
 
     time { color: var(--grey-dark); }
+  }
 
-    a {
-      color: var(--grey-dark);
-      text-decoration: none;
-      &:hover { color: var(--hover-color); }
-    }
+  &-title-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
   }
 
   &-title {
@@ -270,23 +278,16 @@
     font-weight: 600;
     letter-spacing: -1px;
     line-height: 1.2;
-    margin-bottom: 1rem;
-
-    a {
-      text-decoration: none;
-      color: var(--text-color);
-      &:hover { color: var(--hover-color); }
-    }
   }
 
   &-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 
-    .post-reading-time {
-      font-size: $small-font-size;
-      color: var(--grey-dark);
-    }
+  &-tags {
+    color: var(--grey-dark);
   }
 }
 
@@ -332,6 +333,10 @@ time {
 
 a:hover time {
   color: var(--hover-color);
+}
+
+.post-card:hover time {
+  color: var(--grey-dark);
 }
 
 .tag-title {
@@ -706,7 +711,7 @@ a:hover time {
   background: var(--text-color);
   color: var(--bg-color);
   text-decoration: none;
-  border-radius: 2em;
+  border-radius: 4px;
   &:hover {
     opacity: 0.75;
     text-decoration: none;
@@ -923,11 +928,12 @@ a:hover time {
   font-size: 0.9rem;
   text-decoration: none;
   color: var(--text-color);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
     border-color: var(--grey-dark);
-    background: var(--grey-light);
+    color: var(--hover-color);
+    text-decoration: none;
   }
 }
 

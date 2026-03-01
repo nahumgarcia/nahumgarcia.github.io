@@ -53,14 +53,6 @@ layout: default
 
 {% if total_pages > 1 %}
 <nav class="feed-pagination">
-  {% if page_num > 1 %}
-    {% if page_num == 2 %}
-    <a href="{{ site.baseurl }}/fotos/" class="page-link page-prev">&laquo;</a>
-    {% else %}
-    <a href="{{ site.baseurl }}/fotos/page/{{ page_num | minus: 1 }}/" class="page-link page-prev">&laquo;</a>
-    {% endif %}
-  {% endif %}
-
   {% for i in (1..total_pages) %}
     {% if i == page_num %}
     <span class="page-link page-current">{{ i }}</span>
@@ -70,10 +62,6 @@ layout: default
     <a href="{{ site.baseurl }}/fotos/page/{{ i }}/" class="page-link">{{ i }}</a>
     {% endif %}
   {% endfor %}
-
-  {% if page_num < total_pages %}
-  <a href="{{ site.baseurl }}/fotos/page/{{ page_num | plus: 1 }}/" class="page-link page-next">&raquo;</a>
-  {% endif %}
 </nav>
 {% endif %}
 
