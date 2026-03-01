@@ -228,7 +228,7 @@
 .posts-section-title {
   font-size: $small-font-size;
   font-weight: 300;
-  color: var(--grey);
+  color: var(--grey-dark);
   margin-bottom: 0.75rem;
 }
 
@@ -266,6 +266,14 @@
 time {
   color: var(--grey-dark);
   display: inline-block;
+}
+
+.post-meta-sep {
+  color: var(--grey-light);
+}
+
+.post-reading-time {
+  color: var(--grey-dark);
 }
 
 a:hover time {

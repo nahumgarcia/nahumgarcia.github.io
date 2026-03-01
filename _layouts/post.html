@@ -5,6 +5,9 @@ layout: default
   <header class="post-header">
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>
+      {% assign words = page.content | number_of_words %}
+      {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
+      <span class="post-meta-sep">·</span><span class="post-reading-time">{{ reading_time }} min</span>
       {% assign post = page %}
       {% if post.tags.size > 0 %}
         {% assign tags_content = "" %}
@@ -14,7 +17,7 @@ layout: default
           {% endcapture %}
           {% assign tags_content = tags_content_temp %}
         {% endfor %}
-        <span class="tags" itemprop="tags">{{ tags_content }}</span>
+        <span class="post-meta-sep">·</span><span class="tags" itemprop="tags">{{ tags_content }}</span>
       {% endif %}
     </p>
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
