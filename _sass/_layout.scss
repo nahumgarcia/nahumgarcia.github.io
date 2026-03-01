@@ -147,6 +147,47 @@
     margin-left: 0;
   }
 }
+.post-content {
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.toc {
+  border-left: 3px solid var(--grey-light);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: $small-font-size;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 0.2rem;
+  }
+  li.toc-h3 {
+    margin-left: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: var(--grey-dark);
+    &:hover {
+      color: var(--hover-color);
+    }
+  }
+}
+
 /**
 * Pages
 */
