@@ -147,6 +147,27 @@
     margin-left: 0;
   }
 }
+
+.fotos-duo {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    img { width: 100%; }
+  }
+}
+
 .post-content {
   img + em {
     display: block;
