@@ -1,9 +1,9 @@
 ---
 title: El mundo de los perros no es woke
 author: Nahúm
-tags: 
+image: /assets/images/2026-03-01-callum.jpg
+tags:
 - perros
-
 ---
 ![Callum, por John Emms, 1895](/assets/images/2026-03-01-callum.jpg)
 *Callum, por John Emms, 1895*
