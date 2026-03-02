@@ -1,5 +1,6 @@
 ---
 title: Clint y la Funeral Band
+image: /assets/images/clintfuneralband.jpg
 author: Nahúm
 tags:
   - música

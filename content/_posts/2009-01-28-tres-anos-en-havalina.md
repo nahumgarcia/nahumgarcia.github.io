@@ -1,5 +1,6 @@
 ---
 title: Tres años en Havalina
+image: /assets/images/havalina2.jpeg
 author: Nahúm
 tags: [música]
 categories:

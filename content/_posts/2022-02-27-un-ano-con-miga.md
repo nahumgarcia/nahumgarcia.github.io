@@ -1,5 +1,6 @@
 ---
 title: Un año con Miga
+image: /assets/images/img_9656.jpg
 author: Nahúm
 tags:
 - personal

@@ -1,5 +1,6 @@
 ---
 title: El mirador de La Cornisa
+image: /assets/images/cornisa.jpg
 author: Nahúm
 tags:
   - personal

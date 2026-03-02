@@ -1,5 +1,6 @@
 ---
 title: Cosas que me han gustado en 2022
+image: /assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg
 author: Nahúm
 tags:
   - personal
