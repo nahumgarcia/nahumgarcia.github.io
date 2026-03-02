@@ -5,6 +5,8 @@ tags:
 - perros
 
 ---
+![Callum, por John Emms, 1895](/assets/images/2026-03-01-callum.jpg)
+*Callum, por John Emms, 1895*
 
 Hace unos meses saqué [a mi perra](2022/02/27/un-ano-con-miga) por la mañana para que hiciera sus cosas. La típica vuelta a la manzana que hago cuando tengo 15 minutos escasos entre llamadas. Cuando giraba la esquina para entrar en una plaza, un perro negro de tamaño considerablemente mayor que la mía - que está en un rango digamos pequeño/medio - vino como una flecha y sin darme tiempo a reaccionar, agarró por el cuello con sus mandíbulas a Miga y la zarandeó violentamente. La pobre gritó aterrada y después quedó temblorosa, dolorida y decaída por varios días. En su cuello heridas con sangre de los colmillos del otro perro. Tras el altercado, tuve una discusión absurda con su dueño que por un lado le quitaba hierro al tema y por otro decía “denúnciame si quieres”. 
 
@@ -20,6 +22,9 @@ Hay pocas infracciones que vea más recurrentemente que esta. Prácticamente tod
 
 **3. "No es agresivo, sólo está jugando".**  
 Esta es seguramente la peor de las todas, el origen de todos los males. Esta es la que hace que todas las demás sean peor. Hay un desconocimiento tremendo de la psicología de los perros y se considera que jugar de forma agresiva es la única y auténtica forma de ser del can.”Son animales, ellos juegan así”. Por ello, todos los otros perros tienen que adaptarse o quedarse en casa. Cuando hay uno o dos así en un parque de perros, se acaba la diversión para el resto. Y si te cruzas uno así suelto por la calle, puede ser peligroso para tu mascota. Y ojo con sobre proteger a tu perro, que te van a decir que eres tú el que está causando que sea asustadizo. ¿Os suena? Cultura machista humana aplicada a los animales. ¿O quizá es al revés?
+
+**Bola extra, sobre la pintura de Callum.**  
+Para limpiar un poco el paladar, la bonita historia del cuadro que ilustra el artículo. En 1919, James Cowan Smith donó algo más de 50.000 libras esterlinas a las Galerías Nacionales de Escocia. En aquella época era un montón de dinero. Como condición solo puso dos cosas: que cuidaran de su perro Fury tras su muerte, y que pusieran ese cuadro de su perro anterior, Callum, pintado por John Emms. Aún se puede ver a Callum en las paredes de este preciado museo de Edimburgo, donde se ha convertido en un sello de identidad. El Reina Sofía podrá tener el Guernica, pero las Galerías Nacionales tienen al perrito Callum. 
 
 [^1]: Que me lo digan a mí, que mi perra no tuvo socialización de pequeña y de ahí le vienen los problemas que tiene.
 [^2]: Al contrario que mi perra que tardaría aproximadamente 5 segundos en acabar bajo las ruedas de un coche.
