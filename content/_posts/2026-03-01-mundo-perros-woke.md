@@ -5,7 +5,6 @@ tags:
 - perros
 
 ---
-![](/assets/images/2026-03-01-perro-pixel.jpg)
 
 Hace unos meses saqué [a mi perra](2022/02/27/un-ano-con-miga) por la mañana para que hiciera sus cosas. La típica vuelta a la manzana que hago cuando tengo 15 minutos escasos entre llamadas. Cuando giraba la esquina para entrar en una plaza, un perro negro de tamaño considerablemente mayor que la mía - que está en un rango digamos pequeño/medio - vino como una flecha y sin darme tiempo a reaccionar, agarró por el cuello con sus mandíbulas a Miga y la zarandeó violentamente. La pobre gritó aterrada y después quedó temblorosa, dolorida y decaída por varios días. En su cuello heridas con sangre de los colmillos del otro perro. Tras el altercado, tuve una discusión absurda con su dueño que por un lado le quitaba hierro al tema y por otro decía “denúnciame si quieres”. 
 
