@@ -354,6 +354,9 @@
     color: var(--grey-dark);
     text-decoration: none;
   }
+  a:hover {
+    color: var(--hover-color);
+  }
 }
 time {
   color: var(--grey-dark);
