@@ -3,7 +3,7 @@ title: Los gastos de gestión
 author: Nahúm
 tags:
   - música
-  - industria_musical
+  - industria musical
 categories:
 ---
 El otro día fui al cine. Nada remarcable. Como a casi todo el mundo, de vez en cuando me gusta ir. El caso es que el otro día me surgió la duda de si los gastos de gestión que se suelen cobrar cuando compras entradas online, los pagamos íntegramente los usuarios o si se divide el coste también con el cine/sala/productora/etc., ya que las empresas intermediarias como entradas.com también les dan servicio a ellos y no solo a los asistentes, gestionando las ventas, y además con servicios de promoción, etc.

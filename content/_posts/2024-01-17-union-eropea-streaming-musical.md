@@ -3,7 +3,7 @@ title: La Unión Europea podría intervenir en el streaming musical
 author: Nahúm
 tags:
   - música
-  - industria_musical
+  - industria musical
   - streaming
 categories:
 ---

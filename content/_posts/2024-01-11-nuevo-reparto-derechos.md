@@ -3,7 +3,7 @@ title: "Otro desplante a los artistas por parte de Spotify"
 author: Nahúm
 tags:
   - música
-  - industria_musical
+  - industria musical
   - streaming
 categories:
 ---

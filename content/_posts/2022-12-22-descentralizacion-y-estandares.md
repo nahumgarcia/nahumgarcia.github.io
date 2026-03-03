@@ -4,7 +4,7 @@ author: Nahúm
  
 tags:
 - fediverso
-- redes_sociales
+- redes sociales
 categories:
 
 ---
