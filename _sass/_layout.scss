@@ -728,6 +728,19 @@ a:hover time {
 .home-feed-post-body {
   margin-bottom: 0.5rem;
 
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
   img {
     width: calc(100% + 202px);
     max-width: none;
