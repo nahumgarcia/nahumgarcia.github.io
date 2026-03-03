@@ -71,9 +71,7 @@ layout: default
         <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %d, %Y" }}</time></a>
         <span class="post-meta-sep">•</span><span class="post-reading-time">{{ reading_time }} min</span>
         {% if item.tags.size > 0 %}
-        <span class="post-meta-sep">•</span><span class="home-feed-tags">
-          {% for tag in item.tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
-        </span>
+        <span class="post-meta-sep">•</span><span class="home-feed-tags">{% for tag in item.tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
         {% endif %}
       </footer>
       <a href="{{ item.url | prepend: site.baseurl }}" class="home-feed-post-link">
