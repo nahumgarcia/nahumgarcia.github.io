@@ -4,7 +4,7 @@ author: Nahúm
 tags:
 - internet
 - streaming
-categories:
+toc: true 
 ---
 Este artículo se publicó primero en la publicación para adultos Zerospaces, fundada por [Stoya](https://en.wikipedia.org/wiki/Stoya), en mayo de 2021. El sitio ha dejado de estar online.
 

@@ -24,6 +24,7 @@ layout: default
   {% endif %}
 </article>
 
+{% if page.toc %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var content = document.querySelector('.post-content');
@@ -54,3 +55,4 @@ document.addEventListener('DOMContentLoaded', function () {
   content.insertBefore(title, nav);
 });
 </script>
+{% endif %}
