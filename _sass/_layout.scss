@@ -876,7 +876,7 @@ a:hover time {
 .photo-feed-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 10px;
 
   a {
     display: block;
@@ -1000,7 +1000,7 @@ a:hover time {
 .photo-post-photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 10px;
 
   a {
     display: block;
