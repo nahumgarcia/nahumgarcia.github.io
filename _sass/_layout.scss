@@ -1004,7 +1004,7 @@ a:hover time {
 
 .photo-post-photos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 6px;
 
   a {
@@ -1021,11 +1021,6 @@ a:hover time {
     object-fit: cover;
     display: block;
     cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  a:hover img {
-    transform: scale(1.03);
   }
 }
 
@@ -1117,7 +1112,9 @@ a:hover time {
     font-size: 0.8rem;
   }
 
-  .photo-post-photos,
+  .photo-post-photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .photo-feed-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
