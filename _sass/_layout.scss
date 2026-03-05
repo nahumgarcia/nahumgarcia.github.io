@@ -1154,14 +1154,14 @@ a.footnote {
   top: -0.2em;
   margin-left: 0.2em;
   line-height: 1;
-  padding: 0.25em 0.55em;
+  padding: 0.25em 0.8em;
 
   &::before {
     content: '•••';
     font-size: 0.6rem;
     color: var(--bg-color);
     font-weight: 400;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.3em;
   }
 
   &:hover {
