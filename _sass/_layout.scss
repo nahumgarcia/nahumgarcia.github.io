@@ -1147,22 +1147,21 @@ a.footnote {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background: var(--grey-dark);
+  background: var(--text-color);
+  border: 1px solid rgba(0,0,0,0.15);
   font-size: 0;
   text-decoration: none;
   position: relative;
   top: -0.4em;
   margin-left: 0.25em;
   line-height: 1;
-  padding: 0.45em 0.85em;
+  padding: 0.4em 0.75em;
 
   &::before {
-    content: '•••';
-    font-size: 0.75rem;
+    content: '• • •';
+    font-size: 0.65rem;
     color: var(--bg-color);
     font-weight: 400;
-    letter-spacing: 0.35em;
-    margin-right: -0.35em;
   }
 
   &:hover {
