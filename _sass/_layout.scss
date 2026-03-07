@@ -927,9 +927,9 @@ a:hover time {
 
 .photo-feed-caption {
   margin-top: 0.75rem;
-  font-size: 0.95rem;
+  font-size: $base-font-size;
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: $base-line-height;
 }
 
 .photo-feed-meta {
@@ -1022,9 +1022,10 @@ a:hover time {
 .photo-post-caption {
   margin-top: 1rem;
   max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  text-align: left;
 }
 
 .photo-post-meta {
