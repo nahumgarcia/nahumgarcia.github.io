@@ -2,6 +2,8 @@
 title: La música y el recuerdo
 author: Nahúm
 tags:
+  - música
+  - streaming
 categories:
 ---
 

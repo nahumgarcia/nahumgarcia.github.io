@@ -2,6 +2,7 @@
 title: Arroz blanco perfecto
 author: Nahúm
 tags:
+  - cocina
 categories:
 ---
 Siempre le he puesto ojitos a las arroceras eléctricas, aparte de que son preciosas, son uno de esos aparatos que inspiran. El otro día Alberto compartió en [su Tumblr](https://albertorrromero.tumblr.com/) [un artículo](https://www.theatlantic.com/technology/archive/2023/04/rice-cooker-design-history/673795/) que había leído en abril y me recordó por qué me gustan tanto. Solo hacen una cosa, pero la hacen a la perfección. El motivo por el que nunca he comprado una es que ocupan bastante espacio y no como tanto arroz blanco como para justificar perder ese espacio en mi encimera o tener otro cacharro pululando por ahí. Y aunque ahora como mucho más arroz que antes, suelen dos o tres veces por semana como mucho.

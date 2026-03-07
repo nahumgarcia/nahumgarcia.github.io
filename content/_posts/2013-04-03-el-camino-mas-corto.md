@@ -3,7 +3,8 @@ title: El camino más corto
 author: Nahúm
  
 tags:
-
+  - personal
+  - madrid
 categories:
 
 ---

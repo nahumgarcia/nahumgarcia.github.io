@@ -3,7 +3,8 @@ title: El sonido y la memoria
 author: Nahúm
  
 tags:
-
+  - personal
+  - música
 categories:
 
 ---

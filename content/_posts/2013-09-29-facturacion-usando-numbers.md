@@ -3,7 +3,7 @@ title: Facturación usando Numbers
 author: Nahúm
  
 tags:
-
+  - tecnología
 categories:
 
 ---
