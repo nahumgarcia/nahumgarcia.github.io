@@ -1021,7 +1021,9 @@ a:hover time {
 
 .photo-post-caption {
   margin-top: 1rem;
-  line-height: 1.6;
+  max-width: $max-width;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 .photo-post-meta {
