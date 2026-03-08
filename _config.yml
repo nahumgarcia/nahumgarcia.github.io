@@ -24,7 +24,7 @@ collections:
 plugins:
   - jekyll-sitemap
 
-exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script"]
+exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script", "templates", "SITE-NOTES.md"]
 
 defaults:
   - scope:
