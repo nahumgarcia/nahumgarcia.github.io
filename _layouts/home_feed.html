@@ -57,7 +57,7 @@ layout: default
       </div>
       {% if item.content != "" %}
       <div class="photo-feed-caption">
-        {{ item.content | strip_html | truncate: 150 }}
+        {{ item.content }}
       </div>
       {% endif %}
     </article>
