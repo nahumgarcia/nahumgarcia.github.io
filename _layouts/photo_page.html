@@ -16,20 +16,7 @@ layout: default
   {% for post in sorted_photos limit: per_page offset: offset %}
   <article class="photo-feed-post">
     <footer class="photo-feed-meta">
-      <a href="{{ post.url | prepend: site.baseurl }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></a>
-      {% if post.albums.size > 0 %}
-      <span class="photo-feed-albums">
-        {% for album_slug in post.albums %}
-          {% assign album = site.photoalbums | where: "slug", album_slug | first %}
-          {% if album %}
-            <a href="{{ album.url | prepend: site.baseurl }}">{{ album.title }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endif %}
-        {% endfor %}
-      </span>
-      {% endif %}
-      {% if post.photos.size > 1 %}
-      <span class="photo-feed-count">{{ post.photos.size }} fotos</span>
-      {% endif %}
+      <a href="{{ post.url | prepend: site.baseurl }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></a>{% if post.albums.size > 0 %}<span class="post-meta-sep">•</span><span class="photo-feed-albums">{% for album_slug in post.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}">{{ album.title }}</a>{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>{% endif %}{% if post.photos.size > 1 %}<span class="post-meta-sep">•</span><span class="photo-feed-count">{{ post.photos.size }} fotos</span>{% endif %}
     </footer>
     <div class="photo-feed-grid{% if post.photos.size == 1 %} single-photo{% endif %}">
       {% for photo in post.photos %}
