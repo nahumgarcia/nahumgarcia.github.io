@@ -702,8 +702,10 @@ a:hover time {
 }
 
 .home-feed-photo .photo-feed-caption,
-.home-feed-photo .photo-feed-meta {
-  max-width: 620px;
+.home-feed-photo .photo-feed-meta,
+.photo-feed-post .photo-feed-caption,
+.photo-feed-post .photo-feed-meta {
+  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1029,6 +1031,9 @@ a:hover time {
 }
 
 .photo-post-meta {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0.5rem;
   color: var(--grey-dark);
   display: flex;

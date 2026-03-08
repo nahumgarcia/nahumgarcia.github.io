@@ -44,7 +44,7 @@ layout: default
     </div>
     {% if post.content != "" %}
     <div class="photo-feed-caption">
-      {{ post.content | strip_html | truncate: 150 }}
+      {{ post.content }}
     </div>
     {% endif %}
   </article>
