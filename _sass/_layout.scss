@@ -325,7 +325,7 @@
   &-footer .post-reading-time {
     flex-shrink: 0;
     white-space: nowrap;
-    color: var(--grey-dark);
+    color: var(--grey);
   }
 }
 
@@ -369,7 +369,7 @@ time {
 }
 
 .post-reading-time {
-  color: var(--grey-dark);
+  color: var(--grey);
 }
 
 a:hover time {

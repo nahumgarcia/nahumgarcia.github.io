@@ -1,6 +1,6 @@
 ---
 date: 2026-03-08
-albums: Madrid
+albums: [madrid]
 photos:
 - file: "2026-03-08-las-vistillas.jpg" 
   alt: "Restaurante Tres Cerditos, de dumplings"

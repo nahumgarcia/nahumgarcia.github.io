@@ -64,9 +64,9 @@ layout: default
       <a href="{{ item.url | prepend: site.baseurl }}" class="home-feed-post-link">
         <h2 class="home-feed-post-title">{{ item.title }}</h2>
       </a>
-      {% if word_count > 1500 %}
+      {% if word_count > 400 %}
       <div class="home-feed-post-body">
-        {{ item.content | strip_html | truncatewords: 300 }}
+        {{ item.content | truncatewords: 300 }}
         <a href="{{ item.url | prepend: site.baseurl }}" class="read-more">Leer más &rarr;</a>
       </div>
       {% else %}
