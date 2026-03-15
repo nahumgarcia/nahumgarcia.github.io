@@ -7,3 +7,5 @@ photos:
   - file: "clintfuneralband.jpg"
     alt: "Foto de Clint por Nahúm García"
 ---
+
+**Clint y la Funeral Band**

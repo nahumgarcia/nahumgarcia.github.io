@@ -28,25 +28,29 @@ layout: default
     {% if item.collection == "photos" %}
     {%- comment -%} Photo post {%- endcomment -%}
     <article class="home-feed-item home-feed-photo">
-      <footer class="item-meta">
-        <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>{% if item.photos.size > 1 %}<span class="post-meta-sep">•</span><span class="photo-feed-count">{{ item.photos.size }} fotos</span>{% endif %}{% if item.albums.size > 0 %}<span class="item-meta-tags">{% for album_slug in item.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</span>{% endif %}
-      </footer>
-      <div class="photo-feed-grid{% if item.photos.size == 1 %} single-photo{% endif %}">
-        {% for photo in item.photos %}
-        <a href="#" class="feed-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
+      {% assign first_photo = item.photos | first %}
+      <div class="photo-feed-grid single-photo">
+        <a href="{{ item.url | prepend: site.baseurl }}" class="feed-photo" data-full="{{ site.baseurl }}/assets/photos/{{ first_photo.file }}" data-alt="{{ first_photo.alt | default: first_photo.file }}">
           <img
-            src="{{ site.baseurl }}/assets/photos/{{ photo.file }}"
-            alt="{{ item.alt | default: photo.file }}"
+            src="{{ site.baseurl }}/assets/photos/{{ first_photo.file }}"
+            alt="{{ first_photo.alt | default: first_photo.file }}"
             loading="lazy"
           >
         </a>
-        {% endfor %}
       </div>
       {% if item.content != "" %}
       <div class="photo-caption">
         {{ item.content }}
       </div>
       {% endif %}
+      <footer class="item-meta-footer">
+        <div class="item-meta">
+          <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>{% if item.photos.size > 1 %}<span class="post-meta-sep">•</span><a href="{{ item.url | prepend: site.baseurl }}" class="photo-feed-count">{{ item.photos.size }} fotos</a>{% endif %}
+        </div>
+        {% if item.albums.size > 0 %}
+        <div class="item-meta-tags">{% for album_slug in item.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</div>
+        {% endif %}
+      </footer>
     </article>
 
     {% else %}
@@ -54,13 +58,11 @@ layout: default
     {% assign word_count = item.content | number_of_words %}
     {% assign reading_time = word_count | divided_by: 200 | at_least: 1 %}
     <article class="home-feed-item home-feed-post">
-      <footer class="item-meta">
-        <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>
-        <span class="post-meta-sep">•</span><span class="post-reading-time">{{ reading_time }} min</span>
-        {% if item.tags.size > 0 %}
-        <span class="item-meta-tags">{% for tag in item.tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/" class="tag-pill">{{ tag }}</a>{% endfor %}</span>
-        {% endif %}
-      </footer>
+      {% if reading_time > 5 %}
+      <div class="item-meta">
+        <span class="post-reading-time">{{ reading_time }} minutos de lectura</span>
+      </div>
+      {% endif %}
       <a href="{{ item.url | prepend: site.baseurl }}" class="home-feed-post-link">
         <h2 class="home-feed-post-title">{{ item.title }}</h2>
       </a>
@@ -68,13 +70,21 @@ layout: default
       {% if word_count > 400 %}
       <div class="home-feed-post-body">
         {{ item.content | truncatewords: 300 }}
-        <a href="{{ item.url | prepend: site.baseurl }}" class="read-more">Leer más &rarr;</a>
       </div>
+      <a href="{{ item.url | prepend: site.baseurl }}" class="read-more">Leer más &rarr;</a>
       {% else %}
       <div class="home-feed-post-body">
         {{ item.content }}
       </div>
       {% endif %}
+      <footer class="item-meta-footer">
+        <div class="item-meta">
+          <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>
+        </div>
+        {% if item.tags.size > 0 %}
+        <div class="item-meta-tags">{% for tag in item.tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/" class="tag-pill">{{ tag }}</a>{% endfor %}</div>
+        {% endif %}
+      </footer>
     </article>
     {% endif %}
   {% endfor %}

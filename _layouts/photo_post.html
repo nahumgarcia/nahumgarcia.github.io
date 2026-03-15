@@ -2,10 +2,6 @@
 layout: default
 ---
 <article class="photo-post">
-  <header class="item-meta photo-post-header">
-    <time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>{% if page.photos.size > 1 %}<span class="post-meta-sep">•</span><span class="photo-feed-count">{{ page.photos.size }} fotos</span>{% endif %}{% if page.albums.size > 0 %}<span class="item-meta-tags">{% for album_slug in page.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</span>{% endif %}
-  </header>
-
   <div class="photo-post-photos{% if page.photos.size == 1 %} single-photo{% endif %}">
     {% for photo in page.photos %}
     <a href="#" class="post-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
@@ -23,6 +19,15 @@ layout: default
     {{ content }}
   </div>
   {% endif %}
+
+  <footer class="item-meta-footer photo-post-header">
+    <div class="item-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>{% if page.photos.size > 1 %}<span class="post-meta-sep">•</span><span class="photo-feed-count">{{ page.photos.size }} fotos</span>{% endif %}
+    </div>
+    {% if page.albums.size > 0 %}
+    <div class="item-meta-tags">{% for album_slug in page.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</div>
+    {% endif %}
+  </footer>
 </article>
 
 {% include lightbox.html selector=".photo-post-photos" photo_selector=".post-photo" %}

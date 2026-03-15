@@ -204,6 +204,13 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--grey-light);
 
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
   ol {
     list-style: none;
     margin: 0;
@@ -385,11 +392,38 @@ time {
   color: var(--grey-light);
 }
 
-.item-meta-tags {
-  margin-left: 0.35rem;
-  display: inline-flex;
+.item-meta-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.item-meta-footer .item-meta {
+  margin: 0 !important;
+}
+
+.item-meta-footer .item-meta-tags {
+  display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.item-meta-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.post-footer {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
 }
 
 .post-reading-time {
@@ -411,6 +445,7 @@ a:hover time {
   font-size: 2rem;
   letter-spacing: -1px;
   line-height: 1.2;
+  margin-top: 0.4rem;
   margin-bottom: 0.1rem;
   font-weight: 600;
 
@@ -422,13 +457,13 @@ a:hover time {
 .post-subtitle {
   font-style: italic;
   color: var(--grey-dark);
-  margin-top: 0 !important;
-  margin-bottom: 2rem;
+  margin-top: 0.15rem !important;
+  margin-bottom: 0.25rem;
   line-height: 1.4;
 }
 
 .post-content {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .post-card .post-subtitle {
@@ -733,7 +768,19 @@ a:hover time {
 }
 
 .home-feed-item {
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
+
+  &::after {
+    content: "";
+    display: block;
+    max-width: $max-width;
+    margin: 0.75rem auto 0;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
 }
 
 .home-feed-post {
@@ -743,16 +790,24 @@ a:hover time {
 
   > .item-meta {
     margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
-.home-feed-photo .photo-caption,
+.home-feed-photo,
+.photo-feed-post {
+  .photo-caption,
+  .item-meta-footer {
+    max-width: $max-width;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
 .home-feed-photo .item-meta,
-.photo-feed-post .photo-caption,
 .photo-feed-post .item-meta {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
 }
 
 .home-feed-post-link {
@@ -765,7 +820,7 @@ a:hover time {
 
 
 .home-feed-post-body {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.5rem;
 
   img {
@@ -794,6 +849,7 @@ a:hover time {
     text-decoration: none;
   }
 }
+
 
 
 /* ===== Albums scroll horizontal ===== */
@@ -889,53 +945,52 @@ a:hover time {
 }
 
 .photo-feed-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  column-count: 3;
+  column-gap: 10px;
 
   a {
     display: block;
     overflow: hidden;
     border-radius: 4px;
-    aspect-ratio: 1;
+    break-inside: avoid;
+    margin-bottom: 10px;
   }
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     cursor: pointer;
   }
 }
 
-/* Single photo: full width, no grid */
+/* Single photo: full width, no columns */
 .photo-feed-grid.single-photo {
-  display: block;
+  column-count: 1;
 
   a {
     aspect-ratio: auto;
     border-radius: 4px;
+    margin-bottom: 0;
   }
 
   img {
     height: auto;
-    object-fit: contain;
     border-radius: 4px;
   }
 }
 
 .photo-post-photos.single-photo {
-  display: block;
+  column-count: 1;
 
   a {
     aspect-ratio: auto;
     border-radius: 4px;
+    margin-bottom: 0;
   }
 
   img {
     height: auto;
-    object-fit: contain;
     border-radius: 4px;
   }
 }
@@ -995,22 +1050,21 @@ a:hover time {
 }
 
 .photo-post-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  column-count: 3;
+  column-gap: 10px;
 
   a {
     display: block;
     overflow: hidden;
     border-radius: 4px;
-    aspect-ratio: 1;
     text-decoration: none;
+    break-inside: avoid;
+    margin-bottom: 10px;
   }
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     cursor: pointer;
   }
@@ -1094,10 +1148,10 @@ a:hover time {
   }
 
   .photo-post-photos {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
   .photo-feed-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-count: 2;
   }
 }
 

@@ -15,9 +15,6 @@ layout: default
 <section class="photo-feed" id="photo-feed">
   {% for post in sorted_photos limit: per_page offset: offset %}
   <article class="photo-feed-post">
-    <footer class="item-meta">
-      <a href="{{ post.url | prepend: site.baseurl }}"><time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time></a>{% if post.photos.size > 1 %}<span class="post-meta-sep">•</span><span class="photo-feed-count">{{ post.photos.size }} fotos</span>{% endif %}{% if post.albums.size > 0 %}<span class="item-meta-tags">{% for album_slug in post.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</span>{% endif %}
-    </footer>
     <div class="photo-feed-grid{% if post.photos.size == 1 %} single-photo{% endif %}">
       {% for photo in post.photos %}
       <a href="#" class="feed-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
@@ -34,6 +31,14 @@ layout: default
       {{ post.content }}
     </div>
     {% endif %}
+    <footer class="item-meta-footer">
+      <div class="item-meta">
+        <a href="{{ post.url | prepend: site.baseurl }}"><time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time></a>{% if post.photos.size > 1 %}<span class="post-meta-sep">•</span><a href="{{ post.url | prepend: site.baseurl }}" class="photo-feed-count">{{ post.photos.size }} fotos</a>{% endif %}
+      </div>
+      {% if post.albums.size > 0 %}
+      <div class="item-meta-tags">{% for album_slug in post.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</div>
+      {% endif %}
+    </footer>
   </article>
   {% endfor %}
 </section>
