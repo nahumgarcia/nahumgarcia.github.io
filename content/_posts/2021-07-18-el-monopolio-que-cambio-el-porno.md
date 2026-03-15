@@ -1,5 +1,6 @@
 ---
 title: El monopolio que cambió el porno
+subtitle: "Cómo una empresa canadiense conquistó la pornografía online y lo cambió todo para siempre."
 author: Nahúm
 tags:
 - internet

@@ -1,5 +1,6 @@
 ---
 title: Adiós Jerez
+subtitle: "Dos años de calles estrechas, amontillado y atardeceres cerca de Sanlúcar."
 author: Nahúm
 tags:
   - personal

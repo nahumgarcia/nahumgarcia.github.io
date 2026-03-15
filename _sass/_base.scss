@@ -28,6 +28,10 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     overflow-x: clip;
+
+    @media screen and (min-width: 601px) {
+        font-size: 20px;
+    }
 }
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -101,6 +105,7 @@ strong, b {
 a {
     color: var(--link-color);
     text-decoration: underline;
+    transition: color 0.2s ease;
 
     &:hover {
         text-decoration: underline;
