@@ -1,6 +1,6 @@
 ---
 title: Música y videojuegos
-subtitle: "Cómo a veces lo que hacemos mientras escuchamos música queda asociado a las canciones."
+subtitle: "Cómo a veces lo que hacemos mientras escuchamos música queda asociado a las canciones"
 author: Nahúm
 tags:
   - personal

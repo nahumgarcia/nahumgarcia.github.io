@@ -1,6 +1,6 @@
 ---
 title: Tinder y el patetismo
-subtitle: "Cuando los intereses cruzados hacen la experiencia de encontrar pareja un infierno."
+subtitle: "Cuando los intereses cruzados hacen la experiencia de encontrar pareja un infierno"
 author: Nahúm
 tags:
   - tecnología

@@ -1,6 +1,6 @@
 ---
 title: La pantomima de Pono
-subtitle: "El placebo de la calidad de sonido."
+subtitle: "El placebo de la calidad de sonido"
 author: Nahúm
 tags:
   - música

@@ -1,6 +1,6 @@
 ---
 title: Asistentes virtuales
-subtitle: "Ningún asistente puede entender realmente las motivaciones de un ser humano."
+subtitle: "Ningún asistente puede entender realmente las motivaciones de un ser humano"
 author: Nahúm
 tags:
   - tecnología

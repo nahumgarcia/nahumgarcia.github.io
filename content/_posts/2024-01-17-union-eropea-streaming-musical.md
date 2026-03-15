@@ -1,6 +1,6 @@
 ---
 title: La Unión Europea podría intervenir en el streaming musical
-subtitle: "Aunque no voy a esperar sentado."
+subtitle: "Aunque no voy a esperar sentado"
 author: Nahúm
 tags:
   - música

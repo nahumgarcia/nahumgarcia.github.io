@@ -1,6 +1,6 @@
 ---
 title: Los gastos de gestión
-subtitle: "Un abuso a los consumidores, que va en aumento."
+subtitle: "Un abuso a los consumidores, que va en aumento"
 author: Nahúm
 tags:
   - música

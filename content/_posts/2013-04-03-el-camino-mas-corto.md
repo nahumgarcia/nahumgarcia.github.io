@@ -1,6 +1,6 @@
 ---
 title: El camino más corto
-subtitle: "A veces, el camino más largo se hace más corto si es más agradable."
+subtitle: "A veces, el camino más largo se hace más corto si es más agradable"
 author: Nahúm
  
 tags:

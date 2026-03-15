@@ -1,6 +1,6 @@
 ---
 title: El mirador de La Cornisa
-subtitle: "Un incidente que convirtió un rincón de Madrid en algo más bello."
+subtitle: "Un incidente que convirtió un rincón de Madrid en algo más bello"
 image: /assets/images/cornisa.jpg
 author: Nahúm
 tags:
