@@ -5,9 +5,10 @@ author: Nahúm
 tags:
 - internet
 - streaming
-toc: true 
 ---
 Este artículo se publicó primero en la publicación para adultos Zerospaces, fundada por [Stoya](https://en.wikipedia.org/wiki/Stoya), en mayo de 2021. El sitio ha dejado de estar online.
+
+<div id="toc-marker"></div>
 
 ## De la distribución a la emisión al streaming
 

@@ -25,17 +25,14 @@ layout: default
   {% endif %}
 </article>
 
-{% if page.toc %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var content = document.querySelector('.post-content');
   if (!content) return;
+  var marker = content.querySelector('#toc-marker');
+  if (!marker) return;
   var headings = content.querySelectorAll('h2, h3');
   if (headings.length === 0) return;
-
-  var title = document.createElement('p');
-  title.className = 'posts-section-title';
-  title.textContent = 'Tabla de contenidos';
 
   var nav = document.createElement('nav');
   nav.className = 'toc';
@@ -52,8 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   nav.appendChild(ol);
-  content.insertBefore(nav, content.firstChild);
-  content.insertBefore(title, nav);
+  marker.replaceWith(nav);
 });
 </script>
-{% endif %}
