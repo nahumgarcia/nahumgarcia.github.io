@@ -3,22 +3,28 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    {% assign words = page.content | number_of_words %}
+    {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
+    {% if reading_time > 5 %}
     <p class="item-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% include fecha.html date=page.date %}</time>
-      {% assign words = page.content | number_of_words %}
-      {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
-      <span class="post-meta-sep">•</span><span class="post-reading-time">{{ reading_time }} min</span>
-      {% assign post = page %}
-      {% if post.tags.size > 0 %}
-        <span class="item-meta-tags" itemprop="tags">{% for post_tag in post.tags %}<a href="{{ site.baseurl }}/tagged/{{ post_tag | slugify: "latin" }}/" class="tag-pill">{{ post_tag }}</a>{% endfor %}</span>
-      {% endif %}
+      <span class="post-reading-time">{{ reading_time }} minutos de lectura</span>
     </p>
+    {% endif %}
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
   </header>
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
+  {% assign post = page %}
+  <footer class="post-footer item-meta-footer">
+    <div class="item-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% include fecha.html date=page.date %}</time>
+    </div>
+    {% if post.tags.size > 0 %}
+      <div class="item-meta-tags" itemprop="tags">{% for post_tag in post.tags %}<a href="{{ site.baseurl }}/tagged/{{ post_tag | slugify: "latin" }}/" class="tag-pill">{{ post_tag }}</a>{% endfor %}</div>
+    {% endif %}
+  </footer>
 
   {% if page.comment %}
     {% include disqus.html %}
@@ -36,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var nav = document.createElement('nav');
   nav.className = 'toc';
+  var title = document.createElement('h3');
+  title.textContent = 'Contenidos';
+  nav.appendChild(title);
   var ol = document.createElement('ol');
 
   headings.forEach(function (h) {
