@@ -1,5 +1,6 @@
 ---
 title: Conveniencia vs control
+subtitle: "La eterna batalla entre ceder datos a cambio de comodidad."
 author: Nahúm
 tags:
   - tecnología

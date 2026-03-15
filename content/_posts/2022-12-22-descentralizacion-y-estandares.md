@@ -1,5 +1,6 @@
 ---
 title: Descentralización y estándares
+subtitle: "Nostalgia e idealismo vuelven a impregnar las redes."
 author: Nahúm
  
 tags:

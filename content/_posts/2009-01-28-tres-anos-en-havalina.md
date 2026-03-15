@@ -1,5 +1,6 @@
 ---
 title: Tres años en Havalina
+subtitle: "La reinvención de una banda increíble."
 image: /assets/images/havalina2.jpeg
 author: Nahúm
 tags: [música]

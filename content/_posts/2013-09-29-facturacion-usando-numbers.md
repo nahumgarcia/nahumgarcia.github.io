@@ -1,5 +1,6 @@
 ---
 title: Facturación usando Numbers
+subtitle: "Cómo me monté un sistema de facturación con hojas de cálculo en lugar de pagar por software."
 author: Nahúm
  
 tags:

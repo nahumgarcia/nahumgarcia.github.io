@@ -122,7 +122,6 @@
 
 .post-content,
 .post-header,
-.post-meta,
 .post {
   max-width: $max-width;
   margin-left: auto;
@@ -168,7 +167,17 @@
   }
 }
 
-.post-content {
+.post-content > p:first-of-type::first-letter {
+  font-size: 4em;
+  font-weight: 800;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+}
+
+.post-content,
+.home-feed-post-body {
   img + em {
     display: block;
     text-align: center;
@@ -259,6 +268,7 @@
   font-weight: 300;
   color: var(--grey-dark);
   margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
 
 .posts-tags-section {
@@ -268,38 +278,31 @@
 .post-cards {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .post-card {
-  border: 1px solid var(--grey-light);
-  border-radius: 4px;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--grey-light);
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  color: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: border-color 0.2s ease;
 
-  &:hover, &:active {
-    border-color: var(--grey-dark);
+  &-link {
     text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &-date {
-    color: var(--grey-dark);
     margin-bottom: 0.4rem;
-
-    time { color: var(--grey-dark); }
   }
 
   &-title-wrap {
     flex: 1;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   &-title {
@@ -307,31 +310,44 @@
     font-weight: 600;
     letter-spacing: -1px;
     line-height: 1.2;
+    margin-bottom: 0.1rem;
   }
 
   &-footer {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 1rem;
-  }
-
-  &-tags {
-    color: var(--grey-dark);
-    min-width: 0;
-    overflow-wrap: break-word;
-  }
-
-  &-footer .post-reading-time {
-    flex-shrink: 0;
-    white-space: nowrap;
-    color: var(--grey);
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 }
 
 .posts-tags-list {
   margin-bottom: 0;
-  line-height: 1.8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--grey-light);
+  border-radius: 4px;
+  font-size: $small-font-size;
+  color: var(--grey-dark);
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:visited {
+    color: var(--grey-dark);
+  }
+
+  &:hover {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    text-decoration: none;
+  }
 }
 
 .tag-page-prefix {
@@ -343,14 +359,16 @@
   margin-bottom: 1.5rem;
 }
 
-.post-meta {
-  font-family: $base-font-family;
+.item-meta {
   color: var(--grey-dark);
   display: flex;
   align-items: center;
   gap: 0.35rem;
   flex-wrap: wrap;
   margin-bottom: 0.5rem;
+  font-size: $small-font-size;
+  text-transform: uppercase;
+
   a, a:visited {
     color: var(--grey-dark);
     text-decoration: none;
@@ -368,16 +386,19 @@ time {
   color: var(--grey-light);
 }
 
+.item-meta-tags {
+  margin-left: 0.35rem;
+  display: inline-flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
 .post-reading-time {
-  color: var(--grey);
+  color: var(--grey-dark);
 }
 
 a:hover time {
   color: var(--hover-color);
-}
-
-.post-card:hover time {
-  color: var(--grey-dark);
 }
 
 .tag-title {
@@ -386,12 +407,36 @@ a:hover time {
   margin-bottom: 0.5rem;
 }
 
-.post-title {
+.post-title,
+.home-feed-post-title {
   font-size: 2rem;
   letter-spacing: -1px;
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-bottom: 0.1rem;
   font-weight: 600;
+
+  @media screen and (min-width: 601px) {
+    font-size: 2.3rem;
+  }
+}
+
+.post-subtitle {
+  font-style: italic;
+  color: var(--grey-dark);
+  margin-top: 0 !important;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.post-content {
+  margin-top: 2rem;
+}
+
+.post-card .post-subtitle {
+  font-style: normal;
+  color: var(--text-color);
+  margin-top: 0 !important;
+  margin-bottom: 0;
 }
 
 /* Galería de miniaturas */
@@ -693,19 +738,19 @@ a:hover time {
 }
 
 .home-feed-post {
-  max-width: 620px;
+  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
 
-  > .photo-feed-meta {
+  > .item-meta {
     margin-top: 0;
   }
 }
 
-.home-feed-photo .photo-feed-caption,
-.home-feed-photo .photo-feed-meta,
-.photo-feed-post .photo-feed-caption,
-.photo-feed-post .photo-feed-meta {
+.home-feed-photo .photo-caption,
+.home-feed-photo .item-meta,
+.photo-feed-post .photo-caption,
+.photo-feed-post .item-meta {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
@@ -714,35 +759,15 @@ a:hover time {
 .home-feed-post-link {
   text-decoration: none;
   color: var(--text-color);
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.home-feed-post-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-  letter-spacing: -1px;
-}
-
-.home-feed-post-link:hover .home-feed-post-title {
-  text-decoration: underline;
-}
 
 .home-feed-post-body {
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
-
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
-  }
-  h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-  }
 
   img {
     width: calc(100% + 202px);
@@ -774,15 +799,6 @@ a:hover time {
   }
 }
 
-.home-feed-tags {
-  a {
-    color: var(--grey);
-    text-decoration: none;
-    &:hover {
-      color: var(--hover-color);
-    }
-  }
-}
 
 /* ===== Albums scroll horizontal ===== */
 .albums-section {
@@ -928,30 +944,12 @@ a:hover time {
   }
 }
 
-.photo-feed-caption {
+.photo-caption {
   margin-top: 0.75rem;
-  font-size: $base-font-size;
   color: var(--text-color);
   line-height: $base-line-height;
 }
 
-.photo-feed-meta {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--grey-dark);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-
-  a {
-    color: var(--grey-dark);
-    text-decoration: none;
-    &:hover {
-      color: var(--hover-color);
-    }
-  }
-}
 
 .photo-feed-count {
   color: var(--grey);
@@ -1023,34 +1021,19 @@ a:hover time {
 }
 
 .photo-post-caption {
-  margin-top: 1rem;
+  @extend .photo-caption;
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-}
-
-.photo-post-meta {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5rem;
-  color: var(--grey-dark);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-
-  a {
-    color: var(--grey-dark);
-    text-decoration: none;
-    &:hover {
-      color: var(--hover-color);
-    }
-  }
 }
 
 /* ===== Album page ===== */
+.photo-post-header {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .album-page {
   max-width: 1200px;
 }

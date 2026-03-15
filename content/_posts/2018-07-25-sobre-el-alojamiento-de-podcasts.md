@@ -1,5 +1,6 @@
 ---
 title: Sobre el alojamiento de podcasts
+subtitle: "Los intentos de varios actores de conquistar un sector a la alza que hoy es completamente abierto."
 author: Nahúm
 tags:
   - podcasts

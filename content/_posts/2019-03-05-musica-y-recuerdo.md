@@ -1,5 +1,6 @@
 ---
 title: La música y el recuerdo
+subtitle: "La biblioteca musical como una línea temporal de experiencias."
 author: Nahúm
 tags:
   - música
