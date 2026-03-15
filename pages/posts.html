@@ -24,12 +24,12 @@ permalink: /escritos/
 
 <div class="home">
   <section class="posts-tags-section">
-    <h2 class="posts-section-title">Temas</h2>
+    <h2>Temas</h2>
     <div class="posts-tags-list">{% for tag in tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/" class="tag-pill">{{ tag }}</a>{% endfor %}</div>
   </section>
 
   <section class="posts-entries-section">
-    <h2 class="posts-section-title">Entradas</h2>
+    <h2>Entradas</h2>
     <div class="post-cards">
       {% for post in site.posts %}
       {% assign words = post.content | number_of_words %}
