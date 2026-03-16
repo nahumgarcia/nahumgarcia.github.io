@@ -408,8 +408,8 @@ time {
 
   @media (max-width: 600px) {
     flex-direction: column-reverse;
-    align-items: stretch;
-    gap: 0.6rem;
+    align-items: flex-start;
+    gap: 1rem;
 
     .item-meta-tags {
       justify-content: flex-start;
