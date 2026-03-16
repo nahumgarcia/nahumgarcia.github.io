@@ -5,7 +5,7 @@
 - **URL:** https://nahumgarcia.com
 - **Dominio:** Personalizado via archivo `CNAME` (`nahumgarcia.com`)
 - **Hosting:** GitHub Pages (repo `nahumgarcia.github.io`)
-- **Rama de deploy:** `gh-pages`
+- **Rama de deploy:** `gh-pages` — **todos los commits deben ir a esta rama**. Desde workspaces de Conductor, crear PR con `--base gh-pages` y mergear con `gh pr merge`.
 - **Generador:** Jekyll (construido por GitHub Pages directamente)
 - **Tema base:** [Textlog](https://github.com/heiswayi/textlog) v1.5.0 (autor: Heiswayi Nrird), muy personalizado
 - **Plugins:** `jekyll-sitemap`
