@@ -128,7 +128,13 @@
   margin-right: auto;
 }
 
-.post-content iframe[src*="youtube"] {
+.post-content iframe,
+.home-feed-post-body iframe {
+  max-width: 100%;
+}
+
+.post-content iframe[src*="youtube"],
+.home-feed-post-body iframe[src*="youtube"] {
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
