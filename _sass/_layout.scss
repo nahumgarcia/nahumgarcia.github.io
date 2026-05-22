@@ -88,6 +88,16 @@
     transition: color 0.2s ease;
     line-height: 1;
 
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--hover-color);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
     &:hover {
         color: var(--hover-color);
     }
