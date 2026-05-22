@@ -68,6 +68,32 @@ $on-laptop:        800px;
   }
 }
 
+html[data-theme="dark"] {
+  --text-color: #e0e0e0;
+  --bg-color: #1a1a1a;
+  --link-color: #e0e0e0;
+  --hover-color: #1AB8FF;
+  --grey: #999;
+  --grey-light: #333;
+  --grey-dark: #999;
+  --code-bg: #2a2a2a;
+  --code-border: #444;
+  --code-color: #ff6f56;
+}
+
+html[data-theme="light"] {
+  --text-color: #000;
+  --bg-color: #faf7f0;
+  --link-color: #000;
+  --hover-color: #1AB8FF;
+  --grey: #757575;
+  --grey-light: #d5d5d5;
+  --grey-dark: #757575;
+  --code-bg: #fcfcfc;
+  --code-border: #d5d5d5;
+  --code-color: #f14e32;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "fonts",

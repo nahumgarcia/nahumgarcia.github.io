@@ -21,6 +21,19 @@
       {% include footer.html %}
     </div>
   <script>
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme')
+          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       var tooltip = document.createElement('div');
       tooltip.className = 'footnote-tooltip';
