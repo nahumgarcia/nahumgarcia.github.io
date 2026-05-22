@@ -960,6 +960,18 @@ a:hover time {
     display: block;
     text-decoration: none;
   }
+
+  &::after {
+    content: "";
+    display: block;
+    max-width: $max-width;
+    margin: 1.5rem auto 0;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
 }
 
 .photo-feed-grid {
