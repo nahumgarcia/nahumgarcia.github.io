@@ -92,23 +92,21 @@
         color: var(--hover-color);
     }
 
-    .icon-sun { display: none; }
-    .icon-moon { display: block; }
-
-    @media (prefers-color-scheme: dark) {
-        .icon-sun { display: block; }
-        .icon-moon { display: none; }
-    }
+    .icon-auto { display: block; }
+    .icon-moon { display: none; }
+    .icon-sun  { display: none; }
 }
 
 html[data-theme="dark"] .theme-toggle {
-    .icon-sun { display: block; }
-    .icon-moon { display: none; }
+    .icon-auto { display: none; }
+    .icon-moon { display: block; }
+    .icon-sun  { display: none; }
 }
 
 html[data-theme="light"] .theme-toggle {
-    .icon-sun { display: none; }
-    .icon-moon { display: block; }
+    .icon-auto { display: none; }
+    .icon-moon { display: none; }
+    .icon-sun  { display: block; }
 }
 
 @media (max-width: 600px) {
