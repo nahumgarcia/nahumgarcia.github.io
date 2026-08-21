@@ -21,6 +21,7 @@ content:
     fields:
       - { name: title, label: Título, type: string, required: true }
       - { name: subtitle, label: Subtítulo, type: string }
+      - { name: date, label: Fecha, type: date }
       - { name: image, label: "Imagen (og:image)", type: image, options: { media: post-images } }
       - { name: author, label: Autor, type: string, default: "Nahúm" }
       - { name: tags, label: Tags, type: string, list: true }
@@ -31,9 +32,10 @@ content:
     label: "Fotos (publicaciones)"
     type: collection
     path: content/_photos
+    filename: "{year}-{month}-{day}-{fields.title}.md"
     view:
-      fields: [date, title]
-      primary: title
+      fields: [date, albums, title, tags]
+      primary: date
     fields:
       - { name: date, label: Fecha, type: date, required: true }
       - { name: title, label: Título, type: string }
