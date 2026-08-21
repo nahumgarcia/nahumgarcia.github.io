@@ -525,7 +525,7 @@ a:hover time {
 /* Cuadrícula de fotos (/fotos/) — filas y columnas, sin recortar las fotos */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   align-items: center;
   gap: 20px;
 
@@ -536,12 +536,15 @@ a:hover time {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  padding: 0 2rem;
+  box-sizing: border-box;
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    padding: 0 1.5rem;
   }
 }
 
@@ -805,10 +808,8 @@ a:hover time {
 }
 
 .home-index-title {
-  font-size: 1.4rem;
-  letter-spacing: -0.5px;
-  line-height: 1.25;
-  font-weight: 600;
+  font-size: $base-font-size;
+  font-weight: 500;
   margin: 0;
   transition: color 0.2s ease;
 }
