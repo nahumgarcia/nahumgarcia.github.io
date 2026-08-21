@@ -1,5 +1,6 @@
 ---
 title: Música y videojuegos
+date: 2014-02-09
 subtitle: "Cómo a veces lo que hacemos mientras escuchamos música queda asociado a las canciones"
 author: Nahúm
 tags:

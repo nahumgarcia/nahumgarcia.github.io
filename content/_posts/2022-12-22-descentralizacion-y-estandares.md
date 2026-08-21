@@ -1,5 +1,6 @@
 ---
 title: Descentralización y estándares
+date: 2022-12-22
 subtitle: "Nostalgia e idealismo vuelven a impregnar las redes"
 author: Nahúm
  

@@ -1,5 +1,6 @@
 ---
 title: Tres años en Havalina
+date: 2009-01-28
 subtitle: "La reinvención de una banda increíble"
 image: /assets/images/havalina2.jpeg
 author: Nahúm

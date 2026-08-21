@@ -1,5 +1,6 @@
 ---
 title: Tinder y el patetismo
+date: 2019-07-26
 subtitle: "Cuando los intereses cruzados hacen la experiencia de encontrar pareja un infierno"
 author: Nahúm
 tags:

@@ -1,5 +1,6 @@
 ---
 title: Los gastos de gestión
+date: 2013-12-31
 subtitle: "Un abuso a los consumidores, que va en aumento"
 author: Nahúm
 tags:

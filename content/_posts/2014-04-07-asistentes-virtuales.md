@@ -1,5 +1,6 @@
 ---
 title: Asistentes virtuales
+date: 2014-04-07
 subtitle: "Ningún asistente puede entender realmente las motivaciones de un ser humano"
 author: Nahúm
 tags:

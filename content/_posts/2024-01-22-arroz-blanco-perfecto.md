@@ -1,5 +1,6 @@
 ---
 title: Arroz blanco perfecto
+date: 2024-01-22
 subtitle: "No tengo una arrocera por esta receta, y porque no me cabe"
 author: Nahúm
 tags:

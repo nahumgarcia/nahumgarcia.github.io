@@ -1,5 +1,6 @@
 ---
 title: La Unión Europea podría intervenir en el streaming musical
+date: 2024-01-17
 subtitle: "Aunque no voy a esperar sentado"
 author: Nahúm
 tags:

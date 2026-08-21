@@ -1,5 +1,6 @@
 ---
 title: Un año con Miga
+date: 2022-02-27
 subtitle: "Tarda en llegar, y al final..."
 image: /assets/images/img_9656.jpg
 author: Nahúm

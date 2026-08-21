@@ -1,5 +1,6 @@
 ---
 title: Cosas que me han gustado en 2022
+date: 2023-01-22
 subtitle: "Una selección de las películas, discos, y cosas en general que me han alegrado el año"
 image: /assets/images/2023-01-22-cosas-que-me-han-gustado-en-2022.jpg
 author: Nahúm

@@ -1,5 +1,6 @@
 ---
 title: La pantomima de Pono
+date: 2016-10-16
 subtitle: "El placebo de la calidad de sonido"
 author: Nahúm
 tags:
