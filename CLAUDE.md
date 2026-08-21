@@ -117,13 +117,13 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 - **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Dark mode soportado.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px
-- **Grid de `/fotos/`:** `.photo-grid`, CSS Grid con `align-items: center` (4 columnas desktop / 3 tablet / 1 móvil), fotos a su ratio natural
+- **Grid de `/fotos/`:** `.photo-grid`, CSS Grid con `align-items: center` (4 columnas desktop / 3 tablet / 1 móvil), fotos a su ratio natural, ocupa todo el ancho del navegador (se sale de `.site-outer` con el truco `100vw` + márgenes negativos)
 - **Fotos sin bordes redondeados:** en toda la web (home, `/fotos/`, posts individuales, imágenes dentro de artículos)
 - **Código:** Inconsolata/Monaco
 
 ## Funcionalidades
 
-- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-meta`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra.
+- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-date`, `data-camera`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra. El panel de info va en dos columnas (título+fecha a la izquierda, cámara a la derecha) más la descripción debajo, el mismo layout que usa `photo_post.html` para el post individual.
 - **Tabla de contenidos:** Opt-in con `toc: true` en front matter. Genera nav con h2/h3 del artículo.
 - **Notas al pie:** Pastilla `•••` (no se muestra el número). Tooltip al hacer clic.
 - **Open Graph:** `og:image` y `twitter:image` usando `image:` del front matter. Fallback al logo.

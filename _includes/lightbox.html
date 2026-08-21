@@ -5,8 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
     lightbox.innerHTML = '<div class="lightbox-photo-area"><img class="lightbox-img" src="" alt=""></div>'
         + '<div class="lightbox-bottom">'
         + '<div class="lightbox-info">'
+        + '<div class="lightbox-meta-row">'
+        + '<div class="lightbox-meta-left">'
         + '<h3 class="lightbox-title"></h3>'
-        + '<p class="lightbox-meta"></p>'
+        + '<p class="lightbox-date"></p>'
+        + '</div>'
+        + '<div class="lightbox-meta-right">'
+        + '<p class="lightbox-camera"><span>Cámara: </span><strong></strong></p>'
+        + '</div>'
+        + '</div>'
         + '<p class="lightbox-description"></p>'
         + '<a class="lightbox-permalink" href="#">Ver publicación &rarr;</a>'
         + '</div>'
@@ -19,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var lightboxImg = lightbox.querySelector(".lightbox-img");
     var lightboxTitle = lightbox.querySelector(".lightbox-title");
-    var lightboxMeta = lightbox.querySelector(".lightbox-meta");
+    var lightboxDate = lightbox.querySelector(".lightbox-date");
+    var lightboxCamera = lightbox.querySelector(".lightbox-meta-right");
+    var lightboxCameraValue = lightbox.querySelector(".lightbox-camera strong");
     var lightboxDesc = lightbox.querySelector(".lightbox-description");
     var lightboxPermalink = lightbox.querySelector(".lightbox-permalink");
     var closeBtn = lightbox.querySelector(".lightbox-close");
@@ -60,7 +69,14 @@ document.addEventListener("DOMContentLoaded", function() {
         lightboxImg.style.display = 'none';
         lightboxImg.src = '';
         setField(lightboxTitle, photo.dataset.title);
-        setField(lightboxMeta, photo.dataset.meta);
+        setField(lightboxDate, photo.dataset.date);
+        if (photo.dataset.camera) {
+            lightboxCameraValue.textContent = photo.dataset.camera;
+            lightboxCamera.style.display = '';
+        } else {
+            lightboxCameraValue.textContent = '';
+            lightboxCamera.style.display = 'none';
+        }
         setField(lightboxDesc, photo.dataset.desc || photo.dataset.alt);
         if (photo.dataset.url) {
             lightboxPermalink.href = photo.dataset.url;

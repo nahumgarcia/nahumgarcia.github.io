@@ -2,8 +2,6 @@
 layout: default
 ---
 <article class="photo-post">
-  {% if page.title %}<h1 class="photo-post-title">{{ page.title }}</h1>{% endif %}
-
   {%- assign photo_src = page.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
   <a href="#" class="photo-post-image" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ page.title | default: '' }}">
@@ -14,11 +12,17 @@ layout: default
     >
   </a>
 
-  <footer class="item-meta-footer photo-post-header">
-    <div class="item-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>{% if page.camera %}<span class="post-meta-sep">•</span><span>{{ page.camera }}</span>{% endif %}
+  <div class="photo-post-meta">
+    <div class="photo-post-meta-left">
+      {% if page.title %}<h1 class="photo-post-title">{{ page.title }}</h1>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>
     </div>
-  </footer>
+    {% if page.camera %}
+    <div class="photo-post-meta-right">
+      <p class="photo-post-camera">Cámara: <strong>{{ page.camera }}</strong></p>
+    </div>
+    {% endif %}
+  </div>
 
   {% if page.content != "" %}
   <div class="photo-post-caption">

@@ -525,6 +525,14 @@ a:hover time {
   align-items: center;
   gap: 20px;
 
+  /* Ocupa todo el ancho del navegador, saliéndose de .site-outer */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
   @media (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -592,8 +600,16 @@ a:hover time {
 }
 
 .lightbox-info {
-  max-width: 32rem;
-  text-align: center;
+  max-width: 40rem;
+  text-align: left;
+}
+
+.lightbox-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .lightbox-title {
@@ -603,16 +619,31 @@ a:hover time {
   margin: 0;
 }
 
-.lightbox-meta {
+.lightbox-date {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.8rem;
   margin: 0.25rem 0 0;
 }
 
+.lightbox-meta-right {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.lightbox-camera {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  margin: 0;
+
+  strong {
+    color: #fff;
+  }
+}
+
 .lightbox-description {
   color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-  margin: 0.4rem 0 0;
+  text-align: left;
+  margin: 0.6rem 0 0;
   font-size: 0.9rem;
 }
 
@@ -845,17 +876,6 @@ a:hover time {
   margin-right: auto;
 }
 
-.photo-post-title {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.6rem;
-  letter-spacing: -0.5px;
-  line-height: 1.25;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-
 .photo-post-image {
   display: block;
   overflow: hidden;
@@ -868,18 +888,51 @@ a:hover time {
   }
 }
 
-.photo-post-header {
+.photo-post-meta {
   max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.25rem;
+  margin: 1.25rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.photo-post-title {
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+
+.photo-post-meta-left time {
+  display: block;
+  color: var(--grey-dark);
+}
+
+.photo-post-meta-right {
+  text-align: right;
+  color: var(--grey-dark);
+
+  @media (max-width: 480px) {
+    text-align: left;
+  }
+}
+
+.photo-post-camera {
+  margin: 0;
+
+  strong {
+    color: var(--text-color);
+  }
 }
 
 .photo-post-caption {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
   color: var(--text-color);
   line-height: $base-line-height;
 }

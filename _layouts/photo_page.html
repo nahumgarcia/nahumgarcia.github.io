@@ -13,11 +13,6 @@ layout: default
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
   {%- capture photo_date_str %}{% include fecha.html date=photo.date %}{% endcapture -%}
   {%- assign photo_date_str = photo_date_str | strip -%}
-  {%- if photo.camera -%}
-    {%- assign photo_meta = photo_date_str | append: " · " | append: photo.camera -%}
-  {%- else -%}
-    {%- assign photo_meta = photo_date_str -%}
-  {%- endif -%}
   {%- assign photo_desc = photo.content | replace: "</p>", " " | strip_html | strip -%}
   <a
     href="{{ photo.url | prepend: site.baseurl }}"
@@ -25,7 +20,8 @@ layout: default
     data-full="{{ site.baseurl }}{{ photo_src }}"
     data-alt="{{ photo.title | default: '' }}"
     data-title="{{ photo.title | default: '' }}"
-    data-meta="{{ photo_meta }}"
+    data-date="{{ photo_date_str }}"
+    data-camera="{{ photo.camera | default: '' }}"
     data-desc="{{ photo_desc | escape }}"
     data-url="{{ photo.url | prepend: site.baseurl }}"
   >
