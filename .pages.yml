@@ -33,7 +33,7 @@ content:
     path: content/_photos
     filename: "{year}-{month}-{day}-{fields.title}.md"
     view:
-      fields: [title, date, camera]
+      fields: [title, camera, date]
       primary: date
     fields:
       - { name: date, label: Fecha, type: date }
