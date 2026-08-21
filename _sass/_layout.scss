@@ -726,18 +726,31 @@ a:hover time {
 
 /* ===== Home: fila de fotos ===== */
 .home-photo-strip {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
-  overflow: hidden;
   margin-bottom: 3rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    .home-photo-strip-item:nth-child(n+5) {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+
+    .home-photo-strip-item:nth-child(n+4) {
+      display: none;
+    }
+  }
 }
 
 .home-photo-strip-item {
-  flex: 0 0 auto;
-  width: 130px;
-  height: 130px;
-  overflow: hidden;
   display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -749,11 +762,6 @@ a:hover time {
 
   &:hover img {
     transform: scale(1.05);
-  }
-
-  @media (max-width: 600px) {
-    width: 100px;
-    height: 100px;
   }
 }
 

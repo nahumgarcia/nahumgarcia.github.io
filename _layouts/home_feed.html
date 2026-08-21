@@ -9,7 +9,7 @@ layout: default
   <a href="{{ site.baseurl }}/fotos/" class="home-section-more">Ver todas &rarr;</a>
 </div>
 <div class="home-photo-strip">
-  {% for photo in recent_photos limit: 20 %}
+  {% for photo in recent_photos limit: 6 %}
   {%- assign photo_src = photo.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
   {%- capture photo_date_str %}{% include fecha.html date=photo.date %}{% endcapture -%}
