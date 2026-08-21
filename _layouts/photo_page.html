@@ -17,9 +17,11 @@ layout: default
   <article class="photo-feed-post">
     <div class="photo-feed-grid{% if post.photos.size == 1 %} single-photo{% endif %}">
       {% for photo in post.photos %}
-      <a href="#" class="feed-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
+      {%- assign photo_src = photo.file -%}
+      {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
+      <a href="#" class="feed-photo" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.alt | default: photo.file }}">
         <img
-          src="{{ site.baseurl }}/assets/photos/{{ photo.file }}"
+          src="{{ site.baseurl }}{{ photo_src }}"
           alt="{{ photo.alt | default: photo.file }}"
           loading="lazy"
         >

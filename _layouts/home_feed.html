@@ -5,88 +5,63 @@ layout: default
 {% assign page_num = page.page_num | default: 1 %}
 
 {% comment %}
-  Merge posts and photos into a single sorted array.
-  We tag each item so we can distinguish them in the template.
+  Fila de fotos recientes: se aplanan todas las fotos de los últimos
+  posts de fotos en una sola lista, más recientes primero.
 {% endcomment %}
-{% assign all_items = "" | split: "" %}
-{% for post in site.posts %}
-  {% assign item = post | default: post %}
-  {% assign all_items = all_items | push: post %}
+{% assign recent_photo_posts = site.photos | sort: "date" | reverse %}
+{% assign photo_items = "" | split: "" %}
+{% for post in recent_photo_posts %}
+  {% for photo in post.photos %}
+    {% assign photo_items = photo_items | push: photo %}
+  {% endfor %}
 {% endfor %}
-{% for photo in site.photos %}
-  {% assign all_items = all_items | push: photo %}
-{% endfor %}
-{% assign all_items = all_items | sort: "date" | reverse %}
 
-{% assign total_items = all_items.size %}
+{% if photo_items.size > 0 and page_num == 1 %}
+<div class="home-section-header">
+  <h2>Fotos</h2>
+  <a href="{{ site.baseurl }}/fotos/" class="home-section-more">Ver todas &rarr;</a>
+</div>
+<div class="home-photo-strip">
+  {% for photo in photo_items limit: 20 %}
+  {%- assign photo_src = photo.file -%}
+  {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
+  <a href="#" class="home-photo-strip-item" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.alt | default: '' }}">
+    <img
+      src="{{ site.baseurl }}{{ photo_src }}"
+      alt="{{ photo.alt | default: '' }}"
+      loading="lazy"
+    >
+  </a>
+  {% endfor %}
+</div>
+{% include lightbox.html selector=".home-photo-strip" photo_selector=".home-photo-strip-item" %}
+{% endif %}
+
+{% assign all_posts = site.posts | sort: "date" | reverse %}
+{% assign total_items = all_posts.size %}
 {% assign total_pages_float = total_items | plus: 0.0 | divided_by: per_page %}
 {% assign total_pages = total_pages_float | ceil %}
 {% assign offset = page_num | minus: 1 | times: per_page %}
 
-<section class="home-feed">
-  {% for item in all_items limit: per_page offset: offset %}
-    {% if item.collection == "photos" %}
-    {%- comment -%} Photo post {%- endcomment -%}
-    <article class="home-feed-item home-feed-photo">
-      {% assign first_photo = item.photos | first %}
-      <div class="photo-feed-grid single-photo">
-        <a href="{{ item.url | prepend: site.baseurl }}" class="feed-photo" data-full="{{ site.baseurl }}/assets/photos/{{ first_photo.file }}" data-alt="{{ first_photo.alt | default: first_photo.file }}">
-          <img
-            src="{{ site.baseurl }}/assets/photos/{{ first_photo.file }}"
-            alt="{{ first_photo.alt | default: first_photo.file }}"
-            loading="lazy"
-          >
-        </a>
+<div class="home-section-header home-section-header--narrow">
+  <h2>Escritos</h2>
+  <a href="{{ site.baseurl }}/escritos/" class="home-section-more">Ver todos &rarr;</a>
+</div>
+<section class="home-index">
+  {% for post in all_posts limit: per_page offset: offset %}
+  <article class="home-index-item">
+    <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
+      <div class="home-index-heading">
+        <h2 class="home-index-title">{{ post.title }}</h2>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
       </div>
-      {% if item.content != "" %}
-      <div class="photo-caption">
-        {{ item.content }}
-      </div>
-      {% endif %}
-      <footer class="item-meta-footer">
-        <div class="item-meta">
-          <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>{% if item.photos.size > 1 %}<span class="post-meta-sep">•</span><a href="{{ item.url | prepend: site.baseurl }}" class="photo-feed-count">{{ item.photos.size }} fotos</a>{% endif %}
-        </div>
-        {% if item.albums.size > 0 %}
-        <div class="item-meta-tags">{% for album_slug in item.albums %}{% assign album = site.photoalbums | where: "slug", album_slug | first %}{% if album %}<a href="{{ album.url | prepend: site.baseurl }}" class="tag-pill">{{ album.title }}</a>{% endif %}{% endfor %}</div>
-        {% endif %}
-      </footer>
-    </article>
-
-    {% else %}
-    {%- comment -%} Blog post {%- endcomment -%}
-    {% assign word_count = item.content | number_of_words %}
-    {% assign reading_time = word_count | divided_by: 200 | at_least: 1 %}
-    <article class="home-feed-item home-feed-post">
-      {% if reading_time > 5 %}
-      <div class="item-meta">
-        <span class="post-reading-time">{{ reading_time }} minutos de lectura</span>
-      </div>
-      {% endif %}
-      <a href="{{ item.url | prepend: site.baseurl }}" class="home-feed-post-link">
-        <h2 class="home-feed-post-title">{{ item.title }}</h2>
-      </a>
-      {% if item.subtitle %}<p class="post-subtitle">{{ item.subtitle }}</p>{% endif %}
-      {% if word_count > 400 %}
-      <div class="home-feed-post-body">
-        {{ item.content | truncatewords: 300 }}
-      </div>
-      <a href="{{ item.url | prepend: site.baseurl }}" class="read-more">Leer más &rarr;</a>
+      {% if post.subtitle %}
+      <p class="home-index-excerpt">{{ post.subtitle }}</p>
       {% else %}
-      <div class="home-feed-post-body">
-        {{ item.content }}
-      </div>
+      <p class="home-index-excerpt">{{ post.content | strip_html | truncatewords: 28 }}</p>
       {% endif %}
-      <footer class="item-meta-footer">
-        <div class="item-meta">
-          <a href="{{ item.url | prepend: site.baseurl }}"><time datetime="{{ item.date | date_to_xmlschema }}">{% include fecha.html date=item.date %}</time></a>
-        </div>
-        {% if item.tags.size > 0 %}
-        <div class="item-meta-tags">{% for tag in item.tags %}<a href="{{ site.baseurl }}/tagged/{{ tag | slugify: "latin" }}/" class="tag-pill">{{ tag }}</a>{% endfor %}</div>
-        {% endif %}
-      </footer>
-    </article>
-    {% endif %}
+    </a>
+  </article>
   {% endfor %}
 </section>
 
@@ -103,5 +78,3 @@ layout: default
   {% endfor %}
 </nav>
 {% endif %}
-
-{% include lightbox.html selector=".home-feed-photo" photo_selector=".feed-photo" %}

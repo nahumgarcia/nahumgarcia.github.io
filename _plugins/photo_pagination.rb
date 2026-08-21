@@ -40,9 +40,7 @@ module Jekyll
     priority :low
 
     def generate(site)
-      posts = site.posts.docs
-      photos = site.collections['photos'].docs
-      total = posts.length + photos.length
+      total = site.posts.docs.length
       total_pages = (total.to_f / ITEMS_PER_PAGE).ceil
 
       return if total_pages <= 1
