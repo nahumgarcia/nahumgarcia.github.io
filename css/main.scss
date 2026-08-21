@@ -57,7 +57,7 @@ $on-laptop:        800px;
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #e0e0e0;
-    --bg-color: #1a1a1a;
+    --bg-color: #000;
     --link-color: #e0e0e0;
     --grey: #999;
     --grey-light: #333;
@@ -70,7 +70,7 @@ $on-laptop:        800px;
 
 html[data-theme="dark"] {
   --text-color: #e0e0e0;
-  --bg-color: #1a1a1a;
+  --bg-color: #000;
   --link-color: #e0e0e0;
   --hover-color: #1AB8FF;
   --grey: #999;
