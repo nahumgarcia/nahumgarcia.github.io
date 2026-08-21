@@ -16,7 +16,7 @@ content:
     type: collection
     path: content/_posts
     view:
-      fields: [title, tags]
+      fields: [date, title, tags]
       primary: title
     fields:
       - { name: title, label: Título, type: string, required: true }
