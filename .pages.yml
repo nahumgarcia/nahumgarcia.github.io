@@ -33,11 +33,11 @@ content:
     path: content/_photos
     filename: "{year}-{month}-{day}-{fields.title}.md"
     view:
-      fields: [date, title, camera]
+      fields: [title, date, camera]
       primary: date
     fields:
       - { name: date, label: Fecha, type: date }
-      - { name: title, label: Título, type: string }
+      - { name: title, label: Título, type: string, required: true }
       - { name: camera, label: Cámara, type: string }
       - { name: file, label: Foto, type: image, required: true, options: { media: photo-assets } }
       - { name: body, label: Descripción, type: text }

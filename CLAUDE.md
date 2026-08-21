@@ -85,15 +85,15 @@ La nav (`_includes/nav.html`) muestra:
 - Front matter:
   ```yaml
   date: 2024-04-01
-  title: "Título opcional"
+  title: "Título"
   camera: "Cámara opcional"
   file: "foto.jpg"  # o ruta completa /assets/photos/foto.jpg si viene de Pages CMS
   ```
+- `title` es obligatorio (tanto en `.pages.yml` como por convención en el contenido). Si un archivo no lo trae, Jekyll genera uno automáticamente a partir del nombre de archivo (p. ej. `granada-12.md` → "Granada 12") — esto es solo un fallback de Jekyll, no una alternativa válida al crear contenido nuevo.
 - Un solo campo de fecha (`date`): es la fecha en la que se tomó la foto, no una fecha de publicación separada. Si solo se conoce el mes, se usa el día `01` como convención (p. ej. `2024-10-01`).
 - El cuerpo (markdown bajo el `---`) es la descripción/caption, opcional.
 - Las imágenes viven en `assets/photos/`.
-- Si no se especifica `title`, Jekyll genera uno automáticamente a partir del nombre de archivo (p. ej. `granada-12.md` → "Granada 12").
-- Las plantillas que renderizan `file` (`photo_post.html`, `photo_page.html`, `home_feed.html`) aceptan tanto el nombre de archivo suelto como la ruta completa con `/assets/photos/` por delante, para ser compatibles con el selector de imagen de Pages CMS.
+- Las plantillas que renderizan `file` (`photo_post.html`, `photo_page.html`, `home_feed.html`) aceptan tanto el nombre de archivo suelto como la ruta completa con `/assets/photos/` por delante. Pero el valor guardado debe ser la **ruta completa**: la miniatura de Pages CMS (`Thumbnail`/`getRawUrl` en su código) resuelve `file` como ruta relativa a la raíz del repo en `raw.githubusercontent.com`, no relativa a `assets/photos/` — un nombre suelto como `"foto.jpg"` hace que la CMS busque el archivo en la raíz del repo y muestre el icono de imagen rota. Todo el contenido existente se migró a `/assets/photos/foto.jpg` por este motivo.
 
 ## Pages CMS
 
@@ -101,7 +101,7 @@ El sitio se edita también desde [Pages CMS](https://pagescms.org), configurado 
 
 - **`media`**: dos fuentes — `post-images` (`assets/images`, para el campo `image` de escritos) y `photo-assets` (`assets/photos`, para el campo `file` de fotos y portadas). Ambas con `output` en la misma ruta con `/` inicial que ya usa el sitio.
 - **`content: posts`**: espeja `_posts` — título, fecha (opcional, no `required`: ver nota más abajo), imagen (selector con miniatura), autor, tags, toc, cuerpo. Sin campo de subtítulo (eliminado del sitio).
-- **`content: photos`**: espeja `_photos` — fecha (opcional, es la fecha en que se tomó la foto), título, cámara, foto (selector de imagen, `required`), descripción. `filename` fijado a `{year}-{month}-{day}-{fields.title}.md` para que no dependa del campo usado como `primary` en la vista.
+- **`content: photos`**: espeja `_photos` — fecha (opcional, es la fecha en que se tomó la foto), título (`required`, primera columna en la vista de tabla), cámara, foto (selector de imagen, `required`), descripción. `filename` fijado a `{year}-{month}-{day}-{fields.title}.md` para que no dependa del campo usado como `primary` en la vista.
 - **`content: about`**: el único `type: file` — edita `pages/about.md`. Incluye `layout` y `permalink` como campos ocultos con `default`, porque Pages CMS reconstruye el front matter solo con los campos declarados en el esquema — cualquier clave del archivo que no esté en `.pages.yml` se pierde al guardar desde la CMS.
 - El campo `date` de `posts` y `photos` **no es `required`** a propósito: se probó como obligatorio y provocó "Content validation failed: Required at date" al guardar desde la CMS (ver commit `0e0d320`). No se identificó la causa exacta del lado de Pages CMS, así que se optó por quitar la restricción en vez de perseguir un bug en código que no es de este repo.
 - Antes de tocar `.pages.yml`, conviene validarlo contra el esquema real de Pages CMS (Zod), no solo por sintaxis YAML — así se detectaron varios errores durante el desarrollo. El repo de Pages CMS es público (`github.com/pages-cms/pages-cms`); su `lib/config-schema.ts` es la fuente de verdad.
