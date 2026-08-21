@@ -21,7 +21,7 @@ content:
     fields:
       - { name: title, label: Título, type: string, required: true }
       - { name: subtitle, label: Subtítulo, type: string }
-      - { name: date, label: Fecha, type: date, required: true }
+      - { name: date, label: Fecha, type: date }
       - { name: image, label: "Imagen (og:image)", type: image, options: { media: post-images } }
       - { name: author, label: Autor, type: string, default: "Nahúm" }
       - { name: tags, label: Tags, type: string, list: true }
@@ -37,7 +37,7 @@ content:
       fields: [date, title, camera]
       primary: date
     fields:
-      - { name: date, label: Fecha, type: date, required: true }
+      - { name: date, label: Fecha, type: date }
       - { name: title, label: Título, type: string }
       - { name: camera, label: Cámara, type: string }
       - { name: file, label: Foto, type: image, required: true, options: { media: photo-assets } }
