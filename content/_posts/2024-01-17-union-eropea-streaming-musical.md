@@ -1,13 +1,13 @@
 ---
-title: La Unión Europea podría intervenir en el streaming musical
+title: La Unión Europea vs el streaming musical
+subtitle: Aunque no voy a esperar sentado
 date: 2024-01-17
-subtitle: "Aunque no voy a esperar sentado"
 author: Nahúm
 tags:
   - música
   - industria musical
   - streaming
-categories:
+toc: false
 ---
 En un giro inesperado de acontecimientos, la Unión Europea ha asomado la patita. The Verge [se ha hecho eco](https://www.theverge.com/2024/1/17/24041343/eu-music-streaming-platform-artist-pay-europe-regulation) de una resolución, aprobada en el Parlamento Europeo con 532 votos a favor, 61 en contra y 33 abstenciones, y que hace un llamamiento para que el negocio del streaming [sea justo, sostenible y promulgue la diversidad](https://www.europarl.europa.eu/news/en/press-room/20240112IPR16773/music-streaming-sector-eu-must-ensure-just-pay-for-artists-and-fair-algorithms). Tardará en llegar legislación relacionada con esto, y habrá que ver cuán profundo será el alcance, pero es una buena noticia.
 
