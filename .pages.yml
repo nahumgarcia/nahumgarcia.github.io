@@ -20,7 +20,6 @@ content:
       primary: title
     fields:
       - { name: title, label: Título, type: string, required: true }
-      - { name: subtitle, label: Subtítulo, type: string }
       - { name: date, label: Fecha, type: date }
       - { name: image, label: "Imagen (og:image)", type: image, options: { media: post-images } }
       - { name: author, label: Autor, type: string, default: "Nahúm" }

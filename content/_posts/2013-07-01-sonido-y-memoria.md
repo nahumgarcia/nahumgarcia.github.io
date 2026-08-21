@@ -1,7 +1,6 @@
 ---
 title: El sonido y la memoria
 date: 2013-07-01
-subtitle: "La capacidad del sonido para hacernos sentir cosas"
 author: Nahúm
  
 tags:

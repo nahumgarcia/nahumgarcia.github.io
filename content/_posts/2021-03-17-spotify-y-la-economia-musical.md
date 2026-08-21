@@ -1,7 +1,6 @@
 ---
 title: Spotify y la economía musical
 date: 2021-03-17
-subtitle: "Cómo un monopolio ha potenciado un modelo económico injusto donde los artistas son lo que menos importa"
 author: Nahúm
 tags:
 - música

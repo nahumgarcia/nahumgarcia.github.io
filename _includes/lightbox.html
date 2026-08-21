@@ -5,15 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     lightbox.innerHTML = '<div class="lightbox-photo-area"><img class="lightbox-img" src="" alt=""></div>'
         + '<div class="lightbox-bottom">'
         + '<div class="lightbox-info">'
-        + '<div class="lightbox-meta-row">'
-        + '<div class="lightbox-meta-left">'
+        + '<div class="lightbox-title-row">'
         + '<h3 class="lightbox-title"></h3>'
         + '<p class="lightbox-date"></p>'
         + '</div>'
-        + '<div class="lightbox-meta-right">'
         + '<p class="lightbox-camera"><span>Cámara: </span><strong></strong></p>'
-        + '</div>'
-        + '</div>'
         + '<p class="lightbox-description"></p>'
         + '<a class="lightbox-permalink" href="#">Ver publicación &rarr;</a>'
         + '</div>'
@@ -27,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var lightboxImg = lightbox.querySelector(".lightbox-img");
     var lightboxTitle = lightbox.querySelector(".lightbox-title");
     var lightboxDate = lightbox.querySelector(".lightbox-date");
-    var lightboxCamera = lightbox.querySelector(".lightbox-meta-right");
+    var lightboxCamera = lightbox.querySelector(".lightbox-camera");
     var lightboxCameraValue = lightbox.querySelector(".lightbox-camera strong");
     var lightboxDesc = lightbox.querySelector(".lightbox-description");
     var lightboxPermalink = lightbox.querySelector(".lightbox-permalink");
@@ -36,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var rightArrow = lightbox.querySelector(".lightbox-arrow.right");
     var currentPhotos = [];
     var currentIndex = 0;
+    var loadToken = 0;
 
     function setField(el, value) {
         if (value) { el.textContent = value; el.style.display = ''; }
@@ -84,8 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             lightboxPermalink.style.display = 'none';
         }
+        var thisToken = ++loadToken;
         var newImg = new Image();
-        newImg.onload = function() { lightboxImg.src = newImg.src; lightboxImg.style.display = ''; };
+        newImg.onload = function() {
+            if (thisToken !== loadToken) return;
+            lightboxImg.src = newImg.src;
+            lightboxImg.style.display = '';
+        };
         newImg.src = src;
         lightbox.style.display = "flex";
         document.body.style.overflow = "hidden";
@@ -130,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var swiping = false;
 
     lightbox.addEventListener("touchstart", function(e) {
+        if (e.target.closest('.lightbox-controls')) return;
         if (e.touches.length === 1) {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;

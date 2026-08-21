@@ -320,51 +320,6 @@ html[data-theme="light"] .theme-toggle {
   margin-bottom: 2.5rem;
 }
 
-.post-cards {
-  display: flex;
-  flex-direction: column;
-}
-
-.post-card {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--grey-light);
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-
-  &-link {
-    text-decoration: none;
-    color: inherit;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &-date {
-    margin-bottom: 0.4rem;
-  }
-
-  &-title-wrap {
-    flex: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  &-title {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -1px;
-    line-height: 1.2;
-    margin-bottom: 0.1rem;
-  }
-
-  &-footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-}
-
 .posts-tags-list {
   margin-bottom: 0;
   display: flex;
@@ -503,23 +458,8 @@ a:hover time {
   }
 }
 
-.post-subtitle {
-  font-style: italic;
-  color: var(--grey-dark);
-  margin-top: 0.15rem !important;
-  margin-bottom: 0.25rem;
-  line-height: 1.4;
-}
-
 .post-content {
   margin-top: 2.5rem;
-}
-
-.post-card .post-subtitle {
-  font-style: normal;
-  color: var(--text-color);
-  margin-top: 0 !important;
-  margin-bottom: 0;
 }
 
 /* Cuadrícula de fotos (/fotos/) — filas y columnas, sin recortar las fotos */
@@ -608,14 +548,14 @@ a:hover time {
 
 .lightbox-info {
   max-width: 40rem;
+  width: 100%;
   text-align: left;
 }
 
-.lightbox-meta-row {
+.lightbox-title-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: baseline;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
@@ -629,18 +569,13 @@ a:hover time {
 .lightbox-date {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.8rem;
-  margin: 0.25rem 0 0;
-}
-
-.lightbox-meta-right {
-  flex: 0 0 auto;
-  text-align: right;
+  margin: 0;
 }
 
 .lightbox-camera {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.8rem;
-  margin: 0;
+  margin: 0.35rem 0 0;
 
   strong {
     color: #fff;
@@ -878,10 +813,13 @@ a:hover time {
 .photo-post-meta {
   max-width: $max-width;
   margin: 1.25rem auto 0;
+  text-align: left;
+}
+
+.photo-post-title-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: baseline;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
@@ -890,25 +828,16 @@ a:hover time {
   letter-spacing: -0.5px;
   line-height: 1.25;
   font-weight: 600;
-  margin: 0 0 0.15rem;
+  margin: 0;
 }
 
-.photo-post-meta-left time {
-  display: block;
+.photo-post-title-row time {
   color: var(--grey-dark);
-}
-
-.photo-post-meta-right {
-  text-align: right;
-  color: var(--grey-dark);
-
-  @media (max-width: 480px) {
-    text-align: left;
-  }
 }
 
 .photo-post-camera {
-  margin: 0;
+  margin: 0.35rem 0 0;
+  color: var(--grey-dark);
 
   strong {
     color: var(--text-color);
@@ -1034,5 +963,20 @@ a.footnote {
     &:hover {
       color: var(--hover-color);
     }
+  }
+}
+
+/* ===== Enlaces sin affordance visual en dispositivos sin hover ===== */
+/* Estos enlaces se apoyan solo en el color para distinguirse del texto
+   normal (a diferencia de nav, pills, botones o paginación, que ya
+   tienen su propio look de "esto es interactivo"). En táctil, sin
+   :hover, se subrayan para que se noten como enlaces. */
+@media (hover: none) {
+  .toc a,
+  .item-meta a,
+  .lightbox-permalink,
+  .home-section-header a,
+  .home-index-link {
+    text-decoration: underline;
   }
 }

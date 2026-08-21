@@ -1,7 +1,6 @@
 ---
 title: El mundo de los perros no es woke
 date: 2026-03-01
-subtitle: "Cómo en el mundo de los perros los dueños alimentan la cultura del más fuerte"
 author: Nahúm
 image: /assets/images/2026-03-01-callum.jpg
 tags:

@@ -1,7 +1,6 @@
 ---
 title: "Otro desplante a los artistas por parte de Spotify"
 date: 2024-01-11
-subtitle: "Una medida totalmente injusta que beneficia, sorpresa, a las grandes discográficas"
 author: Nahúm
 tags:
   - música

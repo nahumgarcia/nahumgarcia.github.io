@@ -1,6 +1,5 @@
 ---
 title: La Unión Europea vs el streaming musical
-subtitle: Aunque no voy a esperar sentado
 date: 2024-01-17
 author: Nahúm
 tags:

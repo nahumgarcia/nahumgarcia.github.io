@@ -35,7 +35,7 @@
 │   └── _photos/             # Posts de foto (una foto por post)
 ├── pages/                   # Páginas del sitio
 │   ├── about.md
-│   ├── posts.html           # /escritos/ — lista de posts con recuadros
+│   ├── posts.html           # /escritos/ — temas + índice de todos los posts (estilo home)
 │   ├── photos.html          # /fotos/ — grid de miniaturas de fotos
 │   ├── categories.html
 │   ├── tagged.html
@@ -76,6 +76,7 @@ La nav (`_includes/nav.html`) muestra:
     - etiqueta
   toc: true  # opcional, activa tabla de contenidos
   ```
+- Sin subtítulo: el sitio no tiene ese campo (se eliminó de `_posts`, `post.html`, `posts.html` y `.pages.yml`).
 
 ### `_photos` (posts de foto)
 - Un post = una foto. Sin álbumes ni agrupaciones.
@@ -88,6 +89,7 @@ La nav (`_includes/nav.html`) muestra:
   camera: "Cámara opcional"
   file: "foto.jpg"  # o ruta completa /assets/photos/foto.jpg si viene de Pages CMS
   ```
+- Un solo campo de fecha (`date`): es la fecha en la que se tomó la foto, no una fecha de publicación separada. Si solo se conoce el mes, se usa el día `01` como convención (p. ej. `2024-10-01`).
 - El cuerpo (markdown bajo el `---`) es la descripción/caption, opcional.
 - Las imágenes viven en `assets/photos/`.
 - Si no se especifica `title`, Jekyll genera uno automáticamente a partir del nombre de archivo (p. ej. `granada-12.md` → "Granada 12").
@@ -98,8 +100,8 @@ La nav (`_includes/nav.html`) muestra:
 El sitio se edita también desde [Pages CMS](https://pagescms.org), configurado en `.pages.yml` (raíz del repo). Ese archivo define qué colecciones/campos ve el editor — **cualquier cambio en las colecciones, en su front matter o en cómo se generan los archivos (nombre de archivo, campos nuevos, `required`, etc.) debe reflejarse también en `.pages.yml`**, o Pages CMS se desincroniza con lo que realmente hay en `content/`.
 
 - **`media`**: dos fuentes — `post-images` (`assets/images`, para el campo `image` de escritos) y `photo-assets` (`assets/photos`, para el campo `file` de fotos y portadas). Ambas con `output` en la misma ruta con `/` inicial que ya usa el sitio.
-- **`content: posts`**: espeja `_posts` — título, subtítulo, fecha (opcional, no `required`: ver nota más abajo), imagen (selector con miniatura), autor, tags, toc, cuerpo.
-- **`content: photos`**: espeja `_photos` — fecha (opcional), título, cámara, foto (selector de imagen, `required`), descripción. `filename` fijado a `{year}-{month}-{day}-{fields.title}.md` para que no dependa del campo usado como `primary` en la vista.
+- **`content: posts`**: espeja `_posts` — título, fecha (opcional, no `required`: ver nota más abajo), imagen (selector con miniatura), autor, tags, toc, cuerpo. Sin campo de subtítulo (eliminado del sitio).
+- **`content: photos`**: espeja `_photos` — fecha (opcional, es la fecha en que se tomó la foto), título, cámara, foto (selector de imagen, `required`), descripción. `filename` fijado a `{year}-{month}-{day}-{fields.title}.md` para que no dependa del campo usado como `primary` en la vista.
 - **`content: about`**: el único `type: file` — edita `pages/about.md`. Incluye `layout` y `permalink` como campos ocultos con `default`, porque Pages CMS reconstruye el front matter solo con los campos declarados en el esquema — cualquier clave del archivo que no esté en `.pages.yml` se pierde al guardar desde la CMS.
 - El campo `date` de `posts` y `photos` **no es `required`** a propósito: se probó como obligatorio y provocó "Content validation failed: Required at date" al guardar desde la CMS (ver commit `0e0d320`). No se identificó la causa exacta del lado de Pages CMS, así que se optó por quitar la restricción en vez de perseguir un bug en código que no es de este repo.
 - Antes de tocar `.pages.yml`, conviene validarlo contra el esquema real de Pages CMS (Zod), no solo por sintaxis YAML — así se detectaron varios errores durante el desarrollo. El repo de Pages CMS es público (`github.com/pages-cms/pages-cms`); su `lib/config-schema.ts` es la fuente de verdad.
@@ -114,7 +116,7 @@ Cada bloque usa como cabecera un `<h2>` cuyo texto ("Fotos"/"Escritos") es direc
 
 ## Escritos (`/escritos/`)
 
-Muestra recuadros clicables con fecha, título, tags y tiempo de lectura. Cada recuadro es un `<a>` que lleva al artículo.
+Sección "Temas" (pills de tags, enlazan a `/tagged/#tag`) seguida de un índice con **todos** los posts, con el mismo estilo simplificado que el bloque Escritos de la home (`.home-index`): solo título y fecha, sin tags, tiempo de lectura ni subtítulo.
 
 ## Fotos (`/fotos/`)
 
@@ -131,11 +133,12 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 - **Ancho fotos/página:** hasta 1000px
 - **Grid de `/fotos/`:** `.photo-grid`, CSS Grid con `align-items: center` (6 columnas desktop / 4 tablet / 1 móvil), fotos a su ratio natural, ocupa todo el ancho del navegador (se sale de `.site-outer` con el truco `100vw` + márgenes negativos) con `padding` propio a los lados (2rem desktop/tablet, 1.5rem móvil)
 - **Fotos sin bordes redondeados:** en toda la web (home, `/fotos/`, posts individuales, imágenes dentro de artículos)
+- **Enlaces sin affordance visual en dispositivos táctiles:** enlaces que se distinguen solo por color (TOC, `.item-meta a`, `.lightbox-permalink`, cabeceras de sección de la home, `.home-index-link`) se subrayan bajo `@media (hover: none)`, ya que sin `:hover` no hay otra pista de que son clicables. Nav, pills, botones y paginación no lo necesitan porque ya tienen su propio look de "esto es interactivo".
 - **Código:** Inconsolata/Monaco
 
 ## Funcionalidades
 
-- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-date`, `data-camera`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra. El panel de info va en dos columnas (título+fecha a la izquierda, cámara a la derecha) más la descripción debajo, el mismo layout que usa `photo_post.html` para el post individual.
+- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-date`, `data-camera`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra. El panel de info tiene el ancho del texto y está alineado a la izquierda: título y fecha en la misma línea (fecha a la derecha del título), cámara debajo en su propia línea, y descripción debajo de eso — el mismo layout que usa `photo_post.html` para el post individual. Cada `showLightbox()` usa un token incremental para descartar imágenes que tardan en cargar si el usuario ya avanzó a otra foto (evita que una carga lenta sobrescriba la foto actual), y el swipe táctil ignora los toques que empiezan sobre `.lightbox-controls` para no interferir con el tap en las flechas.
 - **Tabla de contenidos:** Opt-in con `toc: true` en front matter. Genera nav con h2/h3 del artículo.
 - **Notas al pie:** Pastilla `•••` (no se muestra el número). Tooltip al hacer clic.
 - **Open Graph:** `og:image` y `twitter:image` usando `image:` del front matter. Fallback al logo.

@@ -1,7 +1,6 @@
 ---
 title: Bye bye Pocoyo
 date: 2012-07-04
-subtitle: "Siete años trabajando en Zinkia, la creación de un icono de la animación infantil"
 author: Nahúm
 tags:
   - personal

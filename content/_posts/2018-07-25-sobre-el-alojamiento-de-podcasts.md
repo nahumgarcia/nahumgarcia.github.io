@@ -1,7 +1,6 @@
 ---
 title: Sobre el alojamiento de podcasts
 date: 2018-07-25
-subtitle: "Los intentos de varios actores de conquistar un sector a la alza que hoy es completamente abierto"
 author: Nahúm
 tags:
   - podcasts

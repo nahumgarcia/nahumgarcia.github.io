@@ -13,14 +13,12 @@ layout: default
   </a>
 
   <div class="photo-post-meta">
-    <div class="photo-post-meta-left">
+    <div class="photo-post-title-row">
       {% if page.title %}<h1 class="photo-post-title">{{ page.title }}</h1>{% endif %}
       <time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>
     </div>
     {% if page.camera %}
-    <div class="photo-post-meta-right">
-      <p class="photo-post-camera">Cámara: <strong>{{ page.camera }}</strong></p>
-    </div>
+    <p class="photo-post-camera">Cámara: <strong>{{ page.camera }}</strong></p>
     {% endif %}
   </div>
 
