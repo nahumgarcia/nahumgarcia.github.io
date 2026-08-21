@@ -16,9 +16,11 @@ layout: default
     {% assign album_posts = site.photos | where_exp: "item", "item.albums contains page.slug" | sort: "date" | reverse %}
     {% for post in album_posts %}
       {% for photo in post.photos %}
-      <a href="#" class="album-grid-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
+      {%- assign photo_src = photo.file -%}
+      {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
+      <a href="#" class="album-grid-photo" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.alt | default: photo.file }}">
         <img
-          src="{{ site.baseurl }}/assets/photos/{{ photo.file }}"
+          src="{{ site.baseurl }}{{ photo_src }}"
           alt="{{ photo.alt | default: photo.file }}"
           loading="lazy"
         >

@@ -4,9 +4,11 @@ layout: default
 <article class="photo-post">
   <div class="photo-post-photos{% if page.photos.size == 1 %} single-photo{% endif %}">
     {% for photo in page.photos %}
-    <a href="#" class="post-photo" data-full="{{ site.baseurl }}/assets/photos/{{ photo.file }}" data-alt="{{ photo.alt | default: photo.file }}">
+    {%- assign photo_src = photo.file -%}
+    {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
+    <a href="#" class="post-photo" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.alt | default: photo.file }}">
       <img
-        src="{{ site.baseurl }}/assets/photos/{{ photo.file }}"
+        src="{{ site.baseurl }}{{ photo_src }}"
         alt="{{ photo.alt | default: photo.file }}"
         loading="lazy"
       >

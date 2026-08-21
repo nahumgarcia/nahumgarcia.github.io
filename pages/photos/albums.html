@@ -16,8 +16,10 @@ description: "Todos los álbumes de fotos"
     <li class="gallery-item">
       <a href="{{ album.url | prepend: site.baseurl }}">
         {% if album.cover_photo %}
+          {%- assign cover_src = album.cover_photo -%}
+          {%- unless cover_src contains "/" -%}{% assign cover_src = "/assets/photos/" | append: cover_src %}{%- endunless -%}
           <img
-            src="{{ site.baseurl }}/assets/photos/{{ album.cover_photo }}"
+            src="{{ site.baseurl }}{{ cover_src }}"
             alt="{{ album.title }}"
             class="gallery-thumbnail"
             loading="lazy"
