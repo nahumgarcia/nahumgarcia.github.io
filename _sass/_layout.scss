@@ -110,7 +110,7 @@ html[data-theme="light"] .theme-toggle {
 }
 
 @media (max-width: 600px) {
-    .site-nav, .photos-submenu {
+    .site-nav {
         flex-wrap: wrap;
     }
 }
@@ -810,20 +810,6 @@ a:hover time {
   -webkit-tap-highlight-color: transparent;
 }
 
-.photo-feed-post {
-  .photo-caption,
-  .item-meta-footer {
-    max-width: $max-width;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .item-meta {
-    margin-top: 0.75rem;
-    margin-bottom: 0;
-  }
-}
-
 /* ===== Home: cabeceras de sección ===== */
 .home-section-header {
   display: flex;
@@ -967,172 +953,6 @@ a:hover time {
 
 
 
-/* ===== Albums scroll horizontal ===== */
-.albums-section {
-  margin-bottom: 2.5rem;
-}
-
-.albums-section-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
-}
-
-.albums-see-all {
-  font-size: 0.9rem;
-  color: var(--grey-dark);
-  text-decoration: none;
-  &:hover {
-    color: var(--hover-color);
-  }
-}
-
-.albums-scroll {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
-
-  /* Ocultar scrollbar pero permitir scroll */
-  scrollbar-width: thin;
-  scrollbar-color: var(--grey-light) transparent;
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--grey-light);
-    border-radius: 2px;
-  }
-}
-
-.album-card {
-  flex: 0 0 140px;
-  scroll-snap-align: start;
-  text-decoration: none;
-  color: var(--text-color);
-  text-align: center;
-
-  img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    transition: transform 0.2s ease;
-  }
-
-  &:hover img {
-    transform: scale(1.03);
-  }
-}
-
-.album-card-title {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-/* ===== Photo feed ===== */
-.photo-feed {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.photo-feed-post {
-  margin-bottom: 2.5rem;
-
-  a {
-    display: block;
-    text-decoration: none;
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    max-width: $max-width;
-    margin: 1.5rem auto 0;
-    border-bottom: 1px solid var(--grey-light);
-  }
-
-  &:last-child::after {
-    display: none;
-  }
-}
-
-.photo-feed-grid {
-  column-count: 3;
-  column-gap: 10px;
-
-  a {
-    display: block;
-    overflow: hidden;
-    border-radius: 4px;
-    break-inside: avoid;
-    margin-bottom: 10px;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    cursor: pointer;
-  }
-}
-
-/* Single photo: full width, no columns */
-.photo-feed-grid.single-photo {
-  column-count: 1;
-
-  a {
-    aspect-ratio: auto;
-    border-radius: 4px;
-    margin-bottom: 0;
-  }
-
-  img {
-    height: auto;
-    border-radius: 4px;
-  }
-}
-
-.photo-post-photos.single-photo {
-  column-count: 1;
-
-  a {
-    aspect-ratio: auto;
-    border-radius: 4px;
-    margin-bottom: 0;
-  }
-
-  img {
-    height: auto;
-    border-radius: 4px;
-  }
-}
-
-.photo-caption {
-  margin-top: 0.75rem;
-  color: var(--text-color);
-  line-height: $base-line-height;
-}
-
-
-.photo-feed-count {
-  color: var(--grey);
-}
-
 .feed-pagination {
   display: flex;
   justify-content: flex-start;
@@ -1176,133 +996,45 @@ a:hover time {
   margin-right: auto;
 }
 
-.photo-post-photos {
-  column-count: 3;
-  column-gap: 10px;
+.photo-post-title {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
 
-  a {
-    display: block;
-    overflow: hidden;
-    border-radius: 4px;
-    text-decoration: none;
-    break-inside: avoid;
-    margin-bottom: 10px;
-  }
+.photo-post-image {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
 
   img {
     width: 100%;
     height: auto;
     display: block;
     cursor: pointer;
+    border-radius: 4px;
   }
 }
 
-.photo-post-caption {
-  @extend .photo-caption;
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ===== Album page ===== */
 .photo-post-header {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1.25rem;
 }
 
-.album-page {
-  max-width: 1200px;
-}
-
-.album-header {
-  margin-bottom: 2rem;
-}
-
-.album-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.album-description {
-  margin-bottom: 2rem;
-  color: var(--grey-dark);
-}
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-
-  a {
-    display: block;
-    text-decoration: none;
-    overflow: hidden;
-    border-radius: 4px;
-    aspect-ratio: 1;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-}
-
-@media (max-width: 600px) {
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .album-card {
-    flex: 0 0 110px;
-    img {
-      width: 110px;
-      height: 110px;
-    }
-  }
-
-  .album-card-title {
-    font-size: 0.8rem;
-  }
-
-  .photo-post-photos {
-    column-count: 2;
-  }
-  .photo-feed-grid {
-    column-count: 2;
-  }
-}
-
-/* ===== Photos submenu ===== */
-.photos-submenu {
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.85rem;
+.photo-post-caption {
   max-width: $max-width;
-  margin: 0 auto 2rem;
-
-  a, a:visited {
-    text-decoration: none;
-    color: var(--grey);
-    transition: color 0.2s ease;
-  }
-
-  a:hover {
-    color: var(--hover-color);
-  }
-
-  a.submenu-active, a.submenu-active:visited {
-    color: var(--text-color);
-  }
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.75rem;
+  color: var(--text-color);
+  line-height: $base-line-height;
 }
 
 /* ===== Footer ===== */

@@ -1,5 +1,6 @@
 module Jekyll
   ITEMS_PER_PAGE = 6
+  PHOTO_ITEMS_PER_PAGE = 24
 
   # Photo feed pagination (/photos/page/N/)
   class PhotoPaginationGenerator < Generator
@@ -8,7 +9,7 @@ module Jekyll
 
     def generate(site)
       photos = site.collections['photos'].docs.sort_by { |p| p.data['date'] }.reverse
-      total_pages = (photos.length.to_f / ITEMS_PER_PAGE).ceil
+      total_pages = (photos.length.to_f / PHOTO_ITEMS_PER_PAGE).ceil
 
       return if total_pages <= 1
 
@@ -30,7 +31,7 @@ module Jekyll
       self.data['title'] = "Fotos - Página #{page_num}"
       self.data['page_num'] = page_num
       self.data['total_pages'] = total_pages
-      self.data['per_page'] = ITEMS_PER_PAGE
+      self.data['per_page'] = PHOTO_ITEMS_PER_PAGE
     end
   end
 

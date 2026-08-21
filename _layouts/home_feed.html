@@ -4,31 +4,21 @@ layout: default
 {% assign per_page = page.per_page | default: 6 %}
 {% assign page_num = page.page_num | default: 1 %}
 
-{% comment %}
-  Fila de fotos recientes: se aplanan todas las fotos de los últimos
-  posts de fotos en una sola lista, más recientes primero.
-{% endcomment %}
-{% assign recent_photo_posts = site.photos | sort: "date" | reverse %}
-{% assign photo_items = "" | split: "" %}
-{% for post in recent_photo_posts %}
-  {% for photo in post.photos %}
-    {% assign photo_items = photo_items | push: photo %}
-  {% endfor %}
-{% endfor %}
+{% assign recent_photos = site.photos | sort: "date" | reverse %}
 
-{% if photo_items.size > 0 and page_num == 1 %}
+{% if recent_photos.size > 0 and page_num == 1 %}
 <div class="home-section-header">
   <h2>Fotos</h2>
   <a href="{{ site.baseurl }}/fotos/" class="home-section-more">Ver todas &rarr;</a>
 </div>
 <div class="home-photo-strip">
-  {% for photo in photo_items limit: 20 %}
+  {% for photo in recent_photos limit: 20 %}
   {%- assign photo_src = photo.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
-  <a href="#" class="home-photo-strip-item" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.alt | default: '' }}">
+  <a href="#" class="home-photo-strip-item" data-full="{{ site.baseurl }}{{ photo_src }}" data-alt="{{ photo.title | default: '' }}">
     <img
       src="{{ site.baseurl }}{{ photo_src }}"
-      alt="{{ photo.alt | default: '' }}"
+      alt="{{ photo.title | default: '' }}"
       loading="lazy"
     >
   </a>

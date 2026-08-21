@@ -30,8 +30,7 @@ Blog personal de Nahúm García. Comenzó como fork de [TextLog](https://github.
 ```
 content/
   _posts/          # Escritos
-  _photos/         # Posts de foto
-  _photoalbums/    # Álbumes
+  _photos/         # Posts de foto (una foto por post)
 pages/             # Páginas estáticas
 assets/
   images/          # Imágenes de posts

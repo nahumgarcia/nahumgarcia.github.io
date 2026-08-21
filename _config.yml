@@ -16,10 +16,6 @@ collections:
   photos:
     output: true
     permalink: /fotos/post/:name/
-  photoalbums:
-    output: true
-    permalink: /fotos/album/:name/
-    title: Álbumes
 
 plugins:
   - jekyll-sitemap

@@ -20,10 +20,9 @@
 │   ├── default.html         # Layout base (head + nav + footer + footnote JS)
 │   ├── page.html            # Páginas estáticas simples
 │   ├── post.html            # Escritos/artículos (date, tags, TOC opcional, footnotes)
-│   ├── home_feed.html       # Feed principal: mezcla posts y fotos ordenados por fecha
-│   ├── photo_post.html      # Post de foto individual (grid + caption + lightbox)
-│   ├── photo_page.html      # Índice de fotos (/fotos/) con submenú
-│   ├── album.html           # Álbum de fotos individual
+│   ├── home_feed.html       # Home: fila de fotos recientes + índice de escritos
+│   ├── photo_post.html      # Post de foto individual (una foto + caption + lightbox)
+│   ├── photo_page.html      # Índice de fotos (/fotos/), grid de miniaturas
 │   └── tag_page.html        # Página de etiqueta
 ├── _includes/
 │   ├── head.html            # Meta tags, CSS, og:image, twitter:image
@@ -33,14 +32,11 @@
 │   └── disqus.html          # Comentarios Disqus (deshabilitado)
 ├── content/                 # collections_dir
 │   ├── _posts/              # Escritos (2008–presente)
-│   ├── _photos/             # Posts de foto
-│   └── _photoalbums/        # Álbumes de fotos
+│   └── _photos/             # Posts de foto (una foto por post)
 ├── pages/                   # Páginas del sitio
 │   ├── about.md
 │   ├── posts.html           # /escritos/ — lista de posts con recuadros
-│   ├── photos.html          # /fotos/ — feed de fotos con submenú
-│   ├── photos/
-│   │   └── albums.html      # /fotos/albums/ — grid de álbumes
+│   ├── photos.html          # /fotos/ — grid de miniaturas de fotos
 │   ├── categories.html
 │   ├── tagged.html
 │   └── 404.md
@@ -82,38 +78,28 @@ La nav (`_includes/nav.html`) muestra:
   ```
 
 ### `_photos` (posts de foto)
+- Un post = una foto. Sin álbumes ni agrupaciones.
 - Permalink: `/fotos/post/:name/`
 - Layout por defecto: `photo_post`
 - Front matter:
   ```yaml
   date: 2024-04-01
   title: "Título opcional"
-  albums: [nombre-album]  # opcional
-  tags:
-    - etiqueta
-  photos:
-    - file: "foto.jpg"
-      alt: "texto alt"
+  camera: "Cámara opcional"
+  file: "foto.jpg"  # o ruta completa /assets/photos/foto.jpg si viene de Pages CMS
   ```
-- Las imágenes viven en `assets/photos/`
-
-### `_photoalbums` (álbumes)
-- Permalink: `/fotos/album/:name/`
-- Layout por defecto: `album`
-- Front matter:
-  ```yaml
-  title: "Título del álbum"
-  slug: nombre-album
-  cover: "foto-portada.jpg"
-  ```
-- El álbum agrupa fotos de `_photos` que tengan `albums: [nombre-album]`
+- El cuerpo (markdown bajo el `---`) es la descripción/caption, opcional.
+- Las imágenes viven en `assets/photos/`.
+- Si no se especifica `title`, Jekyll genera uno automáticamente a partir del nombre de archivo (p. ej. `granada-12.md` → "Granada 12").
+- Las plantillas que renderizan `file` (`photo_post.html`, `photo_page.html`, `home_feed.html`) aceptan tanto el nombre de archivo suelto como la ruta completa con `/assets/photos/` por delante, para ser compatibles con el selector de imagen de Pages CMS.
 
 ## Home feed
 
-El layout `home_feed.html` mezcla `site.posts` y `site.photos` ordenados por fecha.
-- Posts de texto: muestra meta (fecha • tiempo de lectura • tags), título y cuerpo (truncado si > 1500 palabras)
-- Posts de foto: muestra meta (fecha • álbum • nº fotos), grid de fotos 3 columnas y caption opcional
-- Paginación: `/page/N/` configurado en `_config.yml`
+El layout `home_feed.html` tiene dos bloques independientes:
+- **Fotos:** fila de las fotos más recientes (`site.photos`), cuadradas, en una sola línea que se recorta al ancho de pantalla sin scroll. Clic abre el lightbox en la propia página. Solo se muestra en la página 1.
+- **Escritos:** índice de `site.posts` — solo título, fecha y un resumen corto (el `subtitle` del post, o el cuerpo truncado si no tiene). Paginado vía `/page/N/`.
+
+Cada bloque lleva una cabecera con enlace "Ver todo" a su listado completo (`/fotos/`, `/escritos/`).
 
 ## Escritos (`/escritos/`)
 
@@ -121,9 +107,7 @@ Muestra recuadros clicables con fecha, título, tags y tiempo de lectura. Cada r
 
 ## Fotos (`/fotos/`)
 
-Submenú con dos secciones:
-- **Publicaciones** → `/fotos/` — feed cronológico de photo posts
-- **Álbumes** → `/fotos/albums/` — grid de álbumes
+Grid de miniaturas cuadradas (`.gallery-list`/`.gallery-item`, reutilizado del antiguo índice de álbumes) con todas las fotos, más recientes primero. Cada miniatura muestra título (si tiene) y fecha al hover, y lleva al post individual de esa foto. Paginado vía `/fotos/page/N/` (generado por `_plugins/photo_pagination.rb`).
 
 ## Estilos clave
 
@@ -131,7 +115,7 @@ Submenú con dos secciones:
 - **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Dark mode soportado.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px
-- **Grids de fotos:** 3 columnas desktop, 2 en móvil, gap 10px
+- **Grid de `/fotos/`:** `.gallery-list`, columnas automáticas (`repeat(auto-fill, minmax(200px, 1fr))`), miniaturas cuadradas recortadas (`object-fit: cover`)
 - **Código:** Inconsolata/Monaco
 
 ## Funcionalidades

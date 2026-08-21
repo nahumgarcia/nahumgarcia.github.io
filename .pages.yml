@@ -29,41 +29,19 @@ content:
       - { name: body, label: Contenido, type: text }
 
   - name: photos
-    label: "Fotos (publicaciones)"
+    label: Fotos
     type: collection
     path: content/_photos
     filename: "{year}-{month}-{day}-{fields.title}.md"
     view:
-      fields: [date, albums, title, tags, body]
+      fields: [date, title, camera]
       primary: date
     fields:
       - { name: date, label: Fecha, type: date, required: true }
       - { name: title, label: Título, type: string }
-      - { name: albums, label: Álbumes, type: string, list: true }
-      - { name: tags, label: Tags, type: string, list: true }
-      - name: photos
-        label: Fotos
-        type: object
-        list: true
-        fields:
-          - { name: file, label: Foto, type: image, required: true, options: { media: photo-assets } }
-          - { name: alt, label: "Texto alternativo", type: string }
-      - { name: body, label: "Descripción / caption", type: text }
-
-  - name: photoalbums
-    label: Álbumes
-    type: collection
-    path: content/_photoalbums
-    filename: "{fields.slug}.md"
-    view:
-      fields: [title, slug]
-      primary: title
-    fields:
-      - { name: layout, type: string, hidden: true, default: album }
-      - { name: title, label: Título, type: string, required: true }
-      - { name: slug, label: Slug, type: string, required: true }
-      - { name: date, label: Fecha, type: date }
-      - { name: cover_photo, label: "Foto de portada", type: image, options: { media: photo-assets } }
+      - { name: camera, label: Cámara, type: string }
+      - { name: file, label: Foto, type: image, required: true, options: { media: photo-assets } }
+      - { name: body, label: Descripción, type: text }
 
   - name: about
     label: "Sobre mí"
