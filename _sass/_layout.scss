@@ -92,19 +92,23 @@
         color: var(--hover-color);
     }
 
-    .icon-auto { display: block; }
     .icon-moon { display: none; }
-    .icon-sun  { display: none; }
+    .icon-sun  { display: block; }
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) .theme-toggle {
+        .icon-sun  { display: none; }
+        .icon-moon { display: block; }
+    }
 }
 
 html[data-theme="dark"] .theme-toggle {
-    .icon-auto { display: none; }
     .icon-moon { display: block; }
     .icon-sun  { display: none; }
 }
 
 html[data-theme="light"] .theme-toggle {
-    .icon-auto { display: none; }
     .icon-moon { display: none; }
     .icon-sun  { display: block; }
 }
@@ -756,17 +760,10 @@ a:hover time {
 /* ===== Home: índice de escritos ===== */
 .home-index-item {
   max-width: $max-width;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
 
-  &::after {
-    content: "";
-    display: block;
-    margin-top: 2rem;
-    border-bottom: 1px solid var(--grey-light);
-  }
-
-  &:last-child::after {
-    display: none;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -806,13 +803,6 @@ a:hover time {
   font-weight: 600;
   margin: 0;
   transition: color 0.2s ease;
-}
-
-.home-index-excerpt {
-  color: var(--grey-dark);
-  margin-top: 0.35rem;
-  margin-bottom: 0;
-  line-height: 1.5;
 }
 
 .read-more {

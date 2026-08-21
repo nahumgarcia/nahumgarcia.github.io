@@ -1,12 +1,9 @@
 ---
 layout: default
 ---
-{% assign per_page = page.per_page | default: 6 %}
-{% assign page_num = page.page_num | default: 1 %}
-
 {% assign recent_photos = site.photos | sort: "date" | reverse %}
 
-{% if recent_photos.size > 0 and page_num == 1 %}
+{% if recent_photos.size > 0 %}
 <div class="home-section-header">
   <h2>Fotos</h2>
   <a href="{{ site.baseurl }}/fotos/" class="home-section-more">Ver todas &rarr;</a>
@@ -40,44 +37,21 @@ layout: default
 {% include lightbox.html selector=".home-photo-strip" photo_selector=".home-photo-strip-item" %}
 {% endif %}
 
-{% assign all_posts = site.posts | sort: "date" | reverse %}
-{% assign total_items = all_posts.size %}
-{% assign total_pages_float = total_items | plus: 0.0 | divided_by: per_page %}
-{% assign total_pages = total_pages_float | ceil %}
-{% assign offset = page_num | minus: 1 | times: per_page %}
+{% assign recent_posts = site.posts | sort: "date" | reverse %}
 
 <div class="home-section-header home-section-header--narrow">
   <h2>Escritos</h2>
   <a href="{{ site.baseurl }}/escritos/" class="home-section-more">Ver todos &rarr;</a>
 </div>
 <section class="home-index">
-  {% for post in all_posts limit: per_page offset: offset %}
+  {% for post in recent_posts limit: 5 %}
   <article class="home-index-item">
     <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
       <div class="home-index-heading">
         <h2 class="home-index-title">{{ post.title }}</h2>
         <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
       </div>
-      {% if post.subtitle %}
-      <p class="home-index-excerpt">{{ post.subtitle }}</p>
-      {% else %}
-      <p class="home-index-excerpt">{{ post.content | strip_html | truncatewords: 28 }}</p>
-      {% endif %}
     </a>
   </article>
   {% endfor %}
 </section>
-
-{% if total_pages > 1 %}
-<nav class="feed-pagination">
-  {% for i in (1..total_pages) %}
-    {% if i == page_num %}
-    <span class="page-link page-current">{{ i }}</span>
-    {% elsif i == 1 %}
-    <a href="{{ site.baseurl }}/" class="page-link">{{ i }}</a>
-    {% else %}
-    <a href="{{ site.baseurl }}/page/{{ i }}/" class="page-link">{{ i }}</a>
-    {% endif %}
-  {% endfor %}
-</nav>
-{% endif %}

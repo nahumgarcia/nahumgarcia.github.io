@@ -95,9 +95,9 @@ La nav (`_includes/nav.html`) muestra:
 
 ## Home feed
 
-El layout `home_feed.html` tiene dos bloques independientes:
-- **Fotos:** fila de las fotos más recientes (`site.photos`), cuadradas, en una sola línea que se recorta al ancho de pantalla sin scroll. Clic abre el lightbox en la propia página. Solo se muestra en la página 1.
-- **Escritos:** índice de `site.posts` — solo título, fecha y un resumen corto (el `subtitle` del post, o el cuerpo truncado si no tiene). Paginado vía `/page/N/`.
+El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no hay `/page/N/`):
+- **Fotos:** fila de las fotos más recientes (`site.photos`), cuadradas, en una sola línea que se recorta al ancho de pantalla sin scroll. Clic abre el lightbox en la propia página.
+- **Escritos:** las 5 entradas más recientes de `site.posts` — solo título y fecha (sin subtítulo/resumen ni líneas separadoras entre entradas).
 
 Cada bloque lleva una cabecera con enlace "Ver todo" a su listado completo (`/fotos/`, `/escritos/`).
 
@@ -114,7 +114,8 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 ## Estilos clave
 
 - **Tipografía:** System font stack, peso base 300, bold = 700
-- **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Dark mode soportado.
+- **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Fondo blanco puro (`#fff`) en modo claro. Dark mode soportado.
+- **Selector de tema:** botón con solo dos iconos visibles (sol/luna), pero tres estados por detrás: automático (sigue `prefers-color-scheme`, sin `data-theme` ni `localStorage`), y claro/oscuro explícitos (`data-theme` + `localStorage`). Al pulsar, el botón alterna la apariencia actual; si el nuevo estado coincide con el del sistema, vuelve a automático en vez de fijar un `data-theme` explícito. Lógica en `_layouts/default.html`, iconos en `_includes/nav.html`.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px
 - **Grid de `/fotos/`:** `.photo-grid`, CSS Grid con `align-items: center` (4 columnas desktop / 3 tablet / 1 móvil), fotos a su ratio natural, ocupa todo el ancho del navegador (se sale de `.site-outer` con el truco `100vw` + márgenes negativos)

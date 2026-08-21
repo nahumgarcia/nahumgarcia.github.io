@@ -16,7 +16,7 @@ $spacing-unit:     2rem;
 $max-width:        690px;
 
 $text-color:       #000000;
-$background-color: #faf7f0;
+$background-color: #ffffff;
 $link-color:       #000000;
 
 $grey-color:       #757575;
@@ -43,7 +43,7 @@ $on-laptop:        800px;
 // CSS custom properties for dark mode
 :root {
   --text-color: #000;
-  --bg-color: #faf7f0;
+  --bg-color: #fff;
   --link-color: #000;
   --hover-color: #1AB8FF;
   --grey: #757575;
@@ -83,7 +83,7 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   --text-color: #000;
-  --bg-color: #faf7f0;
+  --bg-color: #fff;
   --link-color: #000;
   --hover-color: #1AB8FF;
   --grey: #757575;
