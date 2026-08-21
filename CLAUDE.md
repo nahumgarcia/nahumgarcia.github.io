@@ -107,7 +107,7 @@ Muestra recuadros clicables con fecha, título, tags y tiempo de lectura. Cada r
 
 ## Fotos (`/fotos/`)
 
-Cuadrícula tipo mosaico (`.photo-grid`/`.photo-grid-item`, `column-count` CSS, sin recortar las fotos a un ratio fijo) con todas las fotos, más recientes primero. Paginado vía `/fotos/page/N/` (generado por `_plugins/photo_pagination.rb`, 24 fotos por página).
+Cuadrícula por filas y columnas (`.photo-grid`/`.photo-grid-item`, CSS Grid, sin recortar las fotos a un ratio fijo), con las fotos de cada fila centradas verticalmente entre sí. Todas las fotos, más recientes primero. Paginado vía `/fotos/page/N/` (generado por `_plugins/photo_pagination.rb`, 24 fotos por página).
 
 Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, título, fecha • cámara, descripción y un enlace "Ver publicación" al permalink individual. Las flechas del lightbox navegan entre todas las fotos cargadas en esa página. El `<a>` de cada miniatura mantiene un `href` real al permalink (el JS del lightbox intercepta el click normal con `preventDefault`), así que cmd/ctrl-click o "abrir en pestaña nueva" siguen llevando directamente al post individual.
 
@@ -117,7 +117,8 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 - **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Dark mode soportado.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px
-- **Grid de `/fotos/`:** `.photo-grid`, mosaico con `column-count` (4 desktop / 3 tablet / 2 móvil), fotos a su ratio natural
+- **Grid de `/fotos/`:** `.photo-grid`, CSS Grid con `align-items: center` (4 columnas desktop / 3 tablet / 1 móvil), fotos a su ratio natural
+- **Fotos sin bordes redondeados:** en toda la web (home, `/fotos/`, posts individuales, imágenes dentro de artículos)
 - **Código:** Inconsolata/Monaco
 
 ## Funcionalidades

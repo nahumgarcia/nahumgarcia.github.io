@@ -178,7 +178,6 @@ html[data-theme="light"] .theme-toggle {
   transform: translateX(-50%);
   display: block;
   height: auto;
-  border-radius: 4px;
 }
 
 .fotos-duo {
@@ -191,7 +190,6 @@ html[data-theme="light"] .theme-toggle {
     max-width: none;
     height: auto;
     object-fit: cover;
-    border-radius: 4px;
     margin: 0;
     transform: none;
   }
@@ -520,31 +518,29 @@ a:hover time {
   margin-bottom: 0;
 }
 
-/* Cuadrícula de fotos (/fotos/) — estilo mosaico, sin recortar las fotos */
+/* Cuadrícula de fotos (/fotos/) — filas y columnas, sin recortar las fotos */
 .photo-grid {
-  column-count: 4;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 20px;
 
   @media (max-width: 900px) {
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: 600px) {
-    column-count: 2;
+    grid-template-columns: 1fr;
   }
 }
 
 .photo-grid-item {
   display: block;
-  break-inside: avoid;
-  margin-bottom: 20px;
-  border-radius: 4px;
   overflow: hidden;
 
   img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
     cursor: pointer;
     transition: opacity 0.2s ease;
   }
@@ -705,7 +701,6 @@ a:hover time {
   flex: 0 0 auto;
   width: 130px;
   height: 130px;
-  border-radius: 4px;
   overflow: hidden;
   display: block;
 
@@ -863,7 +858,6 @@ a:hover time {
 
 .photo-post-image {
   display: block;
-  border-radius: 4px;
   overflow: hidden;
 
   img {
@@ -871,7 +865,6 @@ a:hover time {
     height: auto;
     display: block;
     cursor: pointer;
-    border-radius: 4px;
   }
 }
 
