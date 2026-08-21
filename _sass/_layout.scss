@@ -465,7 +465,7 @@ a:hover time {
 /* Cuadrícula de fotos (/fotos/) — filas y columnas, sin recortar las fotos */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   align-items: center;
   gap: 20px;
 
@@ -479,11 +479,7 @@ a:hover time {
   padding: 0 2rem;
   box-sizing: border-box;
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
     padding: 0 1.5rem;
   }
 }
@@ -731,7 +727,7 @@ a:hover time {
 }
 
 .home-index-title {
-  font-size: $base-font-size;
+  font-size: inherit;
   font-weight: 400;
   margin: 0;
   transition: color 0.2s ease;
@@ -976,7 +972,9 @@ a.footnote {
   .item-meta a,
   .lightbox-permalink,
   .home-section-header a,
-  .home-index-link {
+  .home-index-link,
+  .site-nav a,
+  .site-footer a {
     text-decoration: underline;
   }
 }
