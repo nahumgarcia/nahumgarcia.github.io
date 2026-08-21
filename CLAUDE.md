@@ -93,6 +93,17 @@ La nav (`_includes/nav.html`) muestra:
 - Si no se especifica `title`, Jekyll genera uno automáticamente a partir del nombre de archivo (p. ej. `granada-12.md` → "Granada 12").
 - Las plantillas que renderizan `file` (`photo_post.html`, `photo_page.html`, `home_feed.html`) aceptan tanto el nombre de archivo suelto como la ruta completa con `/assets/photos/` por delante, para ser compatibles con el selector de imagen de Pages CMS.
 
+## Pages CMS
+
+El sitio se edita también desde [Pages CMS](https://pagescms.org), configurado en `.pages.yml` (raíz del repo). Ese archivo define qué colecciones/campos ve el editor — **cualquier cambio en las colecciones, en su front matter o en cómo se generan los archivos (nombre de archivo, campos nuevos, `required`, etc.) debe reflejarse también en `.pages.yml`**, o Pages CMS se desincroniza con lo que realmente hay en `content/`.
+
+- **`media`**: dos fuentes — `post-images` (`assets/images`, para el campo `image` de escritos) y `photo-assets` (`assets/photos`, para el campo `file` de fotos y portadas). Ambas con `output` en la misma ruta con `/` inicial que ya usa el sitio.
+- **`content: posts`**: espeja `_posts` — título, subtítulo, fecha (opcional, no `required`: ver nota más abajo), imagen (selector con miniatura), autor, tags, toc, cuerpo.
+- **`content: photos`**: espeja `_photos` — fecha (opcional), título, cámara, foto (selector de imagen, `required`), descripción. `filename` fijado a `{year}-{month}-{day}-{fields.title}.md` para que no dependa del campo usado como `primary` en la vista.
+- **`content: about`**: el único `type: file` — edita `pages/about.md`. Incluye `layout` y `permalink` como campos ocultos con `default`, porque Pages CMS reconstruye el front matter solo con los campos declarados en el esquema — cualquier clave del archivo que no esté en `.pages.yml` se pierde al guardar desde la CMS.
+- El campo `date` de `posts` y `photos` **no es `required`** a propósito: se probó como obligatorio y provocó "Content validation failed: Required at date" al guardar desde la CMS (ver commit `0e0d320`). No se identificó la causa exacta del lado de Pages CMS, así que se optó por quitar la restricción en vez de perseguir un bug en código que no es de este repo.
+- Antes de tocar `.pages.yml`, conviene validarlo contra el esquema real de Pages CMS (Zod), no solo por sintaxis YAML — así se detectaron varios errores durante el desarrollo. El repo de Pages CMS es público (`github.com/pages-cms/pages-cms`); su `lib/config-schema.ts` es la fuente de verdad.
+
 ## Home feed
 
 El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no hay `/page/N/`):
