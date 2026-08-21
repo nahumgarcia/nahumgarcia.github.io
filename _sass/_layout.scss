@@ -520,213 +520,37 @@ a:hover time {
   margin-bottom: 0;
 }
 
-/* Galería de miniaturas */
-.gallery-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0rem;
-}
+/* Cuadrícula de fotos (/fotos/) — estilo mosaico, sin recortar las fotos */
+.photo-grid {
+  column-count: 4;
+  column-gap: 20px;
 
-.gallery-item {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  aspect-ratio: 1;
-  text-align: center;
-  padding-left: 0;
-  border-radius: 4px;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-.gallery-thumbnail {
-  display: block;
-  visibility: visible;
-}
-/* Capa oscura siempre visible */
-.gallery-item a::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
-  transition: background 0.3s ease;
-}
-
-/* Estilos del texto del título */
-.gallery-item-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: white;
-  opacity: 1;
-  z-index: 2;
-  text-decoration: none;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-}
-
-/* Efectos al hacer hover */
-.gallery-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.6); /* Oscurece la imagen */
-}
-
-.gallery-item:hover::after {
-  background: rgba(0, 0, 0, 0.5); /* Añade la capa oscura */
-}
-
-.gallery-item:hover .gallery-item-title {
-  opacity: 1; /* Muestra el título */
-}
-
-.gallery-item:hover .gallery-date {
-  opacity: 1;
-}
-
-/* Ajusta el z-index del overlay */
-.gallery-item a::after {
-  z-index: 1; /* Asegura que está debajo del texto */
-}
-
-.gallery-date {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2; /* Mayor que el overlay (z-index: 1 implícito) */
-  color: white !important;
-  font-size: 0.9em;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-
-/* Galería individual */
-
-.gallery-container {
-  width: 90vw;
-  max-width: 1200px;
-}
-
-.photo-gallery {
-  column-count: 3;
-  column-gap: 10px;
-  max-width: 1800px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-}
-
-.photo-gallery_item {
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-  break-inside: avoid;
-  margin-bottom: 10px;
-}
-
-.photo-gallery_item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-}
-
-@media (max-width: 1024px) {
-  .photo-gallery {
+  @media (max-width: 900px) {
+    column-count: 3;
+  }
+  @media (max-width: 600px) {
     column-count: 2;
   }
 }
 
-@media (max-width: 600px) {
-  .photo-gallery {
-    column-count: 1;
-  }
-}
-
-/* Icono de descripción */
-.photo-info-icon {
-  position: absolute;
-  bottom: 6px;
-  right: 6px;
-  z-index: 10;
-  color: white;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
-}
-
-.photo-info-icon svg {
+.photo-grid-item {
   display: block;
-  width: 14px;
-  height: 14px;
-}
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
 
-/* Asegura que el contenedor de la foto tenga posición relativa */
-.photo-container {
-  position: relative;
-  height: 100%;
-}
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
 
-/* Responsive títulos galerías y fechas */
-@media (hover: none) and (max-width: 768px) {
-  .gallery-item-title,
-  .gallery-date {
-    opacity: 1 !important;
-    color: white !important;
-    -webkit-text-fill-color: white;
-  }
-  
-  .gallery-item-title {
-    top: 50%;
-    left: 50%;
-    font-size: 1.2rem;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
-  }
-  
-  .gallery-date {
-    bottom: 20px !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  }
-  
-  .gallery-item:hover img {
-    filter: brightness(1) !important;
-    transform: none !important;
-  }
-  
-  .gallery-item a::after {
-    background: rgba(0,0,0,0.5) !important; /* Fondo más oscuro */
-  }
-}
-
-/* Versión alternativa para navegadores que no soportan hover: none */
-@media (max-width: 768px) {
-  .gallery-item-title,
-  .gallery-date {
-    opacity: 1 !important;
-    color: white !important;
-    -webkit-text-fill-color: white;
-  }
-  
-  .gallery-item:hover img {
-    filter: brightness(1) !important;
-  }
-  
-  .gallery-item a::after {
-    background: rgba(0,0,0,0.4) !important;
+  &:hover img {
+    opacity: 0.85;
   }
 }
 
@@ -771,11 +595,41 @@ a:hover time {
   gap: 10px;
 }
 
+.lightbox-info {
+  max-width: 32rem;
+  text-align: center;
+}
+
+.lightbox-title {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lightbox-meta {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0;
+}
+
 .lightbox-description {
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  margin: 0;
+  margin: 0.4rem 0 0;
   font-size: 0.9rem;
+}
+
+.lightbox-permalink {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .lightbox-controls {

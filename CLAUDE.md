@@ -107,7 +107,9 @@ Muestra recuadros clicables con fecha, título, tags y tiempo de lectura. Cada r
 
 ## Fotos (`/fotos/`)
 
-Grid de miniaturas cuadradas (`.gallery-list`/`.gallery-item`, reutilizado del antiguo índice de álbumes) con todas las fotos, más recientes primero. Cada miniatura muestra título (si tiene) y fecha al hover, y lleva al post individual de esa foto. Paginado vía `/fotos/page/N/` (generado por `_plugins/photo_pagination.rb`).
+Cuadrícula tipo mosaico (`.photo-grid`/`.photo-grid-item`, `column-count` CSS, sin recortar las fotos a un ratio fijo) con todas las fotos, más recientes primero. Paginado vía `/fotos/page/N/` (generado por `_plugins/photo_pagination.rb`, 24 fotos por página).
+
+Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, título, fecha • cámara, descripción y un enlace "Ver publicación" al permalink individual. Las flechas del lightbox navegan entre todas las fotos cargadas en esa página. El `<a>` de cada miniatura mantiene un `href` real al permalink (el JS del lightbox intercepta el click normal con `preventDefault`), así que cmd/ctrl-click o "abrir en pestaña nueva" siguen llevando directamente al post individual.
 
 ## Estilos clave
 
@@ -115,12 +117,12 @@ Grid de miniaturas cuadradas (`.gallery-list`/`.gallery-item`, reutilizado del a
 - **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Dark mode soportado.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px
-- **Grid de `/fotos/`:** `.gallery-list`, columnas automáticas (`repeat(auto-fill, minmax(200px, 1fr))`), miniaturas cuadradas recortadas (`object-fit: cover`)
+- **Grid de `/fotos/`:** `.photo-grid`, mosaico con `column-count` (4 desktop / 3 tablet / 2 móvil), fotos a su ratio natural
 - **Código:** Inconsolata/Monaco
 
 ## Funcionalidades
 
-- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`
+- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-meta`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra.
 - **Tabla de contenidos:** Opt-in con `toc: true` en front matter. Genera nav con h2/h3 del artículo.
 - **Notas al pie:** Pastilla `•••` (no se muestra el número). Tooltip al hacer clic.
 - **Open Graph:** `og:image` y `twitter:image` usando `image:` del front matter. Fallback al logo.
