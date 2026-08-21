@@ -4,10 +4,7 @@ layout: default
 {% assign recent_photos = site.photos | sort: "date" | reverse %}
 
 {% if recent_photos.size > 0 %}
-<div class="home-section-header">
-  <h2>Fotos</h2>
-  <a href="{{ site.baseurl }}/fotos/" class="home-section-more">Ver todas &rarr;</a>
-</div>
+<h2 class="home-section-header"><a href="{{ site.baseurl }}/fotos/">Fotos</a></h2>
 <div class="home-photo-strip">
   {% for photo in recent_photos limit: 6 %}
   {%- assign photo_src = photo.file -%}
@@ -39,12 +36,9 @@ layout: default
 
 {% assign recent_posts = site.posts | sort: "date" | reverse %}
 
-<div class="home-section-header home-section-header--narrow">
-  <h2>Escritos</h2>
-  <a href="{{ site.baseurl }}/escritos/" class="home-section-more">Ver todos &rarr;</a>
-</div>
+<h2 class="home-section-header home-section-header--narrow"><a href="{{ site.baseurl }}/escritos/">Escritos</a></h2>
 <section class="home-index">
-  {% for post in recent_posts limit: 5 %}
+  {% for post in recent_posts limit: 10 %}
   <article class="home-index-item">
     <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
       <div class="home-index-heading">

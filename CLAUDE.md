@@ -96,10 +96,10 @@ La nav (`_includes/nav.html`) muestra:
 ## Home feed
 
 El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no hay `/page/N/`):
-- **Fotos:** fila de las 6 fotos más recientes (`site.photos`), cuadradas, dentro del ancho del contenido (no a todo el ancho del navegador, a diferencia de `/fotos/`). Grid con columnas `1fr` (6 desktop / 4 tablet / 3 móvil) para que siempre quepan enteras sin recortar ninguna — el número de columnas visibles se ajusta ocultando las últimas `.home-photo-strip-item` por `nth-child` en vez de reducir su tamaño. Clic abre el lightbox en la propia página.
-- **Escritos:** las 5 entradas más recientes de `site.posts` — solo título y fecha (sin subtítulo/resumen ni líneas separadoras entre entradas).
+- **Fotos:** fila de las 6 fotos más recientes (`site.photos`), cuadradas, dentro del ancho del texto (`$max-width`, igual que Escritos — no a todo el ancho del navegador, a diferencia de `/fotos/`). Grid con columnas `1fr` (6 desktop / 4 tablet / 3 móvil) para que siempre quepan enteras sin recortar ninguna — el número de columnas visibles se ajusta ocultando las últimas `.home-photo-strip-item` por `nth-child` en vez de reducir su tamaño. Clic abre el lightbox en la propia página.
+- **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha, sin subtítulo/resumen ni líneas separadoras entre entradas.
 
-Cada bloque lleva una cabecera con enlace "Ver todo" a su listado completo (`/fotos/`, `/escritos/`).
+Cada bloque usa como cabecera un `<h2>` cuyo texto ("Fotos"/"Escritos") es directamente el enlace a su listado completo (`/fotos/`, `/escritos/`) — no hay un "ver más" aparte.
 
 ## Escritos (`/escritos/`)
 
