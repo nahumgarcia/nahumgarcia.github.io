@@ -484,6 +484,15 @@ time {
   }
 }
 
+.photo-wall-date-link {
+  color: var(--grey-dark);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--hover-color);
+    }
+  }
+}
+
 .post-content {
   margin-top: 2.5rem;
 
@@ -928,15 +937,6 @@ time {
   line-height: 1.25;
   font-weight: 600;
   margin: 0 0 0.15rem;
-
-  a {
-    color: var(--text-color);
-    @media (hover: hover) {
-      &:hover {
-        color: var(--hover-color);
-      }
-    }
-  }
 }
 
 .photo-wall-caption {
@@ -1129,7 +1129,7 @@ a.footnote {
 .home-index-link,
 .site-footer a,
 .post-meta-tags a,
-.photo-wall-title a {
+.photo-wall-date-link {
   text-decoration: underline;
   text-decoration-color: var(--underline-color);
   text-underline-offset: 2px;
