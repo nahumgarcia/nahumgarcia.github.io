@@ -77,6 +77,7 @@ La nav (`_includes/nav.html`) muestra:
   toc: true  # opcional, activa tabla de contenidos
   ```
 - Sin subtítulo: el sitio no tiene ese campo (se eliminó de `_posts`, `post.html`, `posts.html` y `.pages.yml`).
+- Metadatos del post individual (`post.html`): la fecha va justo debajo del título (`.post-meta`), sin mayúsculas, con el mismo formato/color que en las listas de escritos. Si hay tags, van después de la fecha separados por un guión (`.post-meta-sep`), como texto plano con subrayado clarito (sin el formato de pill de `.tag-pill`). El aviso de "N minutos de lectura" (solo si supera 5) sigue apareciendo encima del título, sin cambios.
 
 ### `_photos` (posts de foto)
 - Un post = una foto. Sin álbumes ni agrupaciones.
