@@ -124,7 +124,7 @@ El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no
 - **Fotos:** fila de las 6 fotos más recientes (`site.photos`), cuadradas, dentro del ancho del texto (`$max-width`, igual que Escritos — no a todo el ancho del navegador, a diferencia de `/fotos/archivo/`). Grid con columnas `1fr` (6 desktop / 4 tablet / 3 móvil) para que siempre quepan enteras sin recortar ninguna — el número de columnas visibles se ajusta ocultando las últimas `.home-photo-strip-item` por `nth-child` en vez de reducir su tamaño. Clic navega directo al post (sin lightbox), como Archivo y Álbumes.
 - **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha a la derecha, sin subtítulo/resumen ni líneas separadoras entre entradas. La fecha vive fuera del `<a>` (`.home-index-link` envuelve solo el título): no es parte del link, solo el título lo es.
 
-Cada bloque usa como cabecera un `<h2>` cuyo texto ("Fotos"/"Escritos") es directamente el enlace a su listado completo (`/fotos/`, `/escritos/`) — no hay un "ver más" aparte.
+Cada bloque usa como cabecera un `<h2>` cuyo texto ("Últimas fotos"/"Últimos escritos") es directamente el enlace a su listado completo (`/fotos/`, `/escritos/`) — no hay un "ver más" aparte.
 
 ## Escritos (`/escritos/`)
 
