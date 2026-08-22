@@ -136,7 +136,7 @@ blockquote {
         font-size: 3rem;
         font-weight: 700;
         line-height: 1;
-        color: var(--code-color);
+        color: var(--grey);
     }
 
     p {
@@ -145,6 +145,10 @@ blockquote {
 
     > :last-child {
         margin-bottom: 0;
+
+        &::after {
+            content: '\201D';
+        }
     }
 }
 /**
