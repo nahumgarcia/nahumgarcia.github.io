@@ -610,7 +610,6 @@ time {
   @media (hover: hover) {
     &:hover {
       color: #fff;
-      text-decoration: none;
     }
   }
 }
@@ -731,7 +730,6 @@ time {
   color: var(--text-color);
   @media (hover: hover) {
     &:hover {
-      text-decoration: none;
       .home-index-title {
         color: var(--hover-color);
       }
@@ -996,4 +994,21 @@ a.footnote {
       }
     }
   }
+}
+
+/* ===== Subrayado sutil en enlaces sin otra affordance visual ===== */
+/* Estos enlaces se apoyan solo en el color para distinguirse del texto
+   normal (a diferencia de pills, botones o paginación, que ya tienen
+   su propio look de "esto es interactivo"). Un subrayado en un tono
+   clarito los marca como clicables sin ensuciar el diseño. */
+.toc a,
+.item-meta a,
+.lightbox-permalink,
+.home-section-header a,
+.home-index-link,
+.site-nav a,
+.site-footer a {
+  text-decoration: underline;
+  text-decoration-color: var(--underline-color);
+  text-underline-offset: 2px;
 }
