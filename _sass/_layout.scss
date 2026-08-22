@@ -211,15 +211,6 @@ html[data-theme="light"] .theme-toggle {
   }
 }
 
-.post-content > p:first-of-type::first-letter {
-  font-size: 4em;
-  font-weight: 800;
-  float: left;
-  line-height: 0.8;
-  margin-right: 0.08em;
-  margin-top: 0.05em;
-}
-
 .post-content,
 .home-feed-post-body {
   img + em {
