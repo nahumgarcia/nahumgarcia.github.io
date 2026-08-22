@@ -7,14 +7,18 @@ layout: default
   </h1>
 
   {% assign count = page.tag_posts | size %}
-  <p class="tag-page-count">{{ count }} entrada{% if count != 1 %}s{% endif %} sobre este tema</p>
+  <p class="tag-page-count">{{ count }} escrito{% if count != 1 %}s{% endif %} sobre este tema</p>
 
-  <ul class="post-list">
+  <section class="home-index">
     {% for post in page.tag_posts %}
-    <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </li>
+    <article class="home-index-item">
+      <div class="home-index-heading">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
+          <h2 class="home-index-title">{{ post.title }}</h2>
+        </a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
+      </div>
+    </article>
     {% endfor %}
-  </ul>
+  </section>
 </div>
