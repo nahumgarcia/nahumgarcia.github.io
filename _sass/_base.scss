@@ -123,21 +123,20 @@ a {
 blockquote {
     position: relative;
     color: var(--text-color);
-    background: var(--code-bg);
-    border-radius: 8px;
-    padding: 32px;
+    padding: 0 0 0 64px;
     font-style: normal;
     font-size: 1.05em;
 
     &::before {
         content: '\201C';
-        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: 3rem;
         font-weight: 700;
         line-height: 1;
         color: var(--code-color);
-        margin-bottom: 8px;
     }
 
     p {
