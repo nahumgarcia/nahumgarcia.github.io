@@ -11,9 +11,11 @@ layout: default
   {% for photo in sorted_photos limit: per_page offset: offset %}
   {%- assign photo_src = photo.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
+  {%- assign photo_filename = photo_src | split: "/" | last -%}
+  {%- assign thumb_src = "/assets/photos/thumb/" | append: photo_filename -%}
   <a href="{{ photo.url | prepend: site.baseurl }}" class="photo-grid-item">
     <img
-      src="{{ site.baseurl }}{{ photo_src }}"
+      src="{{ site.baseurl }}{{ thumb_src }}"
       alt="{{ photo.title | default: '' }}"
       loading="lazy"
     >

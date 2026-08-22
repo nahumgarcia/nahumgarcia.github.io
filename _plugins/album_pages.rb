@@ -34,15 +34,18 @@ module Jekyll
         cover = sorted.first
         cover_src = cover.data['file'].to_s
         cover_src = "/assets/photos/#{cover_src}" unless cover_src.include?('/')
+        cover_filename = cover_src.split('/').last
+        cover_thumb_src = "/assets/photos/thumb/#{cover_filename}"
         slug = Jekyll::Utils.slugify(tag, mode: 'latin')
 
         album_list << {
-          'name'      => tag,
-          'slug'      => slug,
-          'count'     => photos.size,
-          'cover_url' => cover_src,
-          'cover_alt' => cover.data['title'] || tag,
-          'url'       => "/fotos/album/#{slug}/"
+          'name'            => tag,
+          'slug'            => slug,
+          'count'           => photos.size,
+          'cover_url'       => cover_src,
+          'cover_thumb_url' => cover_thumb_src,
+          'cover_alt'       => cover.data['title'] || tag,
+          'url'             => "/fotos/album/#{slug}/"
         }
 
         site.pages << AlbumPage.new(site, site.source, tag, photos)

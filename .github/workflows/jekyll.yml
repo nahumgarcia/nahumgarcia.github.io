@@ -29,10 +29,20 @@ jobs:
       - name: Resize photos for web
         run: |
           set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y imagemagick
+
           MAX_DIM=2000
           QUALITY=82
-          find assets/photos -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 |
+          THUMB_DIM=600
+          THUMB_QUALITY=75
+
+          mkdir -p assets/photos/thumb
+
+          find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 |
             while IFS= read -r -d '' f; do
+              name="$(basename "$f")"
+              convert "$f" -resize "${THUMB_DIM}x${THUMB_DIM}>" -quality "$THUMB_QUALITY" "assets/photos/thumb/$name"
               mogrify -resize "${MAX_DIM}x${MAX_DIM}>" -quality "$QUALITY" "$f"
             done
 
