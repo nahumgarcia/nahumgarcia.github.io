@@ -4,6 +4,7 @@ title: La Trastienda
 tags:
   - Fuji X-Pro 3
   - Madrid
+  - Comercios
 file: /assets/photos/2026-03-08-las-vistillas-2.jpg
 ---
 Un clásico del barrio. 
