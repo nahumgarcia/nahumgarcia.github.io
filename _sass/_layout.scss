@@ -41,6 +41,10 @@
     margin: 0 auto;
     padding: 0 ($spacing-unit * 0.75);
     box-sizing: border-box;
+
+    @media (max-width: 600px) {
+        padding: 0 1rem;
+    }
 }
 
 /* Encabezado */
@@ -55,6 +59,12 @@
     max-width: $max-width;
     margin: 0 auto;
     padding: 1.5rem ($spacing-unit * 0.75) 0;
+
+    @media (max-width: 600px) {
+        /* El lado derecho conserva más aire: el selector de tema flota
+           más allá del nav y necesita hueco para no tocar el borde. */
+        padding-left: 1rem;
+    }
 }
 
 
@@ -125,7 +135,7 @@
     transform: translateY(-50%);
 
     @media screen and (max-width: 600px) {
-        margin-left: 0.5rem;
+        margin-left: 0;
     }
     background: none;
     border: none;
@@ -235,6 +245,10 @@ html[data-theme="light"] .theme-toggle {
   transform: translateX(-50%);
   display: block;
   height: auto;
+
+  @media (max-width: 600px) {
+    width: calc(100vw - 2rem);
+  }
 }
 
 .fotos-duo {
@@ -525,7 +539,7 @@ time {
   box-sizing: border-box;
 
   @media (max-width: 600px) {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
 
