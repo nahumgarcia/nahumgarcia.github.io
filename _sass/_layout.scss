@@ -474,6 +474,11 @@ time {
 
 .post-content {
   margin-top: 2.5rem;
+
+  a {
+    text-decoration-color: var(--underline-color);
+    text-underline-offset: 2px;
+  }
 }
 
 /* Cuadrícula de fotos (/fotos/) — filas y columnas, sin recortar las fotos */
