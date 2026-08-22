@@ -69,7 +69,7 @@ La nav (`_includes/nav.html`) muestra:
 3. **Fotos** → `/fotos`
 4. **RSS** → `/feed.xml`
 
-Cuando la URL actual empieza por `/fotos` (`page.url contains '/fotos'`, comprobado en `_layouts/default.html`), aparece una segunda línea de navegación justo debajo de la principal (`_includes/photo_subnav.html`), alineada a la derecha igual que ella (`.site-subnav { justify-content: flex-end }`), con las tres secciones de fotos: **Muro** (`/fotos/`), **Archivo** (`/fotos/archivo/`) y **Álbumes** (`/fotos/albumes/`). Se resalta la activa igual que en el nav principal (clase `nav-active`).
+Cuando la URL actual empieza por `/fotos` (`page.url contains '/fotos'`, comprobado en `_layouts/default.html`), aparece una segunda línea de navegación justo debajo de la principal (`_includes/photo_subnav.html`), alineada a la derecha igual que ella (`.site-subnav { justify-content: flex-end }`), con las tres secciones de fotos: **Muro** (`/fotos/`), **Archivo** (`/fotos/archivo/`) y **Álbumes** (`/fotos/albumes/`). Se resalta la activa igual que en el nav principal (clase `nav-active`). Sin espacio entre las dos líneas: `.site-header` no lleva `padding-bottom`, así que el subnav queda pegado justo debajo.
 
 ## Colecciones
 
@@ -138,7 +138,7 @@ La sección de fotos tiene tres vistas, con la sub-nav de `_includes/photo_subna
 
 ### Muro (`/fotos/`, `photo_wall.html`)
 
-Feed vertical con **todas** las fotos (`site.photos`, más recientes primero, sin paginar), cada una a ancho de texto ancho (`.photo-wall`, `max-width: 1000px`) seguida de su título, fecha, tags y descripción — el mismo contenido que se ve en el post individual, apilado uno tras otro. La foto (`.photo-wall-image`) es el disparador del lightbox: `cursor: zoom-in` al pasar el ratón (solo en dispositivos con hover) como pista de que ahí se abre el zoom, y las flechas del lightbox navegan entre **todas** las fotos del muro. El título de cada entrada es un link aparte al permalink individual.
+Feed vertical (`site.photos`, más recientes primero), cada una a ancho de texto ancho (`.photo-wall`, `max-width: 1000px`) seguida de su título, fecha, tags y descripción — el mismo contenido que se ve en el post individual, apilado uno tras otro. La foto (`.photo-wall-image`) es el disparador del lightbox: `cursor: zoom-in` al pasar el ratón (solo en dispositivos con hover) como pista de que ahí se abre el zoom, y las flechas del lightbox navegan entre las fotos cargadas en esa página. El título de cada entrada es un link aparte al permalink individual (la fecha y los tags no son links, salvo los propios tags que enlazan a su álbum). Paginado vía `/fotos/page/N/` (generado por `WallPaginationGenerator` en `_plugins/photo_pagination.rb`, 10 fotos por página — menos que Archivo porque aquí cada entrada pesa mucho más al mostrar la foto entera más su contenido).
 
 ### Archivo (`/fotos/archivo/`, `photo_page.html`)
 
@@ -148,7 +148,7 @@ La cuadrícula de miniaturas que antes vivía en `/fotos/` (`.photo-grid`/`.phot
 
 Cada tag distinto de las fotos es un álbum. `_plugins/album_pages.rb` agrupa `site.collections['photos'].docs` por cada valor de `tags` (una foto con varios tags aparece en varios álbumes), genera `/fotos/album/<tag-slugificado>/` con la cuadrícula de esas fotos (igual que Archivo: `.photo-grid`, clic va al post) y guarda la lista de álbumes en `site.data.albums` (nombre, slug, nº de fotos, portada) para la página índice.
 
-El índice (`/fotos/albumes/`) es una cuadrícula de portadas (`.album-grid`/`.album-grid-item`) en rectángulos apaisados (`aspect-ratio: 16/9`, `object-fit: cover`) con una máscara oscura degradada (`.album-grid-mask`) y el nombre del álbum abajo a la derecha (`.album-grid-name`, blanco). La portada de cada álbum es la foto **más reciente** con ese tag (`photos.sort_by { |p| -p.data['date'].to_i }.first` en el generador).
+El índice (`/fotos/albumes/`) es una cuadrícula de portadas (`.album-grid`/`.album-grid-item`) en rectángulos apaisados (`aspect-ratio: 16/9`, `object-fit: cover`) con una máscara oscura degradada (`.album-grid-mask`) y el nombre del álbum abajo a la derecha (`.album-grid-name`, blanco). La portada de cada álbum es la foto **más reciente** con ese tag (`photos.sort_by { |p| -p.data['date'].to_i }.first` en el generador). A diferencia de Archivo, `.album-grid` no se sale de `.site-outer` — va al ancho del contenido (`max-width: 1000px`, como el Muro y los posts de foto), no a todo el navegador.
 
 ## Estilos clave
 
