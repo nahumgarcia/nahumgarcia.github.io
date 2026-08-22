@@ -719,6 +719,10 @@ time {
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 600px) {
+    margin-bottom: 1.25rem;
+  }
 }
 
 .home-index-link {
