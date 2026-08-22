@@ -11,13 +11,13 @@
             <img src="{{ '/assets/images/logo-color.svg' | prepend: site.baseurl }}" alt="" class="site-logo site-logo-color">
           </span>
         </a></h1>
-        {% include nav.html %}
+        <div class="site-nav-col">
+          {% include nav.html %}
+          {% if page.url contains '/fotos' %}
+          {% include photo_subnav.html %}
+          {% endif %}
+        </div>
       </header>
-      {% if page.url contains '/fotos' %}
-      <div class="site-subnav-outer">
-        {% include photo_subnav.html %}
-      </div>
-      {% endif %}
     </div>
     <div class="site-outer">
       <div class="page-content">
