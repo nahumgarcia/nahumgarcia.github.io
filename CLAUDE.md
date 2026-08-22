@@ -77,7 +77,7 @@ La nav (`_includes/nav.html`) muestra:
   toc: true  # opcional, activa tabla de contenidos
   ```
 - Sin subtítulo: el sitio no tiene ese campo (se eliminó de `_posts`, `post.html`, `posts.html` y `.pages.yml`).
-- Metadatos del post individual (`post.html`): la fecha va justo debajo del título (`.post-meta`), sin mayúsculas, con el mismo formato/color que en las listas de escritos. Si hay tags, van después de la fecha separados por un guión (`.post-meta-sep`), como texto plano con subrayado clarito (sin el formato de pill de `.tag-pill`). El aviso de "N minutos de lectura" (solo si supera 5) sigue apareciendo encima del título, sin cambios.
+- Metadatos del post individual (`post.html`): la fecha va justo debajo del título (`.post-meta`), sin mayúsculas, con el mismo tamaño/color que el texto de cuerpo (no `$small-font-size`). Si hay tags, van después de la fecha separados por un guión (`.post-meta-sep`), como texto plano con subrayado clarito (sin el formato de pill de `.tag-pill`), también al tamaño de cuerpo. Sin espacio de más en el HTML entre fecha/guión/tags (todo en una sola línea en la plantilla) — el espaciado lo pone solo el `margin` del guión, para no duplicarlo con el whitespace entre tags. El aviso de "N minutos de lectura" (solo si supera 5) sigue apareciendo encima del título, sin cambios.
 
 ### `_photos` (posts de foto)
 - Un post = una foto. Sin álbumes ni agrupaciones.
@@ -111,7 +111,7 @@ El sitio se edita también desde [Pages CMS](https://pagescms.org), configurado 
 
 El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no hay `/page/N/`):
 - **Fotos:** fila de las 6 fotos más recientes (`site.photos`), cuadradas, dentro del ancho del texto (`$max-width`, igual que Escritos — no a todo el ancho del navegador, a diferencia de `/fotos/`). Grid con columnas `1fr` (6 desktop / 4 tablet / 3 móvil) para que siempre quepan enteras sin recortar ninguna — el número de columnas visibles se ajusta ocultando las últimas `.home-photo-strip-item` por `nth-child` en vez de reducir su tamaño. Clic abre el lightbox en la propia página.
-- **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha, sin subtítulo/resumen ni líneas separadoras entre entradas. La fecha vive fuera del `<a>` (`.home-index-link` envuelve solo el título): no es parte del link, solo el título lo es.
+- **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha a la derecha al mismo tamaño que el título (`font-size: inherit` en ambos), sin subtítulo/resumen ni líneas separadoras entre entradas. La fecha vive fuera del `<a>` (`.home-index-link` envuelve solo el título): no es parte del link, solo el título lo es.
 
 Cada bloque usa como cabecera un `<h2>` cuyo texto ("Fotos"/"Escritos") es directamente el enlace a su listado completo (`/fotos/`, `/escritos/`) — no hay un "ver más" aparte.
 
@@ -143,7 +143,7 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 
 ## Funcionalidades
 
-- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-date`, `data-camera`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra. El panel de info tiene el ancho del texto y está alineado a la izquierda: título y fecha en la misma línea (fecha a la derecha del título), cámara debajo en su propia línea, y descripción debajo de eso — el mismo layout que usa `photo_post.html` para el post individual. Cada `showLightbox()` usa un token incremental para descartar imágenes que tardan en cargar si el usuario ya avanzó a otra foto (evita que una carga lenta sobrescriba la foto actual), y el swipe táctil ignora los toques que empiezan sobre `.lightbox-controls` para no interferir con el tap en las flechas.
+- **Lightbox:** JS vanilla, reutilizable via `{% include lightbox.html selector=".clase" photo_selector=".clase-foto" %}`. Lee de cada elemento `data-full`, `data-alt`, y opcionalmente `data-title`, `data-date`, `data-camera`, `data-desc` y `data-url` (enlace "Ver publicación"); si faltan estos últimos, esa parte del panel simplemente no se muestra. El panel de info tiene el ancho del texto y está alineado a la izquierda: título y fecha en la misma línea (fecha a la derecha del título, mismo tamaño que el título), cámara debajo en su propia línea, y descripción debajo de eso — el mismo layout que usa `photo_post.html` para el post individual. Cada `showLightbox()` usa un token incremental para descartar imágenes que tardan en cargar si el usuario ya avanzó a otra foto (evita que una carga lenta sobrescriba la foto actual), y el swipe táctil ignora los toques que empiezan sobre `.lightbox-controls` para no interferir con el tap en las flechas.
 - **Tabla de contenidos:** Opt-in con `toc: true` en front matter. Genera nav con h2/h3 del artículo.
 - **Notas al pie:** Pastilla `•••` (no se muestra el número). Tooltip al hacer clic.
 - **Open Graph:** `og:image` y `twitter:image` usando `image:` del front matter. Fallback al logo.
