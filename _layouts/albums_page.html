@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="album-grid">
+  {% for album in site.data.albums %}
+  <a href="{{ album.url | prepend: site.baseurl }}" class="album-grid-item">
+    <img
+      src="{{ album.cover_url | prepend: site.baseurl }}"
+      alt="{{ album.cover_alt }}"
+      loading="lazy"
+    >
+    <span class="album-grid-mask"></span>
+    <span class="album-grid-name">{{ album.name }}</span>
+  </a>
+  {% endfor %}
+</div>

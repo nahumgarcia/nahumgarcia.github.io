@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         + '<div class="lightbox-meta">'
         + '<p class="lightbox-date"></p>'
         + '<span class="lightbox-meta-sep">-</span>'
-        + '<a class="lightbox-camera" href="#"></a>'
+        + '<span class="lightbox-tags"></span>'
         + '</div>'
         + '<p class="lightbox-description"></p>'
         + '<a class="lightbox-permalink" href="#">Ver publicación &rarr;</a>'
@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var lightboxImg = lightbox.querySelector(".lightbox-img");
     var lightboxTitle = lightbox.querySelector(".lightbox-title");
     var lightboxDate = lightbox.querySelector(".lightbox-date");
-    var lightboxCamera = lightbox.querySelector(".lightbox-camera");
-    var lightboxCameraSep = lightbox.querySelector(".lightbox-meta-sep");
+    var lightboxTags = lightbox.querySelector(".lightbox-tags");
+    var lightboxTagsSep = lightbox.querySelector(".lightbox-meta-sep");
     var lightboxDesc = lightbox.querySelector(".lightbox-description");
     var lightboxPermalink = lightbox.querySelector(".lightbox-permalink");
     var closeBtn = lightbox.querySelector(".lightbox-close");
@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function setField(el, value) {
         if (value) { el.textContent = value; el.style.display = ''; }
         else { el.textContent = ''; el.style.display = 'none'; }
+    }
+
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 
     function showLightbox(index, direction) {
@@ -68,15 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
         lightboxImg.src = '';
         setField(lightboxTitle, photo.dataset.title);
         setField(lightboxDate, photo.dataset.date);
-        if (photo.dataset.camera) {
-            lightboxCamera.textContent = photo.dataset.camera;
-            lightboxCamera.href = photo.dataset.cameraUrl || '#';
-            lightboxCamera.style.display = '';
-            lightboxCameraSep.style.display = '';
+        if (photo.dataset.tags) {
+            var tagsHtml = photo.dataset.tags.split('|||').map(function(entry) {
+                var parts = entry.split(':::');
+                return '<a href="' + escapeHtml(parts[1]) + '">' + escapeHtml(parts[0]) + '</a>';
+            }).join(', ');
+            lightboxTags.innerHTML = tagsHtml;
+            lightboxTags.style.display = '';
+            lightboxTagsSep.style.display = '';
         } else {
-            lightboxCamera.textContent = '';
-            lightboxCamera.style.display = 'none';
-            lightboxCameraSep.style.display = 'none';
+            lightboxTags.innerHTML = '';
+            lightboxTags.style.display = 'none';
+            lightboxTagsSep.style.display = 'none';
         }
         setField(lightboxDesc, photo.dataset.desc || photo.dataset.alt);
         if (photo.dataset.url) {

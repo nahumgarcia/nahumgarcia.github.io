@@ -84,6 +84,34 @@
     }
 }
 
+.site-subnav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.85rem;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 ($spacing-unit * 0.75) 1rem;
+
+    a, a:visited {
+        text-decoration: none;
+        color: var(--grey);
+        transition: color 0.2s ease;
+    }
+    @media screen and (min-width: 601px) {
+        a {
+            font-size: 0.85em;
+        }
+    }
+    @media (hover: hover) {
+        a:hover {
+            color: var(--hover-color);
+        }
+    }
+    a.nav-active, a.nav-active:visited {
+        color: var(--text-color);
+    }
+}
+
 .theme-toggle {
     background: none;
     border: none;
@@ -563,16 +591,19 @@ time {
   margin: 0 0.35rem;
 }
 
-.lightbox-camera {
-  color: rgba(255, 255, 255, 0.55);
+.lightbox-tags {
   font-size: 1.19rem;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
-  text-underline-offset: 2px;
 
-  @media (hover: hover) {
-    &:hover {
-      color: #fff;
+  a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 2px;
+
+    @media (hover: hover) {
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }
@@ -842,6 +873,125 @@ time {
   line-height: $base-line-height;
 }
 
+/* ===== Muro (/fotos/) — feed vertical de fotos con su contenido debajo ===== */
+.photo-wall {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.photo-wall-item {
+  margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.photo-wall-image {
+  display: block;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (hover: hover) {
+    cursor: zoom-in;
+  }
+}
+
+.photo-wall-meta {
+  max-width: $max-width;
+  margin: 1.25rem auto 0;
+  text-align: left;
+}
+
+.photo-wall-title {
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+
+  a {
+    color: var(--text-color);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hover-color);
+      }
+    }
+  }
+}
+
+.photo-wall-caption {
+  max-width: $max-width;
+  margin: 1rem auto 0;
+  color: var(--text-color);
+  line-height: $base-line-height;
+}
+
+/* ===== Álbumes (/fotos/albumes/) — cuadrícula de portadas apaisadas ===== */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+
+  /* Ocupa todo el ancho del navegador, saliéndose de .site-outer */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0 2rem;
+  box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+}
+
+.album-grid-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.album-grid-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 60%);
+  pointer-events: none;
+}
+
+.album-grid-name {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
 /* ===== Footer ===== */
 /* Referencia de nota al pie — círculo negro con número blanco */
 sup:has(> a.footnote) {
@@ -973,7 +1123,8 @@ a.footnote {
 .home-section-header a,
 .home-index-link,
 .site-footer a,
-.post-meta-tags a {
+.post-meta-tags a,
+.photo-wall-title a {
   text-decoration: underline;
   text-decoration-color: var(--underline-color);
   text-underline-offset: 2px;

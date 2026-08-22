@@ -1,7 +1,7 @@
 module Jekyll
   PHOTO_ITEMS_PER_PAGE = 24
 
-  # Photo feed pagination (/photos/page/N/)
+  # Archivo pagination (/fotos/archivo/page/N/)
   class PhotoPaginationGenerator < Generator
     safe true
     priority :low
@@ -22,12 +22,12 @@ module Jekyll
     def initialize(site, page_num, total_pages)
       @site = site
       @base = site.source
-      @dir = "fotos/page/#{page_num}"
+      @dir = "fotos/archivo/page/#{page_num}"
       @name = "index.html"
 
       self.process(@name)
       self.read_yaml(File.join(@base, '_layouts'), 'photo_page.html')
-      self.data['title'] = "Fotos - Página #{page_num}"
+      self.data['title'] = "Archivo - Página #{page_num}"
       self.data['page_num'] = page_num
       self.data['total_pages'] = total_pages
       self.data['per_page'] = PHOTO_ITEMS_PER_PAGE

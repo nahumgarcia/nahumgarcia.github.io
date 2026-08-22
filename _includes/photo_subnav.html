@@ -1,0 +1,5 @@
+<nav class="site-subnav">
+<a href="{{ site.baseurl }}/fotos/"{% if page.url == '/fotos/' %} class="nav-active"{% endif %}>Muro</a>
+<a href="{{ site.baseurl }}/fotos/archivo/"{% if page.url contains '/fotos/archivo' %} class="nav-active"{% endif %}>Archivo</a>
+<a href="{{ site.baseurl }}/fotos/albumes/"{% if page.url contains '/fotos/album' %} class="nav-active"{% endif %}>Álbumes</a>
+</nav>

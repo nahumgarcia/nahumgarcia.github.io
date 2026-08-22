@@ -13,6 +13,11 @@
         </a></h1>
         {% include nav.html %}
       </header>
+      {% if page.url contains '/fotos' %}
+      <div class="site-subnav-outer">
+        {% include photo_subnav.html %}
+      </div>
+      {% endif %}
     </div>
     <div class="site-outer">
       <div class="page-content">

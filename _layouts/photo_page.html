@@ -11,21 +11,7 @@ layout: default
   {% for photo in sorted_photos limit: per_page offset: offset %}
   {%- assign photo_src = photo.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
-  {%- capture photo_date_str %}{% include fecha.html date=photo.date %}{% endcapture -%}
-  {%- assign photo_date_str = photo_date_str | strip -%}
-  {%- assign photo_desc = photo.content | replace: "</p>", " " | strip_html | strip -%}
-  <a
-    href="{{ photo.url | prepend: site.baseurl }}"
-    class="photo-grid-item"
-    data-full="{{ site.baseurl }}{{ photo_src }}"
-    data-alt="{{ photo.title | default: '' }}"
-    data-title="{{ photo.title | default: '' }}"
-    data-date="{{ photo_date_str }}"
-    data-camera="{{ photo.camera | default: '' }}"
-    data-camera-url="{{ site.baseurl }}/camaras/{{ photo.camera | slugify: "latin" }}/"
-    data-desc="{{ photo_desc | escape }}"
-    data-url="{{ photo.url | prepend: site.baseurl }}"
-  >
+  <a href="{{ photo.url | prepend: site.baseurl }}" class="photo-grid-item">
     <img
       src="{{ site.baseurl }}{{ photo_src }}"
       alt="{{ photo.title | default: '' }}"
@@ -41,12 +27,10 @@ layout: default
     {% if i == page_num %}
     <span class="page-link page-current">{{ i }}</span>
     {% elsif i == 1 %}
-    <a href="{{ site.baseurl }}/fotos/" class="page-link">{{ i }}</a>
+    <a href="{{ site.baseurl }}/fotos/archivo/" class="page-link">{{ i }}</a>
     {% else %}
-    <a href="{{ site.baseurl }}/fotos/page/{{ i }}/" class="page-link">{{ i }}</a>
+    <a href="{{ site.baseurl }}/fotos/archivo/page/{{ i }}/" class="page-link">{{ i }}</a>
     {% endif %}
   {% endfor %}
 </nav>
 {% endif %}
-
-{% include lightbox.html selector=".photo-grid" photo_selector=".photo-grid-item" %}

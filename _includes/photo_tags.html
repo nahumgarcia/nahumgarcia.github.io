@@ -1,0 +1,1 @@
+{%- for tag in include.photo.tags -%}{%- unless forloop.first -%}|||{%- endunless -%}{{ tag }}:::{{ site.baseurl }}/fotos/album/{{ tag | slugify: "latin" }}/{%- endfor -%}
