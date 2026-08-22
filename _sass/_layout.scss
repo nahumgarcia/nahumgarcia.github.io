@@ -434,6 +434,7 @@ time {
 
 .post-meta-tags a {
   color: var(--grey-dark);
+  font-size: 0.85em;
   @media (hover: hover) {
     &:hover {
       color: var(--hover-color);
@@ -564,6 +565,7 @@ time {
 
 .lightbox-camera {
   color: rgba(255, 255, 255, 0.55);
+  font-size: 1.19rem;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
   text-underline-offset: 2px;
