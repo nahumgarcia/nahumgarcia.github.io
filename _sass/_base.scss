@@ -121,11 +121,28 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: var(--grey-dark);
-    padding-left: $spacing-unit / 2;
-    border-left: 2px solid var(--grey-light);
-    font-style: italic;
-    font-size: 0.9em;
+    position: relative;
+    color: var(--text-color);
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 32px;
+    font-style: normal;
+    font-size: 1.05em;
+
+    &::before {
+        content: '\201C';
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--code-color);
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-bottom: 16px;
+    }
 
     > :last-child {
         margin-bottom: 0;
@@ -140,13 +157,13 @@ pre {
 }
 
 code {
-    padding: 1px 5px;
+    padding: 0 8px;
     font-family: $code-font-family;
     color: var(--code-color);
 }
 
 pre {
-    padding: 8px 12px;
+    padding: 8px 16px;
     overflow-x: auto;
     border: 1px solid var(--code-border);
 
