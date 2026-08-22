@@ -421,6 +421,10 @@ time {
 
 .post-meta {
   color: var(--grey-dark);
+
+  time {
+    font-size: 0.85em;
+  }
 }
 
 .post-meta-tags a {
@@ -545,7 +549,7 @@ time {
 
 .lightbox-date {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -710,7 +714,7 @@ time {
 
   time {
     flex: 0 0 auto;
-    font-size: inherit;
+    font-size: 0.85em;
   }
 
   @media (max-width: 600px) {
@@ -824,7 +828,7 @@ time {
 
 .photo-post-title-row time {
   color: var(--grey-dark);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .photo-post-camera {
