@@ -1,12 +1,17 @@
 ---
 layout: default
 ---
-{% assign recent_photos = site.photos | sort: "date" | reverse %}
+<div class="home">
+  <h1 class="post-title tag-page-title">
+    <span class="tag-page-prefix">Cámara:</span> {{ page.camera }}
+  </h1>
 
-{% if recent_photos.size > 0 %}
-<h2 class="home-section-header"><a href="{{ site.baseurl }}/fotos/">Fotos</a></h2>
-<div class="home-photo-strip">
-  {% for photo in recent_photos limit: 6 %}
+  {% assign count = page.camera_photos | size %}
+  <p class="tag-page-count">{{ count }} foto{% if count != 1 %}s{% endif %} con esta cámara</p>
+</div>
+
+<div class="photo-grid">
+  {% for photo in page.camera_photos %}
   {%- assign photo_src = photo.file -%}
   {%- unless photo_src contains "/" -%}{% assign photo_src = "/assets/photos/" | append: photo_src %}{%- endunless -%}
   {%- capture photo_date_str %}{% include fecha.html date=photo.date %}{% endcapture -%}
@@ -14,7 +19,7 @@ layout: default
   {%- assign photo_desc = photo.content | replace: "</p>", " " | strip_html | strip -%}
   <a
     href="{{ photo.url | prepend: site.baseurl }}"
-    class="home-photo-strip-item"
+    class="photo-grid-item"
     data-full="{{ site.baseurl }}{{ photo_src }}"
     data-alt="{{ photo.title | default: '' }}"
     data-title="{{ photo.title | default: '' }}"
@@ -32,21 +37,5 @@ layout: default
   </a>
   {% endfor %}
 </div>
-{% include lightbox.html selector=".home-photo-strip" photo_selector=".home-photo-strip-item" %}
-{% endif %}
 
-{% assign recent_posts = site.posts | sort: "date" | reverse %}
-
-<h2 class="home-section-header home-section-header--narrow"><a href="{{ site.baseurl }}/escritos/">Escritos</a></h2>
-<section class="home-index">
-  {% for post in recent_posts limit: 10 %}
-  <article class="home-index-item">
-    <div class="home-index-heading">
-      <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
-        <h2 class="home-index-title">{{ post.title }}</h2>
-      </a>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
-    </div>
-  </article>
-  {% endfor %}
-</section>
+{% include lightbox.html selector=".photo-grid" photo_selector=".photo-grid-item" %}

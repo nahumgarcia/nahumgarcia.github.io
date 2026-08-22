@@ -69,6 +69,11 @@
         color: var(--grey);
         transition: color 0.2s ease;
     }
+    @media screen and (min-width: 601px) {
+        a {
+            font-size: 0.85em;
+        }
+    }
     @media (hover: hover) {
         a:hover {
             color: var(--hover-color);
@@ -533,33 +538,40 @@ time {
   text-align: left;
 }
 
-.lightbox-title-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
 .lightbox-title {
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 0.15rem;
+}
+
+.lightbox-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .lightbox-date {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.9rem;
+  font-size: 1.19rem;
   margin: 0;
+}
+
+.lightbox-meta-sep {
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0.35rem;
 }
 
 .lightbox-camera {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.8rem;
-  margin: 0.35rem 0 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 2px;
 
-  strong {
-    color: #fff;
+  @media (hover: hover) {
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
@@ -811,33 +823,12 @@ time {
   text-align: left;
 }
 
-.photo-post-title-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
 .photo-post-title {
   font-size: 1.4rem;
   letter-spacing: -0.5px;
   line-height: 1.25;
   font-weight: 600;
-  margin: 0;
-}
-
-.photo-post-title-row time {
-  color: var(--grey-dark);
-  font-size: 1.2rem;
-}
-
-.photo-post-camera {
-  margin: 0.35rem 0 0;
-  color: var(--grey-dark);
-
-  strong {
-    color: var(--text-color);
-  }
+  margin: 0 0 0.15rem;
 }
 
 .photo-post-caption {
@@ -958,6 +949,9 @@ a.footnote {
   a, a:visited {
     color: var(--grey);
     text-decoration: none;
+    @media screen and (min-width: 601px) {
+      font-size: 0.85em;
+    }
     @media (hover: hover) {
       &:hover {
         color: var(--hover-color);

@@ -22,6 +22,7 @@ layout: default
     data-title="{{ photo.title | default: '' }}"
     data-date="{{ photo_date_str }}"
     data-camera="{{ photo.camera | default: '' }}"
+    data-camera-url="{{ site.baseurl }}/camaras/{{ photo.camera | slugify: "latin" }}/"
     data-desc="{{ photo_desc | escape }}"
     data-url="{{ photo.url | prepend: site.baseurl }}"
   >
