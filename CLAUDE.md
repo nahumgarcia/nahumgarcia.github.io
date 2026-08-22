@@ -150,6 +150,14 @@ Cada tag distinto de las fotos es un álbum. `_plugins/album_pages.rb` agrupa `s
 
 El índice (`/fotos/albumes/`) es una cuadrícula de portadas (`.album-grid`/`.album-grid-item`) en rectángulos apaisados pero no muy alargados (`aspect-ratio: 3/2`, `object-fit: cover`), con poco espacio entre celdas (`gap: 7px`) y una máscara oscura degradada (`.album-grid-mask`) y el nombre del álbum abajo a la derecha (`.album-grid-name`, blanco). La portada de cada álbum es la foto **más reciente** con ese tag (`photos.sort_by { |p| -p.data['date'].to_i }.first` en el generador). A diferencia de Archivo, `.album-grid` no se sale de `.site-outer` — va al ancho del contenido (`max-width: 1000px`, como el Muro y los posts de foto), no a todo el navegador.
 
+### Redimensionar fotos antes de subirlas
+
+Las fotos se suben tal cual desde la cámara/Fotos.app, sin ningún pipeline de optimización de imágenes en el sitio (Jekyll/GitHub Pages las sirve directamente, sin generar variantes). Como el sitio nunca muestra una foto a más de 1000px de ancho pero los originales de cámara suelen rondar 1600–3600px de lado largo, el navegador decodifica bitmaps mucho más grandes de lo necesario en cada vista (una miniatura de 170px en Archivo sigue forzando la decodificación del original a resolución nativa) — esto es lo que hace que Safari avise de que la pestaña usa mucha memoria en páginas con muchas fotos (Muro, Archivo, Álbumes).
+
+`script/resize_photo.sh` redimensiona fotos antes de subirlas: usa `sips` (nativo de macOS, sin dependencias), reduce el lado largo a 2000px como máximo (solo si el original es mayor — nunca hace upscale) y recomprime JPEGs a calidad 82. Convierte `.heic`/`.heif` (formato por defecto de Fotos.app en iPhone) a `.jpg`, que es lo que espera `.pages.yml`. Los originales no se tocan; las copias van a `~/Desktop/fotos-web` (o a `$RESIZE_OUTPUT_DIR` si se define). Uso: `./script/resize_photo.sh foto1.jpg foto2.heic [...]`.
+
+Pensado para invocarse desde una Shortcut de macOS/iOS (acción "Ejecutar script de shell", con la entrada del Shortcut pasada "como argumentos") — así se puede seleccionar fotos en Fotos.app o Finder y redimensionarlas antes de arrastrarlas al selector de imagen de Pages CMS, sin pasar por terminal.
+
 ## Estilos clave
 
 - **Tipografía:** System font stack, peso base 300, bold = 700
