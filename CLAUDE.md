@@ -6,7 +6,7 @@
 - **Dominio:** Personalizado via archivo `CNAME` (`nahumgarcia.com`)
 - **Hosting:** GitHub Pages (repo `nahumgarcia.github.io`)
 - **Rama de deploy:** `gh-pages` — **todos los commits deben ir a esta rama**. Desde workspaces de Conductor, crear PR con `--base gh-pages` y mergear con `gh pr merge`.
-- **Generador:** Jekyll (construido por GitHub Pages directamente)
+- **Generador:** Jekyll, construido y desplegado por un workflow de GitHub Actions propio (`.github/workflows/jekyll.yml`) — no por el build automático "clásico" de GitHub Pages. Esto importa: al no depender del procesador integrado de Pages (que solo permite una lista blanca de gems y no da acceso a shell), el workflow corre en un runner Ubuntu normal con `bundle exec jekyll build`, así que puede hacer cualquier cosa antes del build — como redimensionar imágenes con ImageMagick (ver "Redimensionar fotos" en la sección de Fotos).
 - **Tema base:** [Textlog](https://github.com/heiswayi/textlog) v1.5.0 (autor: Heiswayi Nrird), muy personalizado
 - **Plugins:** `jekyll-sitemap`
 - **Markdown:** Kramdown con input GFM
@@ -150,13 +150,15 @@ Cada tag distinto de las fotos es un álbum. `_plugins/album_pages.rb` agrupa `s
 
 El índice (`/fotos/albumes/`) es una cuadrícula de portadas (`.album-grid`/`.album-grid-item`) en rectángulos apaisados pero no muy alargados (`aspect-ratio: 3/2`, `object-fit: cover`), con poco espacio entre celdas (`gap: 7px`) y una máscara oscura degradada (`.album-grid-mask`) y el nombre del álbum abajo a la derecha (`.album-grid-name`, blanco). La portada de cada álbum es la foto **más reciente** con ese tag (`photos.sort_by { |p| -p.data['date'].to_i }.first` en el generador). A diferencia de Archivo, `.album-grid` no se sale de `.site-outer` — va al ancho del contenido (`max-width: 1000px`, como el Muro y los posts de foto), no a todo el navegador.
 
-### Redimensionar fotos antes de subirlas
+### Redimensionar fotos
 
-Las fotos se suben tal cual desde la cámara/Fotos.app, sin ningún pipeline de optimización de imágenes en el sitio (Jekyll/GitHub Pages las sirve directamente, sin generar variantes). Como el sitio nunca muestra una foto a más de 1000px de ancho pero los originales de cámara suelen rondar 1600–3600px de lado largo, el navegador decodifica bitmaps mucho más grandes de lo necesario en cada vista (una miniatura de 170px en Archivo sigue forzando la decodificación del original a resolución nativa) — esto es lo que hace que Safari avise de que la pestaña usa mucha memoria en páginas con muchas fotos (Muro, Archivo, Álbumes).
+Las fotos se suben tal cual desde la cámara/Fotos.app vía Pages CMS (a veces desde el móvil), y los originales de cámara suelen rondar 1600–3600px de lado largo. Como el sitio nunca muestra una foto a más de 1000px de ancho, sin optimizar esto el navegador decodifica bitmaps mucho más grandes de lo necesario en cada vista (una miniatura de 170px en Archivo sigue forzando la decodificación del original a resolución nativa) — esto es lo que hace que Safari avise de que la pestaña usa mucha memoria en páginas con muchas fotos (Muro, Archivo, Álbumes).
 
-`script/resize_photo.sh` redimensiona fotos antes de subirlas: usa `sips` (nativo de macOS, sin dependencias), reduce el lado largo a 2000px como máximo (solo si el original es mayor — nunca hace upscale) y recomprime JPEGs a calidad 82. Convierte `.heic`/`.heif` (formato por defecto de Fotos.app en iPhone) a `.jpg`, que es lo que espera `.pages.yml`. Los originales no se tocan; las copias van a `~/Desktop/fotos-web` (o a `$RESIZE_OUTPUT_DIR` si se define). Uso: `./script/resize_photo.sh foto1.jpg foto2.heic [...]`.
+**El redimensionado ocurre automáticamente en el build**, no al subir la foto — así funciona igual sin importar si la foto se sube desde el Mac o desde el móvil (que es todo el sentido de usar Pages CMS). El workflow `.github/workflows/jekyll.yml` tiene un paso "Resize photos for web" antes de `jekyll build` que recorre `assets/photos/` con ImageMagick (`mogrify -resize "2000x2000>" -quality 82`) y reduce a 2000px de lado largo cualquier foto que lo supere (el `>` de la geometría hace que nunca haga upscale de las que ya son más pequeñas). Esto solo modifica la copia efímera del runner que se despliega — **los originales en el repo se quedan intactos**, sin necesidad de que el workflow haga commit de vuelta (evita el riesgo de bucles de commits automáticos y mantiene el histórico limpio). 2000px se eligió porque es 2x el ancho máximo de visualización (1000px), suficiente para pantallas retina sin arrastrar el peso completo de la cámara.
 
-Pensado para invocarse desde una Shortcut de macOS/iOS (acción "Ejecutar script de shell", con la entrada del Shortcut pasada "como argumentos") — así se puede seleccionar fotos en Fotos.app o Finder y redimensionarlas antes de arrastrarlas al selector de imagen de Pages CMS, sin pasar por terminal.
+Esto es posible porque el sitio NO usa el build automático "clásico" de GitHub Pages (que corre en un entorno restringido sin acceso a shell ni ImageMagick) — usa un workflow de Actions propio con un runner Ubuntu normal (ver nota en "Datos generales").
+
+`script/resize_photo.sh` (usa `sips`, nativo de macOS) sigue existiendo para quien prefiera redimensionar antes de subir — por ejemplo para ahorrar datos móviles al subir fotos grandes — pero ya **no es necesario** para el problema de memoria en Safari, que ahora se resuelve solo en cada deploy sin importar el origen de la subida. Convierte además `.heic`/`.heif` (formato por defecto de Fotos.app en iPhone) a `.jpg`. Pensado para invocarse desde una Shortcut de macOS/iOS (acción "Ejecutar script de shell", entrada "como argumentos"). Uso: `./script/resize_photo.sh foto1.jpg foto2.heic [...]`.
 
 ## Estilos clave
 

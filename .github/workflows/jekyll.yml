@@ -26,6 +26,16 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      - name: Resize photos for web
+        run: |
+          set -euo pipefail
+          MAX_DIM=2000
+          QUALITY=82
+          find assets/photos -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 |
+            while IFS= read -r -d '' f; do
+              mogrify -resize "${MAX_DIM}x${MAX_DIM}>" -quality "$QUALITY" "$f"
+            done
+
       - name: Build site
         run: bundle exec jekyll build
         env:
