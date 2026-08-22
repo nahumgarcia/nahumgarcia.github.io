@@ -1,5 +1,5 @@
 ---
-date: 2024-10-01
+date: 2024-10-23
 title: La Trastienda
 tags:
   - Fuji X-Pro 3

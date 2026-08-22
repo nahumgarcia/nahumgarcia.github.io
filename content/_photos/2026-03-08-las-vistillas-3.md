@@ -1,5 +1,5 @@
 ---
-date: 2024-10-01
+date: 2024-10-23
 title: Luz del atardecer
 tags:
   - Fuji X-Pro 3
