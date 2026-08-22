@@ -40,12 +40,12 @@ layout: default
 <section class="home-index">
   {% for post in recent_posts limit: 10 %}
   <article class="home-index-item">
-    <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
-      <div class="home-index-heading">
+    <div class="home-index-heading">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="home-index-link">
         <h2 class="home-index-title">{{ post.title }}</h2>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
-      </div>
-    </a>
+      </a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date %}</time>
+    </div>
   </article>
   {% endfor %}
 </section>

@@ -110,7 +110,7 @@ El sitio se edita también desde [Pages CMS](https://pagescms.org), configurado 
 
 El layout `home_feed.html` tiene dos bloques independientes, sin paginación (no hay `/page/N/`):
 - **Fotos:** fila de las 6 fotos más recientes (`site.photos`), cuadradas, dentro del ancho del texto (`$max-width`, igual que Escritos — no a todo el ancho del navegador, a diferencia de `/fotos/`). Grid con columnas `1fr` (6 desktop / 4 tablet / 3 móvil) para que siempre quepan enteras sin recortar ninguna — el número de columnas visibles se ajusta ocultando las últimas `.home-photo-strip-item` por `nth-child` en vez de reducir su tamaño. Clic abre el lightbox en la propia página.
-- **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha, sin subtítulo/resumen ni líneas separadoras entre entradas.
+- **Escritos:** las 10 entradas más recientes de `site.posts` — solo título (peso regular, tamaño de texto base) y fecha, sin subtítulo/resumen ni líneas separadoras entre entradas. La fecha vive fuera del `<a>` (`.home-index-link` envuelve solo el título): no es parte del link, solo el título lo es.
 
 Cada bloque usa como cabecera un `<h2>` cuyo texto ("Fotos"/"Escritos") es directamente el enlace a su listado completo (`/fotos/`, `/escritos/`) — no hay un "ver más" aparte.
 
@@ -128,6 +128,7 @@ Al hacer clic en una miniatura se abre el lightbox (no se navega) con la foto, t
 
 - **Tipografía:** System font stack, peso base 300, bold = 700
 - **Colores:** Variables CSS (`--text-color`, `--bg-color`, `--grey`, `--grey-dark`, `--grey-light`, `--hover-color`). Fondo blanco puro (`#fff`) en modo claro. Dark mode soportado.
+- **`:hover` solo en dispositivos con hover real:** todas las reglas `:hover` del sitio (nav, footer, tags, TOC, lightbox, miniaturas, paginación, links de escritos/fotos en home y `/escritos/`, etc.) están envueltas en `@media (hover: hover)`. Sin esto, en táctil el navegador aplica el estado `:hover` al tocar y lo deja "pegado" hasta el siguiente toque en otro sitio, en vez de mostrar solo el estado normal. Al añadir un nuevo estilo `:hover`, envolverlo igual.
 - **Selector de tema:** botón con solo dos iconos visibles (sol/luna), pero tres estados por detrás: automático (sigue `prefers-color-scheme`, sin `data-theme` ni `localStorage`), y claro/oscuro explícitos (`data-theme` + `localStorage`). Al pulsar, el botón alterna la apariencia actual; si el nuevo estado coincide con el del sistema, vuelve a automático en vez de fijar un `data-theme` explícito. Lógica en `_layouts/default.html`, iconos en `_includes/nav.html`.
 - **Ancho texto:** `$max-width: 620px`
 - **Ancho fotos/página:** hasta 1000px

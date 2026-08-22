@@ -69,8 +69,10 @@
         color: var(--grey);
         transition: color 0.2s ease;
     }
-    a:hover {
-        color: var(--hover-color);
+    @media (hover: hover) {
+        a:hover {
+            color: var(--hover-color);
+        }
     }
     a.nav-active, a.nav-active:visited {
         color: var(--text-color);
@@ -88,8 +90,10 @@
     transition: color 0.2s ease;
     line-height: 1;
 
-    &:hover {
-        color: var(--hover-color);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--hover-color);
+        }
     }
 
     .icon-moon { display: none; }
@@ -143,7 +147,9 @@ html[data-theme="light"] .theme-toggle {
     opacity: 0;
     transition: opacity 0.2s linear;
 }
-.site-title:hover .site-logo-color { opacity: 1; }
+@media (hover: hover) {
+  .site-title:hover .site-logo-color { opacity: 1; }
+}
 .smallcap a {
     text-decoration: none;
     letter-spacing: 0px;
@@ -270,8 +276,10 @@ html[data-theme="light"] .theme-toggle {
   a {
     text-decoration: none;
     color: var(--text-color);
-    &:hover {
-      color: var(--hover-color);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hover-color);
+      }
     }
   }
 }
@@ -343,10 +351,12 @@ html[data-theme="light"] .theme-toggle {
     color: var(--grey-dark);
   }
 
-  &:hover {
-    border-color: var(--hover-color);
-    color: var(--hover-color);
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--hover-color);
+      color: var(--hover-color);
+      text-decoration: none;
+    }
   }
 }
 
@@ -373,8 +383,10 @@ html[data-theme="light"] .theme-toggle {
     color: var(--grey-dark);
     text-decoration: none;
   }
-  a:hover {
-    color: var(--hover-color);
+  @media (hover: hover) {
+    a:hover {
+      color: var(--hover-color);
+    }
   }
 }
 time {
@@ -435,8 +447,10 @@ time {
   color: var(--grey-dark);
 }
 
-a:hover time {
-  color: var(--hover-color);
+@media (hover: hover) {
+  a:hover time {
+    color: var(--hover-color);
+  }
 }
 
 .tag-title {
@@ -496,8 +510,10 @@ a:hover time {
     transition: opacity 0.2s ease;
   }
 
-  &:hover img {
-    opacity: 0.85;
+  @media (hover: hover) {
+    &:hover img {
+      opacity: 0.85;
+    }
   }
 }
 
@@ -591,9 +607,11 @@ a:hover time {
   font-size: 0.8rem;
   margin-top: 0.5rem;
   text-decoration: none;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 
@@ -614,9 +632,11 @@ a:hover time {
   transition: color 0.2s ease;
 }
 
-.lightbox-close:hover,
-.lightbox-arrow:hover {
-  color: white;
+@media (hover: hover) {
+  .lightbox-close:hover,
+  .lightbox-arrow:hover {
+    color: white;
+  }
 }
 
 .lightbox-close:focus,
@@ -639,8 +659,10 @@ a:hover time {
   a {
     color: var(--text-color);
     text-decoration: none;
-    &:hover {
-      color: var(--hover-color);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hover-color);
+      }
     }
   }
 }
@@ -682,8 +704,10 @@ a:hover time {
     transition: transform 0.3s ease;
   }
 
-  &:hover img {
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover img {
+      transform: scale(1.05);
+    }
   }
 }
 
@@ -701,10 +725,12 @@ a:hover time {
   display: block;
   text-decoration: none;
   color: var(--text-color);
-  &:hover {
-    text-decoration: none;
-    .home-index-title {
-      color: var(--hover-color);
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+      .home-index-title {
+        color: var(--hover-color);
+      }
     }
   }
 }
@@ -774,10 +800,12 @@ a:hover time {
   color: var(--text-color);
   transition: border-color 0.2s ease, color 0.2s ease;
 
-  &:hover {
-    border-color: var(--grey-dark);
-    color: var(--hover-color);
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--grey-dark);
+      color: var(--hover-color);
+      text-decoration: none;
+    }
   }
 }
 
@@ -878,8 +906,10 @@ a.footnote {
     font-weight: 400;
   }
 
-  &:hover {
-    background: var(--hover-color);
+  @media (hover: hover) {
+    &:hover {
+      background: var(--hover-color);
+    }
   }
 }
 
@@ -956,8 +986,10 @@ a.footnote {
   a, a:visited {
     color: var(--grey);
     text-decoration: none;
-    &:hover {
-      color: var(--hover-color);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--hover-color);
+      }
     }
   }
 }

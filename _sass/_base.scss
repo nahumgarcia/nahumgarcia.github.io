@@ -110,9 +110,11 @@ a {
     text-decoration: underline;
     transition: color 0.2s ease;
 
-    &:hover {
-        text-decoration: underline;
-        color: var(--hover-color);
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+            color: var(--hover-color);
+        }
     }
 }
 /**
