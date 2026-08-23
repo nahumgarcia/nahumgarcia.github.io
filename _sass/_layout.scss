@@ -61,9 +61,12 @@
     padding: 1.5rem ($spacing-unit * 0.75) 0;
 
     @media (max-width: 600px) {
-        /* El lado derecho conserva más aire: el selector de tema flota
-           más allá del nav y necesita hueco para no tocar el borde. */
+        /* El lado derecho necesita más aire que el estándar (16px):
+           el selector de tema flota más allá del nav y si solo hay
+           16px no cabe ni un hueco hasta el texto ni un hueco hasta
+           el borde a la vez (el icono ya ocupa 16px él solo). */
         padding-left: 1rem;
+        padding-right: 2rem;
     }
 }
 
@@ -135,7 +138,7 @@
     transform: translateY(-50%);
 
     @media screen and (max-width: 600px) {
-        margin-left: 0;
+        margin-left: 0.5rem;
     }
     background: none;
     border: none;
