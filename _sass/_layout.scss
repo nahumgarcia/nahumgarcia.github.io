@@ -614,7 +614,7 @@ time {
 
 .lightbox-title {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin: 0;
 }
@@ -627,7 +627,7 @@ time {
 
 .lightbox-date {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 1.19rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -637,7 +637,7 @@ time {
 }
 
 .lightbox-tags {
-  font-size: 1.19rem;
+  font-size: 0.9rem;
 
   a {
     color: rgba(255, 255, 255, 0.55);
@@ -663,7 +663,7 @@ time {
 .lightbox-permalink {
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-top: 0.5rem;
   text-decoration: none;
   @media (hover: hover) {
@@ -902,9 +902,7 @@ time {
 }
 
 .photo-post-title {
-  font-size: 1.4rem;
-  letter-spacing: -0.5px;
-  line-height: 1.25;
+  font-size: inherit;
   font-weight: 600;
   margin: 0;
 }
@@ -916,6 +914,11 @@ time {
   margin-top: 1.5rem;
   color: var(--text-color);
   line-height: $base-line-height;
+}
+
+.photo-post-postmeta {
+  max-width: $max-width;
+  margin: 1.5rem auto 0;
 }
 
 /* ===== Muro (/fotos/) — feed vertical de fotos con su contenido debajo ===== */
@@ -954,9 +957,7 @@ time {
 }
 
 .photo-wall-title {
-  font-size: 1.4rem;
-  letter-spacing: -0.5px;
-  line-height: 1.25;
+  font-size: inherit;
   font-weight: 600;
   margin: 0;
 }
@@ -966,6 +967,11 @@ time {
   margin: 1rem auto 0;
   color: var(--text-color);
   line-height: $base-line-height;
+}
+
+.photo-wall-postmeta {
+  max-width: $max-width;
+  margin: 1rem auto 0;
 }
 
 /* ===== Álbumes (/fotos/albumes/) — cuadrícula de portadas apaisadas ===== */
