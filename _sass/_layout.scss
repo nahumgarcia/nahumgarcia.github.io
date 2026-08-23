@@ -911,14 +911,14 @@ time {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   color: var(--text-color);
   line-height: $base-line-height;
 }
 
 .photo-post-postmeta {
   max-width: $max-width;
-  margin: 1.5rem auto 0;
+  margin: 0.75rem auto 0;
 }
 
 /* ===== Muro (/fotos/) — feed vertical de fotos con su contenido debajo ===== */
@@ -964,14 +964,14 @@ time {
 
 .photo-wall-caption {
   max-width: $max-width;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 0;
   color: var(--text-color);
   line-height: $base-line-height;
 }
 
 .photo-wall-postmeta {
   max-width: $max-width;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 0;
 }
 
 /* ===== Álbumes (/fotos/albumes/) — cuadrícula de portadas apaisadas ===== */
